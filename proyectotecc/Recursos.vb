@@ -2,14 +2,23 @@
 Imports System.ComponentModel
 Public Class Recursos
     Dim conexion As MySqlConnection
+    Dim conexion2 As MySqlConnection
+
     Dim comando As MySqlCommand
     Dim lector As MySqlDataReader
+    Dim comando2 As MySqlCommand
+    Dim lector2 As MySqlDataReader
     Dim filas As Integer = 0
     Dim opcion As Integer = 0
+    Dim Tipo As String
+
     Private Sub Recursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
+        conexion2 = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
         conexion.Open()
+        conexion2.Open()
         comando = conexion.CreateCommand
+        comando2 = conexion2.CreateCommand
 
         comando.CommandText = "Select IdRecurso from CAÑONES"
         lector = comando.ExecuteReader
@@ -52,9 +61,17 @@ Public Class Recursos
         comando.CommandText = "Select * from RECURSOS"
         lector = comando.ExecuteReader
         While lector.Read()
+            Dim id As String = lector(0)
+            Dim categoria As String = lector(2)
+            comando2.CommandText = "Select * from CATEGORIA where idCategoria  = " & categoria
+            lector2 = comando2.ExecuteReader
+            lector2.Read()
+            categoria = lector2(1)
+            lector2.Close()
             For i As Integer = 0 To cboIdRecurso.Items.Count - 1
-                If (lector(0) + " PANTALLAS").Equals(cboIdRecurso.Items(i)) Or (lector(0) + " CAÑON").Equals(cboIdRecurso.Items(i)) Or (lector(0) + " COMPUTADORAS").Equals(cboIdRecurso.Items(i)) Then
-                    cboIdRecurso.Items.Remove(i)
+                If (id & " " & categoria).Equals(cboIdRecurso.Items(i)) Or (id & " " & categoria).Equals(cboIdRecurso.Items(i)) Or (id & " " & categoria).Equals(cboIdRecurso.Items(i)) Then
+                    cboIdRecurso.Items.Remove(id & " " & categoria)
+                    Exit For
                 End If
             Next
         End While
@@ -70,8 +87,8 @@ Public Class Recursos
         opcion = 2
 
         txtDescripcion.Enabled = True
-        cboIdCategoria.Enabled = True
-        cboIdRecurso.Enabled = True
+        cboIdCategoria.Enabled = False
+        cboIdRecurso.Enabled = False
         btnRegistrar.Enabled = True
 
         gb1.Enabled = False
@@ -95,20 +112,15 @@ Public Class Recursos
         filas = dgwRecurso.RowCount
         filas -= 1
         colocar(filas)
-        comando.CommandText = "SELECT count(idRecurso) FROM COMPUTADORAS"
-        lector = comando.ExecuteReader
-        lector.Read()
-        txtID.Text = CInt(lector(0)) + 1
-        lector.Close()
+
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
-
             If opcion = 2 Then
-                ''  comando.CommandText = "UPDATE COMPUTADORAS set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , Procesador = '" & txtProcesador.Text & "', Memoria = '" & txtMemoria.Text & "',  HDD	 = '" & txtHdd.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & txtidRecursos.Text
+                comando.CommandText = "UPDATE RECURSOS set  descripcion  = '" & txtDescripcion.Text & "'  Where idRecursos =" & cboIdRecurso.Text.Substring(0, cboIdRecurso.Text.IndexOf(" ")) & " and idCategoria=" & cboIdCategoria.Text
             ElseIf opcion = 1 Then
-                ''  comando.CommandText = "insert into COMPUTADORAS (INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
+                comando.CommandText = "insert into RECURSOS (idRecursos,descripcion,idCategoria) values( '" & cboIdRecurso.Text.Substring(0, cboIdRecurso.Text.IndexOf(" ")) & "' , '" & txtDescripcion.Text & "', '" & cboIdCategoria.Text & "')"
             End If
             comando.ExecuteNonQuery()
         Catch ex As Exception
@@ -176,9 +188,19 @@ Public Class Recursos
     End Sub
     Private Sub colocar(fila As Integer)
         dgwRecurso.CurrentCell = dgwRecurso(0, fila)
-        cboIdRecurso.Text = dgwRecurso.Item(0, fila).Value
-        txtConcepto.Text = dgwRecurso.Item(1, fila).Value
-        txtConcepto.Text = dgwRecurso.Item(2, fila).Value
+        If dgwRecurso.Columns.Count >= 0 Then
+            cboIdCategoria.SelectedItem = Integer.Parse(dgwRecurso.Item(0, fila).Value)
+            txtDescripcion.Text = dgwRecurso.Item(1, fila).Value
+
+            comando2.CommandText = "Select * from CATEGORIA where idCategoria  = " & cboIdCategoria.Text
+            lector2 = comando2.ExecuteReader
+            lector2.Read()
+            Dim categoriaT As String = lector2(1)
+            lector2.Close()
+            cboIdRecurso.Text = Integer.Parse(dgwRecurso.Item(2, fila).Value) & " " & categoriaT
+
+        End If
+
 
     End Sub
 
@@ -193,7 +215,6 @@ Public Class Recursos
 
     Private Sub cboIdRecurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboIdRecurso.SelectedIndexChanged
         Dim id As String
-        Dim Tipo As String
 
         id = cboIdRecurso.Text.Substring(0, cboIdRecurso.Text.IndexOf(" "))
         Tipo = cboIdRecurso.Text.Substring(cboIdRecurso.Text.IndexOf(" "), cboIdRecurso.Text.Length - 1)

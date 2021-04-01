@@ -31,9 +31,14 @@ Partial Class Recursos
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtINVCA = New System.Windows.Forms.TextBox()
         Me.cboIdCategoria = New System.Windows.Forms.ComboBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dgwRecurso = New System.Windows.Forms.DataGridView()
+        Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnInicio = New System.Windows.Forms.Button()
@@ -44,13 +49,6 @@ Partial Class Recursos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtINVCA = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.TextBox()
-        Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwRecurso, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,9 +113,7 @@ Partial Class Recursos
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtID)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 109)
         Me.GroupBox1.Name = "GroupBox1"
@@ -151,6 +147,24 @@ Partial Class Recursos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Categorías:"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(326, 64)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(88, 17)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "INVCAPECE:"
+        '
+        'txtINVCA
+        '
+        Me.txtINVCA.Enabled = False
+        Me.txtINVCA.Location = New System.Drawing.Point(323, 89)
+        Me.txtINVCA.Multiline = True
+        Me.txtINVCA.Name = "txtINVCA"
+        Me.txtINVCA.Size = New System.Drawing.Size(210, 43)
+        Me.txtINVCA.TabIndex = 9
+        '
         'cboIdCategoria
         '
         Me.cboIdCategoria.FormattingEnabled = True
@@ -178,6 +192,27 @@ Partial Class Recursos
         Me.dgwRecurso.RowTemplate.Height = 24
         Me.dgwRecurso.Size = New System.Drawing.Size(697, 150)
         Me.dgwRecurso.TabIndex = 12
+        '
+        'idRecursos
+        '
+        Me.idRecursos.HeaderText = "idRecursos"
+        Me.idRecursos.MinimumWidth = 6
+        Me.idRecursos.Name = "idRecursos"
+        Me.idRecursos.Width = 125
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "descripcion"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 125
+        '
+        'idCategoria
+        '
+        Me.idCategoria.HeaderText = "idCategoria"
+        Me.idCategoria.MinimumWidth = 6
+        Me.idCategoria.Name = "idCategoria"
+        Me.idCategoria.Width = 125
         '
         'gb1
         '
@@ -276,63 +311,6 @@ Partial Class Recursos
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
-        'txtINVCA
-        '
-        Me.txtINVCA.Enabled = False
-        Me.txtINVCA.Location = New System.Drawing.Point(323, 89)
-        Me.txtINVCA.Multiline = True
-        Me.txtINVCA.Name = "txtINVCA"
-        Me.txtINVCA.Size = New System.Drawing.Size(210, 43)
-        Me.txtINVCA.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(326, 64)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(88, 17)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "INVCAPECE:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(23, 26)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(23, 17)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "id:"
-        '
-        'txtID
-        '
-        Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(26, 46)
-        Me.txtID.Multiline = True
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(158, 26)
-        Me.txtID.TabIndex = 12
-        '
-        'idRecursos
-        '
-        Me.idRecursos.HeaderText = "idRecursos"
-        Me.idRecursos.MinimumWidth = 6
-        Me.idRecursos.Name = "idRecursos"
-        Me.idRecursos.Width = 125
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "descripcion"
-        Me.descripcion.MinimumWidth = 6
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 125
-        '
-        'idCategoria
-        '
-        Me.idCategoria.HeaderText = "idCategoria"
-        Me.idCategoria.MinimumWidth = 6
-        Me.idCategoria.Name = "idCategoria"
-        Me.idCategoria.Width = 125
-        '
         'Recursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -379,8 +357,6 @@ Partial Class Recursos
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents cboIdRecurso As ComboBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtID As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtINVCA As TextBox
     Friend WithEvents idRecursos As DataGridViewTextBoxColumn
