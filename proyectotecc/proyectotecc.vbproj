@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bajas.Designer.vb">
+      <DependentUpon>Bajas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bajas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="categoría.Designer.vb">
       <DependentUpon>categoría.vb</DependentUpon>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bajas.resx">
+      <DependentUpon>Bajas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="categoría.resx">
       <DependentUpon>categoría.vb</DependentUpon>
     </EmbeddedResource>

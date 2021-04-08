@@ -23,4 +23,7 @@
         Cañones.ShowDialog()
     End Sub
 
+    Private Sub BajasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajasToolStripMenuItem.Click
+        Bajas.ShowDialog()
+    End Sub
 End Class
