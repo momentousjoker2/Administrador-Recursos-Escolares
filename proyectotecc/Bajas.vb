@@ -1,15 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.ComponentModel
 Public Class Bajas
-    Dim conexion As MySqlConnection
-    Dim comando As MySqlCommand
-    Dim lector As MySqlDataReader
-
+    Public conexion As MySqlConnection
+    Public comando As MySqlCommand
+    Public lector As MySqlDataReader
     Private Sub Bajas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
+        conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
-
 
         Dim R As String
 
@@ -21,15 +19,12 @@ Public Class Bajas
             CboFiltroCategoria.Items.Add(lector(0))
         End While
         lector.Close()
-
-
     End Sub
 
     Private Sub FillData()
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
+        conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
-
         Dim R As String
 
         R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, CA.Estado FROM RECURSOS AS R 
@@ -67,14 +62,10 @@ Public Class Bajas
             DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
         End While
         lector.Close()
-
     End Sub
 
     Private Sub CboFiltroCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboFiltroCategoria.SelectedIndexChanged
         DGVRecursos.Rows.Clear()
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
-        conexion.Open()
-        comando = conexion.CreateCommand
 
         If CboFiltroCategoria.SelectedItem.ToString = "0" Then
             TxtFiltroCategoria.Text = "TODAS LAS CATEGORÍAS"
@@ -155,7 +146,6 @@ Public Class Bajas
 
         End If
 
-
     End Sub
 
     Private Sub UpdateData()
@@ -163,10 +153,6 @@ Public Class Bajas
         TxtDescripcion.Text = DGVRecursos.SelectedRows(0).Cells(1).Value.ToString
         TxtIdCategoria.Text = DGVRecursos.SelectedRows(0).Cells(2).Value.ToString
         txtConcepto.Text = DGVRecursos.SelectedRows(0).Cells(3).Value.ToString
-
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
-        conexion.Open()
-        comando = conexion.CreateCommand
 
         If TxtIdCategoria.Text = "1" Then
             Dim R As String
@@ -199,6 +185,7 @@ Public Class Bajas
             txtINVCA.Text = comando.ExecuteScalar
             lector.Close()
         End If
+
     End Sub
 
 
@@ -233,9 +220,6 @@ Public Class Bajas
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
-        conexion.Open()
-        comando = conexion.CreateCommand
 
         Dim R As String
 
@@ -257,6 +241,7 @@ Public Class Bajas
         BtnGuardar.Enabled = False
         BtnLimpiarSeleccion.Enabled = False
         BtnDeshacer.Enabled = False
+
     End Sub
 
     Private Sub Bajas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignarRecursos.Designer.vb">
+      <DependentUpon>AsignarRecursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarRecursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bajas.Designer.vb">
       <DependentUpon>Bajas.vb</DependentUpon>
     </Compile>
@@ -100,6 +106,7 @@
     <Compile Include="Computadoras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Conexion.vb" />
     <Compile Include="Lugar.Designer.vb">
       <DependentUpon>Lugar.vb</DependentUpon>
     </Compile>
@@ -143,6 +150,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AsignarRecursos.resx">
+      <DependentUpon>AsignarRecursos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bajas.resx">
       <DependentUpon>Bajas.vb</DependentUpon>
     </EmbeddedResource>

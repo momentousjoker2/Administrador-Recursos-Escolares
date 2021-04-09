@@ -90,3 +90,4 @@ C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.ex
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.xml
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.pdb
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.Bajas.resources
+C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.AsignarRecursos.resources
