@@ -26,4 +26,8 @@
     Private Sub BajasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajasToolStripMenuItem.Click
         Bajas.ShowDialog()
     End Sub
+
+    Private Sub AsignarRecursosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsignarRecursosToolStripMenuItem.Click
+        AsignarRecursos.Show()
+    End Sub
 End Class
