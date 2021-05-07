@@ -29,10 +29,7 @@ Partial Class Recursos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtConcepto = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtINVCA = New System.Windows.Forms.TextBox()
         Me.cboIdCategoria = New System.Windows.Forms.ComboBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dgwRecurso = New System.Windows.Forms.DataGridView()
@@ -49,6 +46,7 @@ Partial Class Recursos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtIdRecursos = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwRecurso, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +58,7 @@ Partial Class Recursos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(326, 30)
+        Me.Label1.Location = New System.Drawing.Point(22, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 17)
         Me.Label1.TabIndex = 1
@@ -108,62 +106,34 @@ Partial Class Recursos
         Me.txtConcepto.Location = New System.Drawing.Point(26, 96)
         Me.txtConcepto.Multiline = True
         Me.txtConcepto.Name = "txtConcepto"
-        Me.txtConcepto.Size = New System.Drawing.Size(210, 43)
+        Me.txtConcepto.Size = New System.Drawing.Size(528, 43)
         Me.txtConcepto.TabIndex = 6
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtIdRecursos)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 109)
+        Me.GroupBox1.Location = New System.Drawing.Point(144, 313)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(560, 191)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de los recursos"
         '
-        'cboIdRecurso
-        '
-        Me.cboIdRecurso.FormattingEnabled = True
-        Me.cboIdRecurso.Location = New System.Drawing.Point(412, 27)
-        Me.cboIdRecurso.Name = "cboIdRecurso"
-        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
-        Me.cboIdRecurso.TabIndex = 8
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.txtINVCA)
-        Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
-        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.cboIdCategoria)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtConcepto)
-        Me.GroupBox2.Location = New System.Drawing.Point(149, 313)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 118)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(560, 182)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Categorías:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(326, 64)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(88, 17)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "INVCAPECE:"
-        '
-        'txtINVCA
-        '
-        Me.txtINVCA.Enabled = False
-        Me.txtINVCA.Location = New System.Drawing.Point(323, 89)
-        Me.txtINVCA.Multiline = True
-        Me.txtINVCA.Name = "txtINVCA"
-        Me.txtINVCA.Size = New System.Drawing.Size(210, 43)
-        Me.txtINVCA.TabIndex = 9
         '
         'cboIdCategoria
         '
@@ -311,6 +281,13 @@ Partial Class Recursos
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
+        'txtIdRecursos
+        '
+        Me.txtIdRecursos.Location = New System.Drawing.Point(108, 38)
+        Me.txtIdRecursos.Name = "txtIdRecursos"
+        Me.txtIdRecursos.Size = New System.Drawing.Size(109, 22)
+        Me.txtIdRecursos.TabIndex = 4
+        '
         'Recursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -356,10 +333,8 @@ Partial Class Recursos
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
-    Friend WithEvents cboIdRecurso As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtINVCA As TextBox
     Friend WithEvents idRecursos As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents idCategoria As DataGridViewTextBoxColumn
+    Friend WithEvents txtIdRecursos As TextBox
 End Class
