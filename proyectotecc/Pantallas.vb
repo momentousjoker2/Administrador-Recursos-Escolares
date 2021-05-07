@@ -1,4 +1,4 @@
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports MySql.Data.MySqlClient
 Public Class Pantallas
     Dim conexion As MySqlConnection
@@ -10,7 +10,27 @@ Public Class Pantallas
         conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
-        txtidRecuersos.Enabled = False
+
+
+        comando.CommandText = "Select * from RECURSOS where idCategoria = 3"
+        lector = comando.ExecuteReader
+        While lector.Read()
+            cboIdRecurso.Items.Add(lector(0))
+        End While
+        lector.Close()
+
+        comando.CommandText = "Select * from PANTALLAS "
+        lector = comando.ExecuteReader
+        While lector.Read()
+            cboIdRecurso.Items.Remove(lector(0))
+        End While
+        lector.Close()
+
+
+
+
+
+        cboIdRecurso.Enabled = False
         txtTipo.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
@@ -46,11 +66,8 @@ Public Class Pantallas
         filas = dgwPantalla.RowCount
         filas -= 1
         colocar(filas)
-        comando.CommandText = "SELECT count(IdRecurso) FROM PANTALLAS"
-        lector = comando.ExecuteReader
-        lector.Read()
-        txtidRecuersos.Text = CInt(lector(0)) + 1
-        lector.Close()
+        cboIdRecurso.Enabled = True
+
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -58,9 +75,9 @@ Public Class Pantallas
             '					
 
             If opcion = 2 Then
-                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where idLugar =" & txtidRecuersos.Text
+                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where idLugar =" & cboIdRecurso.SelectedIndex.ToString
             ElseIf opcion = 1 Then
-                comando.CommandText = "insert into PANTALLAS(Tipo,INVCAPECE,Marca,Modelo,Dimension,Estado) values('" & txtTipo.Text & "','" & txtInvcapece.Text & "','" & txtMarca.Text & "','" & txtModelo.Text & "','" & txtDimension.Text & "','" & txtEstado.Text & "')"
+                comando.CommandText = "insert into PANTALLAS(IdRecurso,Tipo,INVCAPECE,Marca,Modelo,Dimension,Estado) values('" & cboIdRecurso.SelectedItem.ToString & "','" & txtTipo.Text & "','" & txtInvcapece.Text & "','" & txtMarca.Text & "','" & txtModelo.Text & "','" & txtDimension.Text & "','" & txtEstado.Text & "')"
             End If
             comando.ExecuteNonQuery()
         Catch ex As Exception
@@ -144,7 +161,7 @@ Public Class Pantallas
 
     Private Sub colocar(fila As Integer)
         dgwPantalla.CurrentCell = dgwPantalla(0, fila)
-        txtidRecuersos.Text = dgwPantalla.Item(0, fila).Value
+        cboIdRecurso.Text = dgwPantalla.Item(0, fila).Value
         txtTipo.Text = dgwPantalla.Item(1, fila).Value
         txtInvcapece.Text = dgwPantalla.Item(2, fila).Value
         txtMarca.Text = dgwPantalla.Item(3, fila).Value

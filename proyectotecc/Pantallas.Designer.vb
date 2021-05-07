@@ -24,8 +24,6 @@ Partial Class Pantallas
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtidRecuersos = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -39,6 +37,13 @@ Partial Class Pantallas
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTipo = New System.Windows.Forms.TextBox()
         Me.dgwPantalla = New System.Windows.Forms.DataGridView()
+        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Dimension = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnRegistrar = New System.Windows.Forms.Button()
@@ -49,13 +54,8 @@ Partial Class Pantallas
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Dimension = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwPantalla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,8 +75,8 @@ Partial Class Pantallas
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.txtidRecuersos)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtEstado)
         Me.GroupBox2.Controls.Add(Me.Label9)
@@ -95,23 +95,6 @@ Partial Class Pantallas
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Pantalla:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 17)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "id:"
-        '
-        'txtidRecuersos
-        '
-        Me.txtidRecuersos.Location = New System.Drawing.Point(16, 43)
-        Me.txtidRecuersos.Multiline = True
-        Me.txtidRecuersos.Name = "txtidRecuersos"
-        Me.txtidRecuersos.Size = New System.Drawing.Size(123, 30)
-        Me.txtidRecuersos.TabIndex = 35
         '
         'Label10
         '
@@ -226,6 +209,55 @@ Partial Class Pantallas
         Me.dgwPantalla.Size = New System.Drawing.Size(560, 150)
         Me.dgwPantalla.TabIndex = 19
         '
+        'Id
+        '
+        Me.Id.HeaderText = "Id"
+        Me.Id.MinimumWidth = 6
+        Me.Id.Name = "Id"
+        Me.Id.Width = 125
+        '
+        'Tipo
+        '
+        Me.Tipo.HeaderText = "Tipo"
+        Me.Tipo.MinimumWidth = 6
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.Width = 125
+        '
+        'INVCAPECE
+        '
+        Me.INVCAPECE.HeaderText = "INVCAPECE"
+        Me.INVCAPECE.MinimumWidth = 6
+        Me.INVCAPECE.Name = "INVCAPECE"
+        Me.INVCAPECE.Width = 125
+        '
+        'Marca
+        '
+        Me.Marca.HeaderText = "Marca"
+        Me.Marca.MinimumWidth = 6
+        Me.Marca.Name = "Marca"
+        Me.Marca.Width = 125
+        '
+        'Modelo
+        '
+        Me.Modelo.HeaderText = "Modelo"
+        Me.Modelo.MinimumWidth = 6
+        Me.Modelo.Name = "Modelo"
+        Me.Modelo.Width = 125
+        '
+        'Dimension
+        '
+        Me.Dimension.HeaderText = "Dimension"
+        Me.Dimension.MinimumWidth = 6
+        Me.Dimension.Name = "Dimension"
+        Me.Dimension.Width = 125
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 6
+        Me.Estado.Name = "Estado"
+        Me.Estado.Width = 125
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
@@ -322,54 +354,22 @@ Partial Class Pantallas
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
-        'Id
+        'cboIdRecurso
         '
-        Me.Id.HeaderText = "Id"
-        Me.Id.MinimumWidth = 6
-        Me.Id.Name = "Id"
-        Me.Id.Width = 125
+        Me.cboIdRecurso.FormattingEnabled = True
+        Me.cboIdRecurso.Location = New System.Drawing.Point(16, 46)
+        Me.cboIdRecurso.Name = "cboIdRecurso"
+        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
+        Me.cboIdRecurso.TabIndex = 35
         '
-        'Tipo
+        'Label1
         '
-        Me.Tipo.HeaderText = "Tipo"
-        Me.Tipo.MinimumWidth = 6
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.Width = 125
-        '
-        'INVCAPECE
-        '
-        Me.INVCAPECE.HeaderText = "INVCAPECE"
-        Me.INVCAPECE.MinimumWidth = 6
-        Me.INVCAPECE.Name = "INVCAPECE"
-        Me.INVCAPECE.Width = 125
-        '
-        'Marca
-        '
-        Me.Marca.HeaderText = "Marca"
-        Me.Marca.MinimumWidth = 6
-        Me.Marca.Name = "Marca"
-        Me.Marca.Width = 125
-        '
-        'Modelo
-        '
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.MinimumWidth = 6
-        Me.Modelo.Name = "Modelo"
-        Me.Modelo.Width = 125
-        '
-        'Dimension
-        '
-        Me.Dimension.HeaderText = "Dimension"
-        Me.Dimension.MinimumWidth = 6
-        Me.Dimension.Name = "Dimension"
-        Me.Dimension.Width = 125
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.MinimumWidth = 6
-        Me.Estado.Name = "Estado"
-        Me.Estado.Width = 125
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.TabIndex = 34
+        Me.Label1.Text = "Id Recurso:"
         '
         'Pantallas
         '
@@ -418,8 +418,6 @@ Partial Class Pantallas
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtidRecuersos As TextBox
     Friend WithEvents Id As DataGridViewTextBoxColumn
     Friend WithEvents Tipo As DataGridViewTextBoxColumn
     Friend WithEvents INVCAPECE As DataGridViewTextBoxColumn
@@ -427,4 +425,6 @@ Partial Class Pantallas
     Friend WithEvents Modelo As DataGridViewTextBoxColumn
     Friend WithEvents Dimension As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents cboIdRecurso As ComboBox
+    Friend WithEvents Label1 As Label
 End Class
