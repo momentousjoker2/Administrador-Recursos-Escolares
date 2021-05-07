@@ -9,7 +9,7 @@ Public Class Lugar
     Dim filas As Integer = 0
     Dim opcion As Integer = 0
     Private Sub Lugar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
+        conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
         txtIdLugar.Enabled = False

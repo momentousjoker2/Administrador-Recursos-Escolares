@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+Imports MySql.Data.MySqlClient
 Imports System.ComponentModel
 Public Class Recursos
     Dim conexion As MySqlConnection
@@ -13,7 +13,7 @@ Public Class Recursos
     Dim Tipo As String
 
     Private Sub Recursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
+        conexion = New MySqlConnection(conn)
         conexion2 = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
         conexion.Open()
         conexion2.Open()

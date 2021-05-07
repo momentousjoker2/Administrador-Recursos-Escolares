@@ -9,7 +9,7 @@ Public Class Cañones
     Dim opcion As Integer = 0
 
     Private Sub Cañones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection("datasource=mysql-sistemamediosav.alwaysdata.net;port=3306;username=230400_db;password=W*eH0EBY%7oH;database=sistemamediosav_db;")
+        conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
 
@@ -56,7 +56,7 @@ Public Class Cañones
         filas = dgwCañon.RowCount
         filas -= 1
         colocar(filas)
-        comando.CommandText = "SELECT count(IdRecurso) FROM CAÑONES"
+        comando.CommandText = "Select count(IdRecurso) FROM CAÑONES"
         lector = comando.ExecuteReader
         lector.Read()
         txtIDCanon.Text = CInt(lector(0)) + 1
@@ -71,7 +71,7 @@ Public Class Cañones
             FechaA = dtpFechaAdqui.Value
             FechaM = dtpFechaUltiMan.Value
             If opcion = 2 Then
-                comando.CommandText = "UPDATE CAÑONES set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , HorasLampara = '" & txtHorasLampara.Text & "', Observaciones = '" & txtObservaciones.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & txtIDCanon.Text
+                comando.CommandText = "UPDATE CAÑONES Set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , HorasLampara = '" & txtHorasLampara.Text & "', Observaciones = '" & txtObservaciones.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & txtIDCanon.Text
             ElseIf opcion = 1 Then
                 comando.CommandText = "insert into CAÑONES (INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,HorasLampara,Observaciones,Estado) values( '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtHorasLampara.Text & "', '" & txtObservaciones.Text & "', '" & txtEstado.Text & "')"
             End If
