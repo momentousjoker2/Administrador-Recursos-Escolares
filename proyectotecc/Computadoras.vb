@@ -11,7 +11,24 @@ Public Class Computadoras
         conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
-        txtidRecursos.Enabled = False
+
+
+        comando.CommandText = "Select * from RECURSOS where idCategoria = 2"
+        lector = comando.ExecuteReader
+        While lector.Read()
+            cboIdRecurso.Items.Add(lector(0))
+        End While
+        lector.Close()
+
+        comando.CommandText = "Select * from COMPUTADORAS "
+        lector = comando.ExecuteReader
+        While lector.Read()
+            cboIdRecurso.Items.Remove(lector(0))
+        End While
+        lector.Close()
+
+
+        cboIdRecurso.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
         txtModelo.Enabled = False
@@ -54,11 +71,7 @@ Public Class Computadoras
         filas = dgwComputadora.RowCount
         filas -= 1
         colocar(filas)
-        comando.CommandText = "SELECT count(idRecurso) FROM COMPUTADORAS"
-        lector = comando.ExecuteReader
-        lector.Read()
-        txtidRecursos.Text = CInt(lector(0)) + 1
-        lector.Close()
+        cboIdRecurso.Enabled = True
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -69,9 +82,9 @@ Public Class Computadoras
             FechaA = dtpFechaAdqui.Value
             FechaM = dtpFechaUltMan.Value
             If opcion = 2 Then
-                comando.CommandText = "UPDATE COMPUTADORAS set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , Procesador = '" & txtProcesador.Text & "', Memoria = '" & txtMemoria.Text & "',  HDD	 = '" & txtHdd.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & txtidRecursos.Text
+                comando.CommandText = "UPDATE COMPUTADORAS set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , Procesador = '" & txtProcesador.Text & "', Memoria = '" & txtMemoria.Text & "',  HDD	 = '" & txtHdd.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.SelectedItem.Text
             ElseIf opcion = 1 Then
-                comando.CommandText = "insert into COMPUTADORAS (INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
+                comando.CommandText = "insert into COMPUTADORAS (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & cboIdRecurso.SelectedItem.ToString & "' ,'" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
             End If
             comando.ExecuteNonQuery()
         Catch ex As Exception
@@ -165,7 +178,7 @@ Public Class Computadoras
 
     Private Sub colocar(fila As Integer)
         dgwComputadora.CurrentCell = dgwComputadora(0, fila)
-        txtidRecursos.Text = dgwComputadora.Item(0, fila).Value
+        cboIdRecurso.Text = dgwComputadora.Item(0, fila).Value
         txtInvcapece.Text = dgwComputadora.Item(1, fila).Value
         dtpFechaAdqui.Text = dgwComputadora.Item(2, fila).Value
         dtpFechaUltMan.Text = dgwComputadora.Item(3, fila).Value

@@ -24,8 +24,6 @@ Partial Class Computadoras
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtidRecursos = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.txtProcesador = New System.Windows.Forms.TextBox()
         Me.txtMemoria = New System.Windows.Forms.TextBox()
@@ -47,16 +45,6 @@ Partial Class Computadoras
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgwComputadora = New System.Windows.Forms.DataGridView()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.gb1 = New System.Windows.Forms.GroupBox()
-        Me.btnUltimo = New System.Windows.Forms.Button()
-        Me.btnInicio = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.idRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAdq = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,6 +56,18 @@ Partial Class Computadoras
         Me.Memoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HDD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.gb1 = New System.Windows.Forms.GroupBox()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +87,7 @@ Partial Class Computadoras
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtidRecursos)
+        Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtEstado)
         Me.GroupBox2.Controls.Add(Me.txtProcesador)
@@ -115,23 +115,6 @@ Partial Class Computadoras
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Computadora:"
-        '
-        'txtidRecursos
-        '
-        Me.txtidRecursos.Location = New System.Drawing.Point(10, 56)
-        Me.txtidRecursos.Multiline = True
-        Me.txtidRecursos.Name = "txtidRecursos"
-        Me.txtidRecursos.Size = New System.Drawing.Size(221, 28)
-        Me.txtidRecursos.TabIndex = 46
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 17)
-        Me.Label1.TabIndex = 47
-        Me.Label1.Text = "id:"
         '
         'txtEstado
         '
@@ -312,6 +295,83 @@ Partial Class Computadoras
         Me.dgwComputadora.Size = New System.Drawing.Size(560, 182)
         Me.dgwComputadora.TabIndex = 26
         '
+        'idRecurso
+        '
+        Me.idRecurso.HeaderText = "idRecurso"
+        Me.idRecurso.MinimumWidth = 6
+        Me.idRecurso.Name = "idRecurso"
+        Me.idRecurso.Width = 125
+        '
+        'INVCAPECE
+        '
+        Me.INVCAPECE.HeaderText = "INVCAPECE"
+        Me.INVCAPECE.MinimumWidth = 6
+        Me.INVCAPECE.Name = "INVCAPECE"
+        Me.INVCAPECE.Width = 125
+        '
+        'FechaAdq
+        '
+        Me.FechaAdq.HeaderText = "FechaAdq"
+        Me.FechaAdq.MinimumWidth = 6
+        Me.FechaAdq.Name = "FechaAdq"
+        Me.FechaAdq.Width = 125
+        '
+        'FechaUltMantto
+        '
+        Me.FechaUltMantto.HeaderText = "FechaUltMantto"
+        Me.FechaUltMantto.MinimumWidth = 6
+        Me.FechaUltMantto.Name = "FechaUltMantto"
+        Me.FechaUltMantto.Width = 125
+        '
+        'Modelo
+        '
+        Me.Modelo.HeaderText = "Modelo"
+        Me.Modelo.MinimumWidth = 6
+        Me.Modelo.Name = "Modelo"
+        Me.Modelo.Width = 125
+        '
+        'Marca
+        '
+        Me.Marca.HeaderText = "Marca"
+        Me.Marca.MinimumWidth = 6
+        Me.Marca.Name = "Marca"
+        Me.Marca.Width = 125
+        '
+        'NoSerie
+        '
+        Me.NoSerie.HeaderText = "NoSerie"
+        Me.NoSerie.MinimumWidth = 6
+        Me.NoSerie.Name = "NoSerie"
+        Me.NoSerie.Width = 125
+        '
+        'Procesador
+        '
+        Me.Procesador.HeaderText = "Procesador"
+        Me.Procesador.MinimumWidth = 6
+        Me.Procesador.Name = "Procesador"
+        Me.Procesador.Width = 125
+        '
+        'Memoria
+        '
+        Me.Memoria.HeaderText = "Memoria" & Global.Microsoft.VisualBasic.ChrW(9)
+        Me.Memoria.MinimumWidth = 6
+        Me.Memoria.Name = "Memoria"
+        Me.Memoria.Width = 125
+        '
+        'HDD
+        '
+        Me.HDD.HeaderText = "HDD"
+        Me.HDD.MinimumWidth = 6
+        Me.HDD.Name = "HDD"
+        Me.HDD.Width = 125
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 6
+        Me.Estado.Name = "Estado"
+        Me.Estado.Width = 125
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
@@ -408,82 +468,22 @@ Partial Class Computadoras
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
-        'idRecurso
+        'cboIdRecurso
         '
-        Me.idRecurso.HeaderText = "idRecurso"
-        Me.idRecurso.MinimumWidth = 6
-        Me.idRecurso.Name = "idRecurso"
-        Me.idRecurso.Width = 125
+        Me.cboIdRecurso.FormattingEnabled = True
+        Me.cboIdRecurso.Location = New System.Drawing.Point(10, 46)
+        Me.cboIdRecurso.Name = "cboIdRecurso"
+        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
+        Me.cboIdRecurso.TabIndex = 47
         '
-        'INVCAPECE
+        'Label1
         '
-        Me.INVCAPECE.HeaderText = "INVCAPECE"
-        Me.INVCAPECE.MinimumWidth = 6
-        Me.INVCAPECE.Name = "INVCAPECE"
-        Me.INVCAPECE.Width = 125
-        '
-        'FechaAdq
-        '
-        Me.FechaAdq.HeaderText = "FechaAdq"
-        Me.FechaAdq.MinimumWidth = 6
-        Me.FechaAdq.Name = "FechaAdq"
-        Me.FechaAdq.Width = 125
-        '
-        'FechaUltMantto
-        '
-        Me.FechaUltMantto.HeaderText = "FechaUltMantto"
-        Me.FechaUltMantto.MinimumWidth = 6
-        Me.FechaUltMantto.Name = "FechaUltMantto"
-        Me.FechaUltMantto.Width = 125
-        '
-        'Modelo
-        '
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.MinimumWidth = 6
-        Me.Modelo.Name = "Modelo"
-        Me.Modelo.Width = 125
-        '
-        'Marca
-        '
-        Me.Marca.HeaderText = "Marca"
-        Me.Marca.MinimumWidth = 6
-        Me.Marca.Name = "Marca"
-        Me.Marca.Width = 125
-        '
-        'NoSerie
-        '
-        Me.NoSerie.HeaderText = "NoSerie"
-        Me.NoSerie.MinimumWidth = 6
-        Me.NoSerie.Name = "NoSerie"
-        Me.NoSerie.Width = 125
-        '
-        'Procesador
-        '
-        Me.Procesador.HeaderText = "Procesador"
-        Me.Procesador.MinimumWidth = 6
-        Me.Procesador.Name = "Procesador"
-        Me.Procesador.Width = 125
-        '
-        'Memoria
-        '
-        Me.Memoria.HeaderText = "Memoria" & Global.Microsoft.VisualBasic.ChrW(9)
-        Me.Memoria.MinimumWidth = 6
-        Me.Memoria.Name = "Memoria"
-        Me.Memoria.Width = 125
-        '
-        'HDD
-        '
-        Me.HDD.HeaderText = "HDD"
-        Me.HDD.MinimumWidth = 6
-        Me.HDD.Name = "HDD"
-        Me.HDD.Width = 125
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.MinimumWidth = 6
-        Me.Estado.Name = "Estado"
-        Me.Estado.Width = 125
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.TabIndex = 46
+        Me.Label1.Text = "Id Recurso:"
         '
         'Computadoras
         '
@@ -540,8 +540,6 @@ Partial Class Computadoras
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
-    Friend WithEvents txtidRecursos As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents idRecurso As DataGridViewTextBoxColumn
     Friend WithEvents INVCAPECE As DataGridViewTextBoxColumn
     Friend WithEvents FechaAdq As DataGridViewTextBoxColumn
@@ -553,4 +551,6 @@ Partial Class Computadoras
     Friend WithEvents Memoria As DataGridViewTextBoxColumn
     Friend WithEvents HDD As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents cboIdRecurso As ComboBox
+    Friend WithEvents Label1 As Label
 End Class
