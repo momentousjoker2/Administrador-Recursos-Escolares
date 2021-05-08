@@ -75,7 +75,7 @@ Public Class Pantallas
             '					
 
             If opcion = 2 Then
-                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where idLugar =" & cboIdRecurso.SelectedIndex.ToString
+                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where idLugar =" & cboIdRecurso.SelectedItem.ToString
             ElseIf opcion = 1 Then
                 comando.CommandText = "insert into PANTALLAS(IdRecurso,Tipo,INVCAPECE,Marca,Modelo,Dimension,Estado) values('" & cboIdRecurso.SelectedItem.ToString & "','" & txtTipo.Text & "','" & txtInvcapece.Text & "','" & txtMarca.Text & "','" & txtModelo.Text & "','" & txtDimension.Text & "','" & txtEstado.Text & "')"
             End If
