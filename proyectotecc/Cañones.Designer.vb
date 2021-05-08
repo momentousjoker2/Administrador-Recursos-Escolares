@@ -24,6 +24,7 @@ Partial Class Cañones
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtHorasLampara = New System.Windows.Forms.NumericUpDown()
         Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.txtNoSerie = New System.Windows.Forms.TextBox()
@@ -42,18 +43,6 @@ Partial Class Cañones
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgwCañon = New System.Windows.Forms.DataGridView()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.gb1 = New System.Windows.Forms.GroupBox()
-        Me.btnUltimo = New System.Windows.Forms.Button()
-        Me.btnInicio = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.txtIDCanon = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAdq = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,13 +53,24 @@ Partial Class Cañones
         Me.HorasLampara = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtHorasLampara = New System.Windows.Forms.NumericUpDown()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.gb1 = New System.Windows.Forms.GroupBox()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.txtHorasLampara, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgwCañon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.gb1.SuspendLayout()
-        CType(Me.txtHorasLampara, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -85,9 +85,9 @@ Partial Class Cañones
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtHorasLampara)
-        Me.GroupBox2.Controls.Add(Me.txtIDCanon)
+        Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
         Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.txtHorasLampara)
         Me.GroupBox2.Controls.Add(Me.txtEstado)
         Me.GroupBox2.Controls.Add(Me.txtObservaciones)
         Me.GroupBox2.Controls.Add(Me.txtNoSerie)
@@ -111,6 +111,13 @@ Partial Class Cañones
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Cañon:"
+        '
+        'txtHorasLampara
+        '
+        Me.txtHorasLampara.Location = New System.Drawing.Point(268, 354)
+        Me.txtHorasLampara.Name = "txtHorasLampara"
+        Me.txtHorasLampara.Size = New System.Drawing.Size(174, 22)
+        Me.txtHorasLampara.TabIndex = 48
         '
         'txtEstado
         '
@@ -268,6 +275,76 @@ Partial Class Cañones
         Me.dgwCañon.Size = New System.Drawing.Size(560, 150)
         Me.dgwCañon.TabIndex = 28
         '
+        'id
+        '
+        Me.id.HeaderText = "id"
+        Me.id.MinimumWidth = 6
+        Me.id.Name = "id"
+        Me.id.Width = 125
+        '
+        'INVCAPECE
+        '
+        Me.INVCAPECE.HeaderText = "INVCAPECE"
+        Me.INVCAPECE.MinimumWidth = 6
+        Me.INVCAPECE.Name = "INVCAPECE"
+        Me.INVCAPECE.Width = 125
+        '
+        'FechaAdq
+        '
+        Me.FechaAdq.HeaderText = "FechaAdq"
+        Me.FechaAdq.MinimumWidth = 6
+        Me.FechaAdq.Name = "FechaAdq"
+        Me.FechaAdq.Width = 125
+        '
+        'FechaUltMantto
+        '
+        Me.FechaUltMantto.HeaderText = "FechaUltMantto"
+        Me.FechaUltMantto.MinimumWidth = 6
+        Me.FechaUltMantto.Name = "FechaUltMantto"
+        Me.FechaUltMantto.Width = 125
+        '
+        'Modelo
+        '
+        Me.Modelo.HeaderText = "Modelo"
+        Me.Modelo.MinimumWidth = 6
+        Me.Modelo.Name = "Modelo"
+        Me.Modelo.Width = 125
+        '
+        'Marca
+        '
+        Me.Marca.HeaderText = "Marca"
+        Me.Marca.MinimumWidth = 6
+        Me.Marca.Name = "Marca"
+        Me.Marca.Width = 125
+        '
+        'NoSerie
+        '
+        Me.NoSerie.HeaderText = "NoSerie"
+        Me.NoSerie.MinimumWidth = 6
+        Me.NoSerie.Name = "NoSerie"
+        Me.NoSerie.Width = 125
+        '
+        'HorasLampara
+        '
+        Me.HorasLampara.HeaderText = "HorasLampara"
+        Me.HorasLampara.MinimumWidth = 6
+        Me.HorasLampara.Name = "HorasLampara"
+        Me.HorasLampara.Width = 125
+        '
+        'Observaciones
+        '
+        Me.Observaciones.HeaderText = "Observaciones"
+        Me.Observaciones.MinimumWidth = 6
+        Me.Observaciones.Name = "Observaciones"
+        Me.Observaciones.Width = 125
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 6
+        Me.Estado.Name = "Estado"
+        Me.Estado.Width = 125
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
@@ -364,99 +441,22 @@ Partial Class Cañones
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
-        'txtIDCanon
+        'cboIdRecurso
         '
-        Me.txtIDCanon.Location = New System.Drawing.Point(144, 50)
-        Me.txtIDCanon.Multiline = True
-        Me.txtIDCanon.Name = "txtIDCanon"
-        Me.txtIDCanon.Size = New System.Drawing.Size(177, 29)
-        Me.txtIDCanon.TabIndex = 46
+        Me.cboIdRecurso.FormattingEnabled = True
+        Me.cboIdRecurso.Location = New System.Drawing.Point(177, 55)
+        Me.cboIdRecurso.Name = "cboIdRecurso"
+        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
+        Me.cboIdRecurso.TabIndex = 50
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(141, 30)
+        Me.Label1.Location = New System.Drawing.Point(174, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(25, 17)
-        Me.Label1.TabIndex = 47
-        Me.Label1.Text = "ID:"
-        '
-        'id
-        '
-        Me.id.HeaderText = "id"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.Width = 125
-        '
-        'INVCAPECE
-        '
-        Me.INVCAPECE.HeaderText = "INVCAPECE"
-        Me.INVCAPECE.MinimumWidth = 6
-        Me.INVCAPECE.Name = "INVCAPECE"
-        Me.INVCAPECE.Width = 125
-        '
-        'FechaAdq
-        '
-        Me.FechaAdq.HeaderText = "FechaAdq"
-        Me.FechaAdq.MinimumWidth = 6
-        Me.FechaAdq.Name = "FechaAdq"
-        Me.FechaAdq.Width = 125
-        '
-        'FechaUltMantto
-        '
-        Me.FechaUltMantto.HeaderText = "FechaUltMantto"
-        Me.FechaUltMantto.MinimumWidth = 6
-        Me.FechaUltMantto.Name = "FechaUltMantto"
-        Me.FechaUltMantto.Width = 125
-        '
-        'Modelo
-        '
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.MinimumWidth = 6
-        Me.Modelo.Name = "Modelo"
-        Me.Modelo.Width = 125
-        '
-        'Marca
-        '
-        Me.Marca.HeaderText = "Marca"
-        Me.Marca.MinimumWidth = 6
-        Me.Marca.Name = "Marca"
-        Me.Marca.Width = 125
-        '
-        'NoSerie
-        '
-        Me.NoSerie.HeaderText = "NoSerie"
-        Me.NoSerie.MinimumWidth = 6
-        Me.NoSerie.Name = "NoSerie"
-        Me.NoSerie.Width = 125
-        '
-        'HorasLampara
-        '
-        Me.HorasLampara.HeaderText = "HorasLampara"
-        Me.HorasLampara.MinimumWidth = 6
-        Me.HorasLampara.Name = "HorasLampara"
-        Me.HorasLampara.Width = 125
-        '
-        'Observaciones
-        '
-        Me.Observaciones.HeaderText = "Observaciones"
-        Me.Observaciones.MinimumWidth = 6
-        Me.Observaciones.Name = "Observaciones"
-        Me.Observaciones.Width = 125
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.MinimumWidth = 6
-        Me.Estado.Name = "Estado"
-        Me.Estado.Width = 125
-        '
-        'txtHorasLampara
-        '
-        Me.txtHorasLampara.Location = New System.Drawing.Point(268, 354)
-        Me.txtHorasLampara.Name = "txtHorasLampara"
-        Me.txtHorasLampara.Size = New System.Drawing.Size(174, 22)
-        Me.txtHorasLampara.TabIndex = 48
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.TabIndex = 49
+        Me.Label1.Text = "Id Recurso:"
         '
         'Cañones
         '
@@ -473,10 +473,10 @@ Partial Class Cañones
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.txtHorasLampara, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgwCañon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.gb1.ResumeLayout(False)
-        CType(Me.txtHorasLampara, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -511,8 +511,6 @@ Partial Class Cañones
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
-    Friend WithEvents txtIDCanon As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents INVCAPECE As DataGridViewTextBoxColumn
     Friend WithEvents FechaAdq As DataGridViewTextBoxColumn
@@ -524,4 +522,6 @@ Partial Class Cañones
     Friend WithEvents Observaciones As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
     Friend WithEvents txtHorasLampara As NumericUpDown
+    Friend WithEvents cboIdRecurso As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

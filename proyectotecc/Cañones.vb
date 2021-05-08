@@ -13,7 +13,21 @@ Public Class Cañones
         conexion.Open()
         comando = conexion.CreateCommand
 
-        txtIDCanon.Enabled = False
+        comando.CommandText = "Select * from RECURSOS where idCategoria = 1"
+        lector = comando.ExecuteReader
+        While lector.Read()
+            cboIdRecurso.Items.Add(lector(0))
+        End While
+        lector.Close()
+
+        comando.CommandText = "Select * from CAÑONES "
+        lector = comando.ExecuteReader
+        While lector.Read()
+            cboIdRecurso.Items.Remove(lector(0))
+        End While
+        lector.Close()
+
+        cboIdRecurso.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
         txtModelo.Enabled = False
@@ -59,8 +73,8 @@ Public Class Cañones
         comando.CommandText = "Select count(IdRecurso) FROM CAÑONES"
         lector = comando.ExecuteReader
         lector.Read()
-        txtIDCanon.Text = CInt(lector(0)) + 1
         lector.Close()
+        cboIdRecurso.Enabled = True
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -71,9 +85,9 @@ Public Class Cañones
             FechaA = dtpFechaAdqui.Value
             FechaM = dtpFechaUltiMan.Value
             If opcion = 2 Then
-                comando.CommandText = "UPDATE CAÑONES Set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , HorasLampara = '" & txtHorasLampara.Text & "', Observaciones = '" & txtObservaciones.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & txtIDCanon.Text
+                comando.CommandText = "UPDATE CAÑONES Set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , HorasLampara = '" & txtHorasLampara.Text & "', Observaciones = '" & txtObservaciones.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.SelectedItem.ToString
             ElseIf opcion = 1 Then
-                comando.CommandText = "insert into CAÑONES (INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,HorasLampara,Observaciones,Estado) values( '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtHorasLampara.Text & "', '" & txtObservaciones.Text & "', '" & txtEstado.Text & "')"
+                comando.CommandText = "insert into CAÑONES (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,HorasLampara,Observaciones,Estado) values( '" & cboIdRecurso.SelectedItem.ToString & "' ,  '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtHorasLampara.Text & "', '" & txtObservaciones.Text & "', '" & txtEstado.Text & "')"
             End If
             comando.ExecuteNonQuery()
         Catch ex As Exception
@@ -167,7 +181,7 @@ Public Class Cañones
 
     Private Sub colocar(fila As Integer)
         dgwCañon.CurrentCell = dgwCañon(0, fila)
-        txtIDCanon.Text = dgwCañon.Item(0, fila).Value
+        cboIdRecurso.Text = dgwCañon.Item(0, fila).Value
         txtInvcapece.Text = dgwCañon.Item(1, fila).Value
         dtpFechaAdqui.Text = dgwCañon.Item(2, fila).Value
         dtpFechaUltiMan.Text = dgwCañon.Item(3, fila).Value
