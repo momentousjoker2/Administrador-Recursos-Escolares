@@ -164,15 +164,24 @@ Public Class AsignarRecursos
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         Dim R As String
-
-        If TxtIdCategoria.Text = "1" Then
-            ''R = "UPDATE CAÑON SET Estado = 'Baja' WHERE IdRecurso = " & DGVSeleccion.Rows.Item(i).Cells(0).Value
-        ElseIf TxtIdCategoria.Text = "2" Then
-            ''R = "UPDATE COMPUTADORAS SET Estado = 'Baja' WHERE IdRecurso = " & DGVSeleccion.Rows.Item(i).Cells(0).Value
-        ElseIf TxtIdCategoria.Text = "3" Then
-            'R = "UPDATE PANTALLAS SET Estado = 'Baja' WHERE IdRecurso = " & DGVSeleccion.Rows.Item(i).Cells(0).Value
+        Dim cat As String = txtConcepto.Text.ToString
+        Dim id As String = TxtIdRecurso.Text.ToString
+        If cat = "CAÑON" Then
+            R = "UPDATE CAÑONES SET Estado = 'Asignado' WHERE IdRecurso = " & id
+        ElseIf cat = "COMPUTADORAS" Then
+            R = "UPDATE COMPUTADORAS SET Estado = 'Asignado' WHERE IdRecurso = " & id
+        ElseIf cat = "PANTALLAS" Then
+            R = "UPDATE PANTALLAS SET Estado = 'Asignado' WHERE IdRecurso = " & id
         End If
+        comando.CommandText = R
+        comando.ExecuteNonQuery()
 
+        Dim FechaA As Date = dtpFecha.Value
+        R = "INSERT INTO RECURSOSASIGNADOS (IdRecurso,Fecha,Edificio,Aula,Responsable,Estado) VALUES (" & TxtIdRecurso.Text.ToString & " ,'" &
+                                                                            FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "','" &
+                                                                            TxtEdificio.Text.ToString & "','" &
+                                                                            TxtAula.Text.ToString & "','" &
+                                                                            TxtResponsable.Text.ToString & "','Vigente')"
         comando.CommandText = R
         comando.ExecuteNonQuery()
 
@@ -180,11 +189,21 @@ Public Class AsignarRecursos
         DGVRecursos.Rows.Clear()
         BtnGuardar.Enabled = False
         BtnLimpiarSeleccion.Enabled = False
+        LimpiarDatos()
     End Sub
 
     Private Sub BtnLimpiarSeleccion_Click(sender As Object, e As EventArgs) Handles BtnLimpiarSeleccion.Click
+        LimpiarDatos()
+    End Sub
+
+    Private Sub LimpiarDatos()
         TxtEdificio.Clear()
         TxtAula.Clear()
         TxtResponsable.Clear()
+        TxtDescripcion.Clear()
+        TxtIdCategoria.Clear()
+        txtConcepto.Clear()
+        TxtIdRecurso.Clear()
+        txtINVCA.Clear()
     End Sub
 End Class
