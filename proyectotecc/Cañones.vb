@@ -44,37 +44,45 @@ Public Class Cañones
         gb1.Enabled = False
         dgwCañon.Rows.Clear()
 
+
+
         actualizar()
         colocar(0)
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        If cboIdRecurso.Items.Count = 0 Then
+            MsgBox("Usted no tiene nuevos recusos que registar en esta categoria")
+        Else
 
-        txtInvcapece.Enabled = True
-        txtMarca.Enabled = True
-        txtModelo.Enabled = True
-        txtEstado.Enabled = True
-        txtNoSerie.Enabled = True
-        txtHorasLampara.Enabled = True
-        txtObservaciones.Enabled = True
-        dtpFechaAdqui.Enabled = True
-        dtpFechaUltiMan.Enabled = True
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
-        txtHorasLampara.Enabled = True
+            txtInvcapece.Enabled = True
+            txtMarca.Enabled = True
+            txtModelo.Enabled = True
+            txtEstado.Text = "Disponible"
+            txtNoSerie.Enabled = True
+            txtHorasLampara.Enabled = True
+            txtObservaciones.Enabled = True
+            dtpFechaAdqui.Enabled = True
+            dtpFechaUltiMan.Enabled = True
+            btnModificar.Enabled = False
+            btnRegistrar.Enabled = True
+            btnNuevo.Enabled = False
+            gb1.Enabled = False
+            txtHorasLampara.Enabled = True
 
-        opcion = 1
+            opcion = 1
 
-        filas = dgwCañon.RowCount
-        filas -= 1
-        colocar(filas)
-        comando.CommandText = "Select count(IdRecurso) FROM CAÑONES"
-        lector = comando.ExecuteReader
-        lector.Read()
-        lector.Close()
-        cboIdRecurso.Enabled = True
+            filas = dgwCañon.RowCount
+            filas -= 1
+            colocar(filas)
+            comando.CommandText = "Select count(IdRecurso) FROM CAÑONES"
+            lector = comando.ExecuteReader
+            lector.Read()
+            lector.Close()
+            cboIdRecurso.Enabled = True
+            btnRegistrar.Text = "Guardar"
+        End If
+
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -128,6 +136,8 @@ Public Class Cañones
         btnNuevo.Enabled = False
         gb1.Enabled = False
         txtHorasLampara.Enabled = True
+        btnRegistrar.Text = "Guardar"
+
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

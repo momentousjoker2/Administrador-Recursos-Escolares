@@ -50,28 +50,32 @@ Public Class Computadoras
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        If cboIdRecurso.Items.Count = 0 Then
+            MsgBox("Usted no tiene nuevos recusos que registar en esta categoria")
+        Else
+            txtInvcapece.Enabled = True
+            txtMarca.Enabled = True
+            txtModelo.Enabled = True
+            txtHdd.Enabled = True
+            txtMemoria.Enabled = True
+            txtNoSerie.Enabled = True
+            txtProcesador.Enabled = True
+            dtpFechaAdqui.Enabled = True
+            dtpFechaUltMan.Enabled = True
+            btnModificar.Enabled = False
+            btnRegistrar.Enabled = True
+            btnNuevo.Enabled = False
+            gb1.Enabled = False
+            txtEstado.Text = "Disponible"
 
-        txtInvcapece.Enabled = True
-        txtMarca.Enabled = True
-        txtModelo.Enabled = True
-        txtEstado.Enabled = True
-        txtHdd.Enabled = True
-        txtMemoria.Enabled = True
-        txtNoSerie.Enabled = True
-        txtProcesador.Enabled = True
-        dtpFechaAdqui.Enabled = True
-        dtpFechaUltMan.Enabled = True
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
+            opcion = 1
 
-        opcion = 1
+            filas = dgwComputadora.RowCount
+            filas -= 1
+            colocar(filas)
+            cboIdRecurso.Enabled = True
+        End If
 
-        filas = dgwComputadora.RowCount
-        filas -= 1
-        colocar(filas)
-        cboIdRecurso.Enabled = True
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -82,9 +86,9 @@ Public Class Computadoras
             FechaA = dtpFechaAdqui.Value
             FechaM = dtpFechaUltMan.Value
             If opcion = 2 Then
-                comando.CommandText = "UPDATE COMPUTADORAS set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , Procesador = '" & txtProcesador.Text & "', Memoria = '" & txtMemoria.Text & "',  HDD	 = '" & txtHdd.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.SelectedItem.Text
+                comando.CommandText = "UPDATE COMPUTADORAS set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , Procesador = '" & txtProcesador.Text & "', Memoria = '" & txtMemoria.Text & "',  HDD	 = '" & txtHdd.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.Text
             ElseIf opcion = 1 Then
-                comando.CommandText = "insert into COMPUTADORAS (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & cboIdRecurso.SelectedItem.ToString & "' ,'" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
+                comando.CommandText = "insert into COMPUTADORAS (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & cboIdRecurso.Text & "' ,'" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
             End If
             comando.ExecuteNonQuery()
         Catch ex As Exception
@@ -94,7 +98,6 @@ Public Class Computadoras
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
         txtModelo.Enabled = False
-        txtEstado.Enabled = False
         txtHdd.Enabled = False
         txtMemoria.Enabled = False
         txtNoSerie.Enabled = False
@@ -113,7 +116,6 @@ Public Class Computadoras
         txtInvcapece.Enabled = True
         txtMarca.Enabled = True
         txtModelo.Enabled = True
-        txtEstado.Enabled = True
         txtHdd.Enabled = True
         txtMemoria.Enabled = True
         txtNoSerie.Enabled = True

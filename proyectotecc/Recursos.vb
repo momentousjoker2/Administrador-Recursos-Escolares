@@ -39,11 +39,9 @@ Public Class Recursos
         txtDescripcion.Enabled = True
         cboIdCategoria.Enabled = False
         btnRegistrar.Enabled = True
-
         gb1.Enabled = False
         btnNuevo.Enabled = False
         btnModificar.Enabled = False
-        btnRegistrar.Text = "Guardar"
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
@@ -85,8 +83,6 @@ Public Class Recursos
         gb1.Enabled = True
         btnNuevo.Enabled = True
         txtDescripcion.Enabled = False
-        btnRegistrar.Text = "Regristar"
-
 
     End Sub
 

@@ -43,9 +43,9 @@ Public Class categoría
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
             If opcion = 2 Then
-                comando.CommandText = "UPDATE CATEGORIA set Concepto = '" & txtConcepto.Text & "' Where idCategoria =" & txtIdCategoria.Text
+                comando.CommandText = "UPDATE CATEGORIA set Concepto = '" & txtConcepto.Text.ToString & "' Where idCategoria =" & txtIdCategoria.Text.ToString
             ElseIf opcion = 1 Then
-                comando.CommandText = "insert into CATEGORIA(Concepto) values('" & txtConcepto.Text & "')"
+                comando.CommandText = "insert into CATEGORIA(Concepto) values('" & txtConcepto.Text.ToString & "')"
             End If
             comando.ExecuteNonQuery()
         Catch ex As Exception
@@ -58,6 +58,7 @@ Public Class categoría
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
+
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click

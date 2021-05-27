@@ -26,10 +26,6 @@ Public Class Pantallas
         End While
         lector.Close()
 
-
-
-
-
         cboIdRecurso.Enabled = False
         txtTipo.Enabled = False
         txtInvcapece.Enabled = False
@@ -55,14 +51,13 @@ Public Class Pantallas
         txtMarca.Enabled = True
         txtModelo.Enabled = True
         txtDimension.Enabled = True
-        txtEstado.Enabled = True
+        txtEstado.Text = "Disponible"
         btnModificar.Enabled = False
         btnRegistrar.Enabled = True
         btnNuevo.Enabled = False
         gb1.Enabled = False
 
         opcion = 1
-
         filas = dgwPantalla.RowCount
         filas -= 1
         colocar(filas)
@@ -75,7 +70,7 @@ Public Class Pantallas
             '					
 
             If opcion = 2 Then
-                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where idLugar =" & cboIdRecurso.SelectedItem.ToString
+                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.Text.ToString
             ElseIf opcion = 1 Then
                 comando.CommandText = "insert into PANTALLAS(IdRecurso,Tipo,INVCAPECE,Marca,Modelo,Dimension,Estado) values('" & cboIdRecurso.SelectedItem.ToString & "','" & txtTipo.Text & "','" & txtInvcapece.Text & "','" & txtMarca.Text & "','" & txtModelo.Text & "','" & txtDimension.Text & "','" & txtEstado.Text & "')"
             End If
@@ -89,11 +84,11 @@ Public Class Pantallas
         txtMarca.Enabled = False
         txtModelo.Enabled = False
         txtDimension.Enabled = False
-        txtEstado.Enabled = False
         btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
+
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -104,11 +99,11 @@ Public Class Pantallas
         txtMarca.Enabled = True
         txtModelo.Enabled = True
         txtDimension.Enabled = True
-        txtEstado.Enabled = True
         btnModificar.Enabled = False
         btnRegistrar.Enabled = True
         btnNuevo.Enabled = False
         gb1.Enabled = False
+
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

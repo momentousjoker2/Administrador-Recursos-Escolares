@@ -91,3 +91,27 @@ C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.xm
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.pdb
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.Bajas.resources
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.AsignarRecursos.resources
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\proyectotecc.exe.config
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\proyectotecc.exe
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\proyectotecc.pdb
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\proyectotecc.xml
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\MySql.Data.dll
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\BouncyCastle.Crypto.dll
+D:\Momen\Documents\Servicio\proyectotecc\bin\Debug\Renci.SshNet.dll
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.vbprojAssemblyReference.cache
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.AsignarRecursos.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Bajas.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.categoría.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Cañones.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Computadoras.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Lugar.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Menu.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Resources.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Pantallas.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.Recursos.resources
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.GenerateResource.cache
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.CoreCompileInputs.cache
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.CopyComplete
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.exe
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.xml
+D:\Momen\Documents\Servicio\proyectotecc\obj\Debug\proyectotecc.pdb

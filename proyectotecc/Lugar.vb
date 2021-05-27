@@ -50,7 +50,7 @@ Public Class Lugar
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
             If opcion = 2 Then
-                comando.CommandText = "UPDATE LUGAR set Concepto = '" & txtConcepto.Text & "' Where idLugar =" & txtIdLugar.Text
+                comando.CommandText = "UPDATE LUGAR set Concepto = '" & txtConcepto.Text & "' Where idLugar =" & txtIdLugar.Text.ToString
             ElseIf opcion = 1 Then
                 comando.CommandText = "insert into LUGAR(Concepto) values('" & txtConcepto.Text & "')"
             End If
