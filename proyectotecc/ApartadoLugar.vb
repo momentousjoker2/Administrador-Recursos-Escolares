@@ -21,7 +21,7 @@ Public Class ApartadoLugar
         End While
         lector.Close()
 
-        comando.CommandText = "SELECT count(IdApartado) FROM APARTADOS-LUGAR"
+        comando.CommandText = "SELECT COUNT(IdApartado) FROM `APARTADOS-LUGAR`"
         lector = comando.ExecuteReader
         lector.Read()
         TxtIdApartado.Text = CInt(lector(0)) + 1
@@ -29,5 +29,21 @@ Public Class ApartadoLugar
         lector.Close()
 
         conexion.Close()
+    End Sub
+    Private Sub DGVLugar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVLugar.CellClick
+        conexion = New MySqlConnection(conn)
+        conexion.Open()
+        comando = conexion.CreateCommand
+
+        Dim R As String
+        Dim FechaA As Date = dtpFecha.Value
+        Dim A1 = Val(DGVLugar.SelectedCells.Item(0).Value)
+        R = "SELECT HoraInicial, HoraFinal FROM `APARTADOS-LUGAR` WHERE Fecha = " & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & " AND IdLugar = " & A1
+        comando.CommandText = R
+        lector = comando.ExecuteReader
+        While lector.Read()
+            DGVLugar.Rows.Add(lector(0), lector(1))
+        End While
+        lector.Close()
     End Sub
 End Class

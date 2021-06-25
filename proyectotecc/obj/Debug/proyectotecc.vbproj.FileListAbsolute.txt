@@ -126,3 +126,4 @@ C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.
 C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.exe
 C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.xml
 C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.pdb
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.ApartadoLugar.resources
