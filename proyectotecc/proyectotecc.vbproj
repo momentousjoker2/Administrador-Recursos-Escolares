@@ -76,10 +76,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApartadoLugar.Designer.vb">
+      <DependentUpon>ApartadoLugar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApartadoLugar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AsignarRecursos.Designer.vb">
       <DependentUpon>AsignarRecursos.vb</DependentUpon>
     </Compile>
     <Compile Include="AsignarRecursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApartarRecurso.Designer.vb">
+      <DependentUpon>ApartarRecurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApartarRecurso.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bajas.Designer.vb">
@@ -150,6 +162,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ApartadoLugar.resx">
+      <DependentUpon>ApartadoLugar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsignarRecursos.resx">
       <DependentUpon>AsignarRecursos.vb</DependentUpon>
     </EmbeddedResource>

@@ -33,6 +33,7 @@ Partial Class Menu
         Me.MovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsignarRecursosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ApartarRecursosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,7 +93,7 @@ Partial Class Menu
         '
         'MovimientosToolStripMenuItem
         '
-        Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BajasToolStripMenuItem, Me.AsignarRecursosToolStripMenuItem})
+        Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BajasToolStripMenuItem, Me.AsignarRecursosToolStripMenuItem, Me.ApartarRecursosToolStripMenuItem})
         Me.MovimientosToolStripMenuItem.Name = "MovimientosToolStripMenuItem"
         Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(89, 20)
         Me.MovimientosToolStripMenuItem.Text = "Movimientos"
@@ -108,6 +109,12 @@ Partial Class Menu
         Me.AsignarRecursosToolStripMenuItem.Name = "AsignarRecursosToolStripMenuItem"
         Me.AsignarRecursosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AsignarRecursosToolStripMenuItem.Text = "Asignar Recursos"
+        '
+        'ApartarRecursosToolStripMenuItem
+        '
+        Me.ApartarRecursosToolStripMenuItem.Name = "ApartarRecursosToolStripMenuItem"
+        Me.ApartarRecursosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ApartarRecursosToolStripMenuItem.Text = "Apartar Recursos"
         '
         'Menu
         '
@@ -136,4 +143,5 @@ Partial Class Menu
     Friend WithEvents MovimientosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BajasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AsignarRecursosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ApartarRecursosToolStripMenuItem As ToolStripMenuItem
 End Class

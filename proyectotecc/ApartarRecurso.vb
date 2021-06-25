@@ -270,6 +270,6 @@ Public Class ApartarRecurso
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        DetalleApartadoRecurso.Show()
+        'DetalleApartadoRecurso.Show()
     End Sub
 End Class

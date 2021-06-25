@@ -91,3 +91,38 @@ C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.xm
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.pdb
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.Bajas.resources
 C:\Users\Pierre Yoltic\Documents\SERVICIO\proyectotecc\obj\Debug\proyectotecc.AsignarRecursos.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\proyectotecc.exe.config
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\proyectotecc.exe
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\proyectotecc.pdb
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\proyectotecc.xml
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\Google.Protobuf.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\Zstandard.Net.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\Renci.SshNet.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\System.Memory.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\System.Buffers.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\bin\Debug\MySql.Data.xml
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.AssemblyReference.cache
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.exe.config
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.AsignarRecursos.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Bajas.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.categoría.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Cañones.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Computadoras.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Lugar.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Menu.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Resources.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Pantallas.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.Recursos.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.GenerateResource.cache
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.CoreCompileInputs.cache
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.vbproj.CopyComplete
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.exe
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.xml
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.pdb
