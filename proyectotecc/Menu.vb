@@ -34,4 +34,8 @@
     Private Sub ApartarRecursosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartarRecursosToolStripMenuItem.Click
         ApartarRecurso.Show()
     End Sub
+
+    Private Sub ApartarLugarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartarLugarToolStripMenuItem.Click
+        ApartadoLugar.Show()
+    End Sub
 End Class

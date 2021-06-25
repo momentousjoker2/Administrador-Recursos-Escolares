@@ -25,7 +25,15 @@ Partial Class ApartadoLugar
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DGVLugar = New System.Windows.Forms.DataGridView()
+        Me.idLugar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Concepto = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.HoraFin = New System.Windows.Forms.ComboBox()
+        Me.HoraInicio = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtNC = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtDocente = New System.Windows.Forms.TextBox()
@@ -40,25 +48,17 @@ Partial Class ApartadoLugar
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BtnGrabar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.idLugar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelFiltro = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtIdApartado = New System.Windows.Forms.TextBox()
-        Me.HoraFin = New System.Windows.Forms.ComboBox()
-        Me.HoraInicio = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGVReservaciones = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoraInicial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoraFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Concepto = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGVLugar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +111,20 @@ Partial Class ApartadoLugar
         Me.DGVLugar.Size = New System.Drawing.Size(818, 142)
         Me.DGVLugar.TabIndex = 13
         '
+        'idLugar
+        '
+        Me.idLugar.HeaderText = "Id Lugar"
+        Me.idLugar.MinimumWidth = 6
+        Me.idLugar.Name = "idLugar"
+        Me.idLugar.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.Concepto)
@@ -137,6 +151,70 @@ Partial Class ApartadoLugar
         Me.GroupBox6.TabIndex = 29
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Datos del Apartado"
+        '
+        'Concepto
+        '
+        Me.Concepto.Location = New System.Drawing.Point(11, 125)
+        Me.Concepto.Margin = New System.Windows.Forms.Padding(2)
+        Me.Concepto.Multiline = True
+        Me.Concepto.Name = "Concepto"
+        Me.Concepto.Size = New System.Drawing.Size(799, 24)
+        Me.Concepto.TabIndex = 65
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(8, 108)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 15)
+        Me.Label4.TabIndex = 66
+        Me.Label4.Text = "Concepto:"
+        '
+        'HoraFin
+        '
+        Me.HoraFin.FormattingEnabled = True
+        Me.HoraFin.Items.AddRange(New Object() {"8:00:00", "9:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00", "17:00:00", "18:00:00", "19:00:00", "20:00:00"})
+        Me.HoraFin.Location = New System.Drawing.Point(710, 76)
+        Me.HoraFin.Margin = New System.Windows.Forms.Padding(2)
+        Me.HoraFin.Name = "HoraFin"
+        Me.HoraFin.Size = New System.Drawing.Size(100, 24)
+        Me.HoraFin.TabIndex = 64
+        Me.HoraFin.Text = "8:00:00"
+        '
+        'HoraInicio
+        '
+        Me.HoraInicio.FormattingEnabled = True
+        Me.HoraInicio.Items.AddRange(New Object() {"7:00:00", "8:00:00", "9:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00", "17:00:00", "18:00:00", "19:00:00"})
+        Me.HoraInicio.Location = New System.Drawing.Point(599, 76)
+        Me.HoraInicio.Margin = New System.Windows.Forms.Padding(2)
+        Me.HoraInicio.Name = "HoraInicio"
+        Me.HoraInicio.Size = New System.Drawing.Size(100, 24)
+        Me.HoraInicio.TabIndex = 61
+        Me.HoraInicio.Text = "7:00:00"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(707, 59)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 15)
+        Me.Label2.TabIndex = 63
+        Me.Label2.Text = "Hora Fin:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(596, 59)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(69, 15)
+        Me.Label3.TabIndex = 62
+        Me.Label3.Text = "Hora Inicio:"
         '
         'TxtNC
         '
@@ -283,20 +361,6 @@ Partial Class ApartadoLugar
         Me.Panel1.Size = New System.Drawing.Size(824, 49)
         Me.Panel1.TabIndex = 33
         '
-        'idLugar
-        '
-        Me.idLugar.HeaderText = "Id Lugar"
-        Me.idLugar.MinimumWidth = 6
-        Me.idLugar.Name = "idLugar"
-        Me.idLugar.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.MinimumWidth = 6
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        '
         'PanelFiltro
         '
         Me.PanelFiltro.Controls.Add(Me.Panel2)
@@ -359,50 +423,6 @@ Partial Class ApartadoLugar
         Me.TxtIdApartado.Size = New System.Drawing.Size(141, 21)
         Me.TxtIdApartado.TabIndex = 14
         '
-        'HoraFin
-        '
-        Me.HoraFin.FormattingEnabled = True
-        Me.HoraFin.Items.AddRange(New Object() {"8:00:00", "9:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00", "17:00:00", "18:00:00", "19:00:00", "20:00:00"})
-        Me.HoraFin.Location = New System.Drawing.Point(710, 76)
-        Me.HoraFin.Margin = New System.Windows.Forms.Padding(2)
-        Me.HoraFin.Name = "HoraFin"
-        Me.HoraFin.Size = New System.Drawing.Size(100, 24)
-        Me.HoraFin.TabIndex = 64
-        Me.HoraFin.Text = "8:00:00"
-        '
-        'HoraInicio
-        '
-        Me.HoraInicio.FormattingEnabled = True
-        Me.HoraInicio.Items.AddRange(New Object() {"7:00:00", "8:00:00", "9:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00", "17:00:00", "18:00:00", "19:00:00"})
-        Me.HoraInicio.Location = New System.Drawing.Point(599, 76)
-        Me.HoraInicio.Margin = New System.Windows.Forms.Padding(2)
-        Me.HoraInicio.Name = "HoraInicio"
-        Me.HoraInicio.Size = New System.Drawing.Size(100, 24)
-        Me.HoraInicio.TabIndex = 61
-        Me.HoraInicio.Text = "7:00:00"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(707, 59)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 15)
-        Me.Label2.TabIndex = 63
-        Me.Label2.Text = "Hora Fin:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(596, 59)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 15)
-        Me.Label3.TabIndex = 62
-        Me.Label3.Text = "Hora Inicio:"
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.DGVReservaciones)
@@ -450,26 +470,6 @@ Partial Class ApartadoLugar
         Me.HoraFinal.HeaderText = "Hora Final"
         Me.HoraFinal.Name = "HoraFinal"
         Me.HoraFinal.ReadOnly = True
-        '
-        'Concepto
-        '
-        Me.Concepto.Location = New System.Drawing.Point(11, 125)
-        Me.Concepto.Margin = New System.Windows.Forms.Padding(2)
-        Me.Concepto.Multiline = True
-        Me.Concepto.Name = "Concepto"
-        Me.Concepto.Size = New System.Drawing.Size(799, 24)
-        Me.Concepto.TabIndex = 65
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 108)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 15)
-        Me.Label4.TabIndex = 66
-        Me.Label4.Text = "Concepto:"
         '
         'ApartadoLugar
         '
