@@ -7,7 +7,7 @@ Public Class Cañones
     Dim lector As MySqlDataReader
     Dim filas As Integer = 0
     Dim opcion As Integer = 0
-
+    Dim y As Integer
     Private Sub Cañones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion = New MySqlConnection(conn)
         conexion.Open()
@@ -27,6 +27,18 @@ Public Class Cañones
         End While
         lector.Close()
 
+        If Not cboIdRecurso.Items.Count.Equals(0) Then
+            For y = 0 To cboIdRecurso.Items.Count
+                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.GetItemText(y)
+                lector = comando.ExecuteReader
+                lector.Read()
+                cboNombreRecursos.Items.Add(lector(1))
+                lector.Close()
+
+            Next
+        End If
+
+        cboNombreRecursos.Enabled = False
         cboIdRecurso.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
@@ -37,11 +49,10 @@ Public Class Cañones
         txtObservaciones.Enabled = False
         dtpFechaAdqui.Enabled = False
         dtpFechaUltiMan.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         txtHorasLampara.Enabled = False
-        gb1.Enabled = False
+        gb1.Enabled = True
         dgwCañon.Rows.Clear()
 
 
@@ -52,9 +63,9 @@ Public Class Cañones
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         If cboIdRecurso.Items.Count = 0 Then
-            MsgBox("Usted no tiene nuevos recusos que registar en esta categoria")
+            MsgBox("Usted no tiene nuevos recusos que registar en esta categoría")
         Else
-
+            cboNombreRecursos.Enabled = True
             txtInvcapece.Enabled = True
             txtMarca.Enabled = True
             txtModelo.Enabled = True
@@ -64,7 +75,6 @@ Public Class Cañones
             txtObservaciones.Enabled = True
             dtpFechaAdqui.Enabled = True
             dtpFechaUltiMan.Enabled = True
-            btnModificar.Enabled = False
             btnRegistrar.Enabled = True
             btnNuevo.Enabled = False
             gb1.Enabled = False
@@ -111,7 +121,6 @@ Public Class Cañones
         txtObservaciones.Enabled = False
         dtpFechaAdqui.Enabled = False
         dtpFechaUltiMan.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
@@ -119,26 +128,6 @@ Public Class Cañones
 
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        opcion = 2
-
-        txtInvcapece.Enabled = True
-        txtMarca.Enabled = True
-        txtModelo.Enabled = True
-        txtEstado.Enabled = True
-        txtNoSerie.Enabled = True
-        txtHorasLampara.Enabled = True
-        txtObservaciones.Enabled = True
-        dtpFechaAdqui.Enabled = True
-        dtpFechaUltiMan.Enabled = True
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
-        txtHorasLampara.Enabled = True
-        btnRegistrar.Text = "Guardar"
-
-    End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Dispose()
@@ -192,6 +181,11 @@ Public Class Cañones
     Private Sub colocar(fila As Integer)
         dgwCañon.CurrentCell = dgwCañon(0, fila)
         cboIdRecurso.Text = dgwCañon.Item(0, fila).Value
+        comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
+        lector = comando.ExecuteReader
+        lector.Read()
+        cboNombreRecursos.Text = lector(1)
+        lector.Close()
         txtInvcapece.Text = dgwCañon.Item(1, fila).Value
         dtpFechaAdqui.Text = dgwCañon.Item(2, fila).Value
         dtpFechaUltiMan.Text = dgwCañon.Item(3, fila).Value
@@ -204,7 +198,6 @@ Public Class Cañones
             txtHorasLampara.Value = Integer.Parse(dgwCañon.Item(7, fila).Value)
 
         End If
-
 
         txtObservaciones.Text = dgwCañon.Item(8, fila).Value
         txtEstado.Text = dgwCañon.Item(9, fila).Value

@@ -6,7 +6,6 @@ Public Class Recursos
     Dim comando As MySqlCommand
     Dim lector As MySqlDataReader
     Dim filas As Integer = 0
-    Dim opcion As Integer = 0
 
     Private Sub Recursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion = New MySqlConnection(conn)
@@ -17,13 +16,12 @@ Public Class Recursos
         comando.CommandText = "Select * from CATEGORIA"
         lector = comando.ExecuteReader
         While lector.Read()
-            cboIdCategoria.Items.Add(lector(0))
+            cboIdCategoria.Items.Add(lector(1))
         End While
         lector.Close()
 
         txtIdRecursos.Enabled = False
         cboIdCategoria.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         gb1.Enabled = True
 
@@ -33,16 +31,7 @@ Public Class Recursos
         colocar(0)
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        opcion = 2
 
-        txtDescripcion.Enabled = True
-        cboIdCategoria.Enabled = False
-        btnRegistrar.Enabled = True
-        gb1.Enabled = False
-        btnNuevo.Enabled = False
-        btnModificar.Enabled = False
-    End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         txtDescripcion.Enabled = True
@@ -50,9 +39,7 @@ Public Class Recursos
         btnRegistrar.Enabled = True
         gb1.Enabled = False
         btnNuevo.Enabled = False
-        btnModificar.Enabled = False
 
-        opcion = 1
         filas = dgwRecurso.RowCount
         filas -= 1
         colocar(filas)
@@ -66,19 +53,13 @@ Public Class Recursos
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
-            If opcion = 2 Then
-                comando.CommandText = "UPDATE RECURSOS set  descripcion  = '" & txtDescripcion.Text & "'  Where idRecursos =" & txtIdRecursos.Text
-            ElseIf opcion = 1 Then
-                comando.CommandText = "insert into RECURSOS (idRecursos,descripcion,idCategoria) values( '" & txtIdRecursos.Text & "' , '" & txtDescripcion.Text & "', '" & cboIdCategoria.Text & "')"
-            End If
+            comando.CommandText = "insert into RECURSOS (idRecursos,descripcion,idCategoria) values( '" & txtIdRecursos.Text & "' , '" & txtDescripcion.Text & "', '" & txtConcepto.Text & "')"
             comando.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar grabar compruebe los datos " & ex.Message)
         End Try
         actualizar()
-        opcion = 0
         cboIdCategoria.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         gb1.Enabled = True
         btnNuevo.Enabled = True
@@ -156,11 +137,11 @@ Public Class Recursos
     End Sub
 
     Private Sub cboIdCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboIdCategoria.SelectedIndexChanged
-        comando.CommandText = "Select * from CATEGORIA where idCategoria = " & cboIdCategoria.Text
+        comando.CommandText = "Select * from CATEGORIA where Concepto = '" & cboIdCategoria.Text & "'"
         lector = comando.ExecuteReader
 
         lector.Read()
-        txtConcepto.Text = lector(1)
+        txtConcepto.Text = lector(0)
         lector.Close()
     End Sub
 

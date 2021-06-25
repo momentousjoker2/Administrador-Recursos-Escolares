@@ -24,6 +24,10 @@ Partial Class Computadoras
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cboNombreRecursos = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.txtProcesador = New System.Windows.Forms.TextBox()
         Me.txtMemoria = New System.Windows.Forms.TextBox()
@@ -59,15 +63,12 @@ Partial Class Computadoras
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +88,8 @@ Partial Class Computadoras
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cboNombreRecursos)
+        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtEstado)
@@ -115,6 +118,40 @@ Partial Class Computadoras
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Computadora:"
+        '
+        'cboNombreRecursos
+        '
+        Me.cboNombreRecursos.FormattingEnabled = True
+        Me.cboNombreRecursos.Location = New System.Drawing.Point(272, 46)
+        Me.cboNombreRecursos.Name = "cboNombreRecursos"
+        Me.cboNombreRecursos.Size = New System.Drawing.Size(197, 24)
+        Me.cboNombreRecursos.TabIndex = 54
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(270, 26)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(121, 17)
+        Me.Label2.TabIndex = 53
+        Me.Label2.Text = "Nombre recursos:"
+        '
+        'cboIdRecurso
+        '
+        Me.cboIdRecurso.FormattingEnabled = True
+        Me.cboIdRecurso.Location = New System.Drawing.Point(125, 46)
+        Me.cboIdRecurso.Name = "cboIdRecurso"
+        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
+        Me.cboIdRecurso.TabIndex = 47
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(122, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.TabIndex = 46
+        Me.Label1.Text = "Id Recurso:"
         '
         'txtEstado
         '
@@ -181,7 +218,7 @@ Partial Class Computadoras
         '
         'dtpFechaAdqui
         '
-        Me.dtpFechaAdqui.Location = New System.Drawing.Point(149, 158)
+        Me.dtpFechaAdqui.Location = New System.Drawing.Point(149, 164)
         Me.dtpFechaAdqui.Name = "dtpFechaAdqui"
         Me.dtpFechaAdqui.Size = New System.Drawing.Size(264, 22)
         Me.dtpFechaAdqui.TabIndex = 37
@@ -278,7 +315,7 @@ Partial Class Computadoras
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(203, 138)
+        Me.Label5.Location = New System.Drawing.Point(203, 144)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(147, 17)
         Me.Label5.TabIndex = 22
@@ -376,7 +413,6 @@ Partial Class Computadoras
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
         Me.GroupBox4.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox4.Controls.Add(Me.btnModificar)
         Me.GroupBox4.Controls.Add(Me.btnSalir)
         Me.GroupBox4.Location = New System.Drawing.Point(340, 769)
         Me.GroupBox4.Name = "GroupBox4"
@@ -402,20 +438,11 @@ Partial Class Computadoras
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(118, 60)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(100, 36)
-        Me.btnModificar.TabIndex = 18
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
         'btnSalir
         '
         Me.btnSalir.Location = New System.Drawing.Point(12, 60)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(100, 36)
+        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
         Me.btnSalir.TabIndex = 17
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
@@ -468,23 +495,6 @@ Partial Class Computadoras
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
-        'cboIdRecurso
-        '
-        Me.cboIdRecurso.FormattingEnabled = True
-        Me.cboIdRecurso.Location = New System.Drawing.Point(10, 46)
-        Me.cboIdRecurso.Name = "cboIdRecurso"
-        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
-        Me.cboIdRecurso.TabIndex = 47
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 26)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 17)
-        Me.Label1.TabIndex = 46
-        Me.Label1.Text = "Id Recurso:"
-        '
         'Computadoras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -533,7 +543,6 @@ Partial Class Computadoras
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnRegistrar As Button
-    Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents gb1 As GroupBox
     Friend WithEvents btnUltimo As Button
@@ -553,4 +562,6 @@ Partial Class Computadoras
     Friend WithEvents Estado As DataGridViewTextBoxColumn
     Friend WithEvents cboIdRecurso As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents cboNombreRecursos As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

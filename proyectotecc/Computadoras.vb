@@ -27,6 +27,16 @@ Public Class Computadoras
         End While
         lector.Close()
 
+        If Not cboIdRecurso.Items.Count.Equals(0) Then
+            For y = 0 To cboIdRecurso.Items.Count
+                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.GetItemText(y)
+                lector = comando.ExecuteReader
+                lector.Read()
+                cboNombreRecursos.Items.Add(lector(1))
+                lector.Close()
+
+            Next
+        End If
 
         cboIdRecurso.Enabled = False
         txtInvcapece.Enabled = False
@@ -39,7 +49,6 @@ Public Class Computadoras
         txtProcesador.Enabled = False
         dtpFechaAdqui.Enabled = False
         dtpFechaUltMan.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
@@ -51,7 +60,7 @@ Public Class Computadoras
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         If cboIdRecurso.Items.Count = 0 Then
-            MsgBox("Usted no tiene nuevos recusos que registar en esta categoria")
+            MsgBox("Usted no tiene nuevos recusos que registar en esta categoría")
         Else
             txtInvcapece.Enabled = True
             txtMarca.Enabled = True
@@ -62,7 +71,6 @@ Public Class Computadoras
             txtProcesador.Enabled = True
             dtpFechaAdqui.Enabled = True
             dtpFechaUltMan.Enabled = True
-            btnModificar.Enabled = False
             btnRegistrar.Enabled = True
             btnNuevo.Enabled = False
             gb1.Enabled = False
@@ -104,28 +112,9 @@ Public Class Computadoras
         txtProcesador.Enabled = False
         dtpFechaAdqui.Enabled = False
         dtpFechaUltMan.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
-    End Sub
-
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        opcion = 2
-
-        txtInvcapece.Enabled = True
-        txtMarca.Enabled = True
-        txtModelo.Enabled = True
-        txtHdd.Enabled = True
-        txtMemoria.Enabled = True
-        txtNoSerie.Enabled = True
-        txtProcesador.Enabled = True
-        dtpFechaAdqui.Enabled = True
-        dtpFechaUltMan.Enabled = True
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -181,6 +170,11 @@ Public Class Computadoras
     Private Sub colocar(fila As Integer)
         dgwComputadora.CurrentCell = dgwComputadora(0, fila)
         cboIdRecurso.Text = dgwComputadora.Item(0, fila).Value
+        comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
+        lector = comando.ExecuteReader
+        lector.Read()
+        cboNombreRecursos.Text = lector(1)
+        lector.Close()
         txtInvcapece.Text = dgwComputadora.Item(1, fila).Value
         dtpFechaAdqui.Text = dgwComputadora.Item(2, fila).Value
         dtpFechaUltMan.Text = dgwComputadora.Item(3, fila).Value

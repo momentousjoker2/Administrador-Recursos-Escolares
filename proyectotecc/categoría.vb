@@ -10,7 +10,6 @@ Public Class categoría
         conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
-        btnModificar.Enabled = True
         txtIdCategoria.Enabled = False
         txtConcepto.Enabled = False
         btnRegistrar.Enabled = False
@@ -25,7 +24,6 @@ Public Class categoría
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         txtIdCategoria.Enabled = False
         txtConcepto.Enabled = True
-        btnModificar.Enabled = False
         btnRegistrar.Enabled = True
         btnNuevo.Enabled = False
         gb1.Enabled = False
@@ -54,21 +52,10 @@ Public Class categoría
         actualizar()
         txtIdCategoria.Enabled = False
         txtConcepto.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
 
-    End Sub
-
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        opcion = 2
-        txtIdCategoria.Enabled = False
-        txtConcepto.Enabled = True
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

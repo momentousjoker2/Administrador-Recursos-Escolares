@@ -34,7 +34,6 @@ Partial Class categoría
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.btnUltimo = New System.Windows.Forms.Button()
@@ -133,7 +132,6 @@ Partial Class categoría
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
         Me.GroupBox4.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox4.Controls.Add(Me.btnModificar)
         Me.GroupBox4.Controls.Add(Me.btnSalir)
         Me.GroupBox4.Location = New System.Drawing.Point(48, 494)
         Me.GroupBox4.Name = "GroupBox4"
@@ -159,20 +157,11 @@ Partial Class categoría
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(118, 60)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(100, 36)
-        Me.btnModificar.TabIndex = 18
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
         'btnSalir
         '
         Me.btnSalir.Location = New System.Drawing.Point(12, 60)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(100, 36)
+        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
         Me.btnSalir.TabIndex = 17
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
@@ -257,7 +246,6 @@ Partial Class categoría
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnRegistrar As Button
-    Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents gb1 As GroupBox
     Friend WithEvents btnUltimo As Button

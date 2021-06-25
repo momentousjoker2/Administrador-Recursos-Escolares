@@ -29,13 +29,11 @@ Partial Class Recursos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtConcepto = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtIdRecursos = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cboIdCategoria = New System.Windows.Forms.ComboBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dgwRecurso = New System.Windows.Forms.DataGridView()
-        Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnInicio = New System.Windows.Forms.Button()
@@ -43,10 +41,11 @@ Partial Class Recursos
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtIdRecursos = New System.Windows.Forms.TextBox()
+        Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idcategoría = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwRecurso, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,9 +86,9 @@ Partial Class Recursos
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(23, 30)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 17)
+        Me.Label3.Size = New System.Drawing.Size(88, 17)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Id categoría:"
+        Me.Label3.Text = "Id Categoría:"
         '
         'Label4
         '
@@ -103,10 +102,10 @@ Partial Class Recursos
         'txtConcepto
         '
         Me.txtConcepto.Enabled = False
-        Me.txtConcepto.Location = New System.Drawing.Point(26, 96)
+        Me.txtConcepto.Location = New System.Drawing.Point(113, 27)
         Me.txtConcepto.Multiline = True
         Me.txtConcepto.Name = "txtConcepto"
-        Me.txtConcepto.Size = New System.Drawing.Size(528, 43)
+        Me.txtConcepto.Size = New System.Drawing.Size(121, 27)
         Me.txtConcepto.TabIndex = 6
         '
         'GroupBox1
@@ -115,12 +114,19 @@ Partial Class Recursos
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
-        Me.GroupBox1.Location = New System.Drawing.Point(144, 313)
+        Me.GroupBox1.Location = New System.Drawing.Point(149, 264)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(560, 191)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de los recursos"
+        '
+        'txtIdRecursos
+        '
+        Me.txtIdRecursos.Location = New System.Drawing.Point(108, 38)
+        Me.txtIdRecursos.Name = "txtIdRecursos"
+        Me.txtIdRecursos.Size = New System.Drawing.Size(109, 22)
+        Me.txtIdRecursos.TabIndex = 4
         '
         'GroupBox2
         '
@@ -130,22 +136,22 @@ Partial Class Recursos
         Me.GroupBox2.Controls.Add(Me.txtConcepto)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 118)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(560, 182)
+        Me.GroupBox2.Size = New System.Drawing.Size(560, 140)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Datos de Categorías:"
+        Me.GroupBox2.Text = "Datos de Categoría:"
         '
         'cboIdCategoria
         '
         Me.cboIdCategoria.FormattingEnabled = True
-        Me.cboIdCategoria.Location = New System.Drawing.Point(115, 27)
+        Me.cboIdCategoria.Location = New System.Drawing.Point(26, 89)
         Me.cboIdCategoria.Name = "cboIdCategoria"
-        Me.cboIdCategoria.Size = New System.Drawing.Size(121, 24)
+        Me.cboIdCategoria.Size = New System.Drawing.Size(528, 24)
         Me.cboIdCategoria.TabIndex = 7
         '
         'btnRegistrar
         '
-        Me.btnRegistrar.Location = New System.Drawing.Point(12, 57)
+        Me.btnRegistrar.Location = New System.Drawing.Point(12, 58)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(100, 36)
         Me.btnRegistrar.TabIndex = 9
@@ -155,34 +161,13 @@ Partial Class Recursos
         'dgwRecurso
         '
         Me.dgwRecurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgwRecurso.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecursos, Me.descripcion, Me.idCategoria})
-        Me.dgwRecurso.Location = New System.Drawing.Point(12, 510)
+        Me.dgwRecurso.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecursos, Me.descripcion, Me.idcategoría})
+        Me.dgwRecurso.Location = New System.Drawing.Point(12, 461)
         Me.dgwRecurso.Name = "dgwRecurso"
         Me.dgwRecurso.RowHeadersWidth = 51
         Me.dgwRecurso.RowTemplate.Height = 24
         Me.dgwRecurso.Size = New System.Drawing.Size(697, 150)
         Me.dgwRecurso.TabIndex = 12
-        '
-        'idRecursos
-        '
-        Me.idRecursos.HeaderText = "idRecursos"
-        Me.idRecursos.MinimumWidth = 6
-        Me.idRecursos.Name = "idRecursos"
-        Me.idRecursos.Width = 125
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "descripcion"
-        Me.descripcion.MinimumWidth = 6
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 125
-        '
-        'idCategoria
-        '
-        Me.idCategoria.HeaderText = "idCategoria"
-        Me.idCategoria.MinimumWidth = 6
-        Me.idCategoria.Name = "idCategoria"
-        Me.idCategoria.Width = 125
         '
         'gb1
         '
@@ -190,7 +175,7 @@ Partial Class Recursos
         Me.gb1.Controls.Add(Me.btnInicio)
         Me.gb1.Controls.Add(Me.btnSiguiente)
         Me.gb1.Controls.Add(Me.btnAnterior)
-        Me.gb1.Location = New System.Drawing.Point(13, 306)
+        Me.gb1.Location = New System.Drawing.Point(18, 264)
         Me.gb1.Name = "gb1"
         Me.gb1.Size = New System.Drawing.Size(125, 191)
         Me.gb1.TabIndex = 13
@@ -236,11 +221,10 @@ Partial Class Recursos
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
         Me.GroupBox4.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox4.Controls.Add(Me.btnModificar)
         Me.GroupBox4.Controls.Add(Me.btnSalir)
         Me.GroupBox4.Location = New System.Drawing.Point(584, 109)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(125, 191)
+        Me.GroupBox4.Size = New System.Drawing.Size(125, 149)
         Me.GroupBox4.TabIndex = 14
         Me.GroupBox4.TabStop = False
         '
@@ -253,18 +237,9 @@ Partial Class Recursos
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(12, 99)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(100, 36)
-        Me.btnModificar.TabIndex = 18
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(12, 141)
+        Me.btnSalir.Location = New System.Drawing.Point(12, 100)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(100, 36)
         Me.btnSalir.TabIndex = 17
@@ -281,12 +256,26 @@ Partial Class Recursos
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
-        'txtIdRecursos
+        'idRecursos
         '
-        Me.txtIdRecursos.Location = New System.Drawing.Point(108, 38)
-        Me.txtIdRecursos.Name = "txtIdRecursos"
-        Me.txtIdRecursos.Size = New System.Drawing.Size(109, 22)
-        Me.txtIdRecursos.TabIndex = 4
+        Me.idRecursos.HeaderText = "idRecursos"
+        Me.idRecursos.MinimumWidth = 6
+        Me.idRecursos.Name = "idRecursos"
+        Me.idRecursos.Width = 125
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "descripción"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 125
+        '
+        'idcategoría
+        '
+        Me.idcategoría.HeaderText = "idCategoria"
+        Me.idcategoría.MinimumWidth = 6
+        Me.idcategoría.Name = "idcategoría"
+        Me.idcategoría.Width = 125
         '
         'Recursos
         '
@@ -330,11 +319,10 @@ Partial Class Recursos
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
+    Friend WithEvents txtIdRecursos As TextBox
     Friend WithEvents idRecursos As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents idCategoria As DataGridViewTextBoxColumn
-    Friend WithEvents txtIdRecursos As TextBox
+    Friend WithEvents idcategoría As DataGridViewTextBoxColumn
 End Class

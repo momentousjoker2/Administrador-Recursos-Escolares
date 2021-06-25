@@ -26,6 +26,17 @@ Public Class Pantallas
         End While
         lector.Close()
 
+        If Not cboIdRecurso.Items.Count.Equals(0) Then
+            For y = 0 To cboIdRecurso.Items.Count
+                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.GetItemText(y)
+                lector = comando.ExecuteReader
+                lector.Read()
+                cboNombreRecursos.Items.Add(lector(1))
+                lector.Close()
+
+            Next
+        End If
+
         cboIdRecurso.Enabled = False
         txtTipo.Enabled = False
         txtInvcapece.Enabled = False
@@ -33,7 +44,6 @@ Public Class Pantallas
         txtModelo.Enabled = False
         txtDimension.Enabled = False
         txtEstado.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
@@ -45,24 +55,25 @@ Public Class Pantallas
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        If cboIdRecurso.Items.Count = 0 Then
+            MsgBox("Usted no tiene nuevos recusos que registar en esta categoría")
+        Else
+            txtTipo.Enabled = True
+            txtInvcapece.Enabled = True
+            txtMarca.Enabled = True
+            txtModelo.Enabled = True
+            txtDimension.Enabled = True
+            txtEstado.Text = "Disponible"
+            btnRegistrar.Enabled = True
+            btnNuevo.Enabled = False
+            gb1.Enabled = False
 
-        txtTipo.Enabled = True
-        txtInvcapece.Enabled = True
-        txtMarca.Enabled = True
-        txtModelo.Enabled = True
-        txtDimension.Enabled = True
-        txtEstado.Text = "Disponible"
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
-
-        opcion = 1
-        filas = dgwPantalla.RowCount
-        filas -= 1
-        colocar(filas)
-        cboIdRecurso.Enabled = True
-
+            opcion = 1
+            filas = dgwPantalla.RowCount
+            filas -= 1
+            colocar(filas)
+            cboIdRecurso.Enabled = True
+        End If
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -84,27 +95,12 @@ Public Class Pantallas
         txtMarca.Enabled = False
         txtModelo.Enabled = False
         txtDimension.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
 
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        opcion = 2
-
-        txtTipo.Enabled = True
-        txtInvcapece.Enabled = True
-        txtMarca.Enabled = True
-        txtModelo.Enabled = True
-        txtDimension.Enabled = True
-        btnModificar.Enabled = False
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
-
-    End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Dispose()
@@ -157,6 +153,11 @@ Public Class Pantallas
     Private Sub colocar(fila As Integer)
         dgwPantalla.CurrentCell = dgwPantalla(0, fila)
         cboIdRecurso.Text = dgwPantalla.Item(0, fila).Value
+        comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
+        lector = comando.ExecuteReader
+        lector.Read()
+        cboNombreRecursos.Text = lector(1)
+        lector.Close()
         txtTipo.Text = dgwPantalla.Item(1, fila).Value
         txtInvcapece.Text = dgwPantalla.Item(2, fila).Value
         txtMarca.Text = dgwPantalla.Item(3, fila).Value
@@ -165,6 +166,5 @@ Public Class Pantallas
         txtEstado.Text = dgwPantalla.Item(6, fila).Value
 
     End Sub
-
 
 End Class

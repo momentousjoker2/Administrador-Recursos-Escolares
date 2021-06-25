@@ -14,7 +14,6 @@ Public Class Lugar
         comando = conexion.CreateCommand
         txtIdLugar.Enabled = False
         txtConcepto.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
@@ -30,7 +29,6 @@ Public Class Lugar
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         txtIdLugar.Enabled = False
         txtConcepto.Enabled = True
-        btnModificar.Enabled = False
         btnRegistrar.Enabled = True
         btnNuevo.Enabled = False
         gb1.Enabled = False
@@ -61,18 +59,16 @@ Public Class Lugar
         actualizar()
         txtIdLugar.Enabled = False
         txtConcepto.Enabled = False
-        btnModificar.Enabled = True
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs)
         opcion = 2
 
         txtIdLugar.Enabled = False
         txtConcepto.Enabled = True
-        btnModificar.Enabled = False
         btnRegistrar.Enabled = True
         btnNuevo.Enabled = False
         gb1.Enabled = False

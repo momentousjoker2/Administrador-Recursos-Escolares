@@ -29,18 +29,17 @@ Partial Class Lugar
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtConcepto = New System.Windows.Forms.TextBox()
         Me.dgwLugar = New System.Windows.Forms.DataGridView()
+        Me.idLugar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.idLugar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgwLugar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,11 +114,24 @@ Partial Class Lugar
         Me.dgwLugar.Size = New System.Drawing.Size(560, 150)
         Me.dgwLugar.TabIndex = 25
         '
+        'idLugar
+        '
+        Me.idLugar.HeaderText = "id"
+        Me.idLugar.MinimumWidth = 6
+        Me.idLugar.Name = "idLugar"
+        Me.idLugar.Width = 125
+        '
+        'Concepto
+        '
+        Me.Concepto.HeaderText = "Concepto"
+        Me.Concepto.MinimumWidth = 6
+        Me.Concepto.Name = "Concepto"
+        Me.Concepto.Width = 125
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
         Me.GroupBox4.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox4.Controls.Add(Me.btnModificar)
         Me.GroupBox4.Controls.Add(Me.btnSalir)
         Me.GroupBox4.Location = New System.Drawing.Point(43, 483)
         Me.GroupBox4.Name = "GroupBox4"
@@ -145,20 +157,11 @@ Partial Class Lugar
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(118, 60)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(100, 36)
-        Me.btnModificar.TabIndex = 18
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
         'btnSalir
         '
         Me.btnSalir.Location = New System.Drawing.Point(12, 60)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(100, 36)
+        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
         Me.btnSalir.TabIndex = 17
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
@@ -211,20 +214,6 @@ Partial Class Lugar
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
-        'idLugar
-        '
-        Me.idLugar.HeaderText = "id"
-        Me.idLugar.MinimumWidth = 6
-        Me.idLugar.Name = "idLugar"
-        Me.idLugar.Width = 125
-        '
-        'Concepto
-        '
-        Me.Concepto.HeaderText = "Concepto"
-        Me.Concepto.MinimumWidth = 6
-        Me.Concepto.Name = "Concepto"
-        Me.Concepto.Width = 125
-        '
         'Lugar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -257,7 +246,6 @@ Partial Class Lugar
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnRegistrar As Button
-    Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents gb1 As GroupBox
     Friend WithEvents btnUltimo As Button
