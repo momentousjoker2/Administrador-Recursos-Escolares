@@ -117,6 +117,7 @@ Partial Class Cañones
         '
         'cboNombreRecursos
         '
+        Me.cboNombreRecursos.Enabled = False
         Me.cboNombreRecursos.FormattingEnabled = True
         Me.cboNombreRecursos.Location = New System.Drawing.Point(268, 55)
         Me.cboNombreRecursos.Name = "cboNombreRecursos"
@@ -307,6 +308,7 @@ Partial Class Cañones
         Me.dgwCañon.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.INVCAPECE, Me.FechaAdq, Me.FechaUltMantto, Me.Modelo, Me.Marca, Me.NoSerie, Me.HorasLampara, Me.Observaciones, Me.Estado})
         Me.dgwCañon.Location = New System.Drawing.Point(12, 600)
         Me.dgwCañon.Name = "dgwCañon"
+        Me.dgwCañon.ReadOnly = True
         Me.dgwCañon.RowHeadersWidth = 51
         Me.dgwCañon.RowTemplate.Height = 24
         Me.dgwCañon.Size = New System.Drawing.Size(560, 150)

@@ -27,8 +27,8 @@ Public Class Pantallas
         lector.Close()
 
         If Not cboIdRecurso.Items.Count.Equals(0) Then
-            For y = 0 To cboIdRecurso.Items.Count
-                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.GetItemText(y)
+            For y = 0 To (cboIdRecurso.Items.Count) - 1
+                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Items.Item(y)
                 lector = comando.ExecuteReader
                 lector.Read()
                 cboNombreRecursos.Items.Add(lector(1))
@@ -96,6 +96,7 @@ Public Class Pantallas
         txtModelo.Enabled = False
         txtDimension.Enabled = False
         btnRegistrar.Enabled = False
+        cboIdRecurso.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
 
@@ -152,18 +153,29 @@ Public Class Pantallas
 
     Private Sub colocar(fila As Integer)
         dgwPantalla.CurrentCell = dgwPantalla(0, fila)
-        cboIdRecurso.Text = dgwPantalla.Item(0, fila).Value
+        If (IsNothing(dgwPantalla.Item(0, fila).Value)) Then
+            cboIdRecurso.SelectedIndex = 0
+
+        Else
+            cboIdRecurso.Text = dgwPantalla.Item(0, fila).Value
+        End If
+
         comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
         lector = comando.ExecuteReader
         lector.Read()
         cboNombreRecursos.Text = lector(1)
         lector.Close()
+
         txtTipo.Text = dgwPantalla.Item(1, fila).Value
         txtInvcapece.Text = dgwPantalla.Item(2, fila).Value
         txtMarca.Text = dgwPantalla.Item(3, fila).Value
         txtModelo.Text = dgwPantalla.Item(4, fila).Value
         txtDimension.Text = dgwPantalla.Item(5, fila).Value
+
         txtEstado.Text = dgwPantalla.Item(6, fila).Value
+        If txtEstado.Text.Length.Equals(0) Then
+            txtEstado.Text = "Disponible"
+        End If
 
     End Sub
 

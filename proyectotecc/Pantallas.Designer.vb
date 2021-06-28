@@ -101,6 +101,7 @@ Partial Class Pantallas
         '
         'cboNombreRecursos
         '
+        Me.cboNombreRecursos.Enabled = False
         Me.cboNombreRecursos.FormattingEnabled = True
         Me.cboNombreRecursos.Location = New System.Drawing.Point(330, 46)
         Me.cboNombreRecursos.Name = "cboNombreRecursos"

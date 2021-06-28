@@ -125,7 +125,15 @@ Public Class Recursos
             txtDescripcion.Text = dgwRecurso.Item(1, fila).Value
             Dim aux = (dgwRecurso.Item(2, fila).Value)
             If Not IsNothing(aux) Then
-                cboIdCategoria.SelectedItem = Integer.Parse(aux)
+
+                comando.CommandText = "Select * from CATEGORIA where idCategoria = " & aux
+                lector = comando.ExecuteReader
+
+                lector.Read()
+                Dim aux2 = lector(1)
+                lector.Close()
+                cboIdCategoria.SelectedItem = aux2
+
             Else
                 cboIdCategoria.SelectedItem = 1
             End If

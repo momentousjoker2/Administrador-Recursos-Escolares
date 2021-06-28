@@ -34,6 +34,9 @@ Partial Class Recursos
         Me.cboIdCategoria = New System.Windows.Forms.ComboBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dgwRecurso = New System.Windows.Forms.DataGridView()
+        Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idcategoría = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gb1 = New System.Windows.Forms.GroupBox()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnInicio = New System.Windows.Forms.Button()
@@ -43,9 +46,6 @@ Partial Class Recursos
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idcategoría = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwRecurso, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,6 +143,7 @@ Partial Class Recursos
         '
         'cboIdCategoria
         '
+        Me.cboIdCategoria.AllowDrop = True
         Me.cboIdCategoria.FormattingEnabled = True
         Me.cboIdCategoria.Location = New System.Drawing.Point(26, 89)
         Me.cboIdCategoria.Name = "cboIdCategoria"
@@ -168,6 +169,27 @@ Partial Class Recursos
         Me.dgwRecurso.RowTemplate.Height = 24
         Me.dgwRecurso.Size = New System.Drawing.Size(697, 150)
         Me.dgwRecurso.TabIndex = 12
+        '
+        'idRecursos
+        '
+        Me.idRecursos.HeaderText = "idRecursos"
+        Me.idRecursos.MinimumWidth = 6
+        Me.idRecursos.Name = "idRecursos"
+        Me.idRecursos.Width = 125
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "descripción"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 125
+        '
+        'idcategoría
+        '
+        Me.idcategoría.HeaderText = "idCategoria"
+        Me.idcategoría.MinimumWidth = 6
+        Me.idcategoría.Name = "idcategoría"
+        Me.idcategoría.Width = 125
         '
         'gb1
         '
@@ -255,27 +277,6 @@ Partial Class Recursos
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
-        '
-        'idRecursos
-        '
-        Me.idRecursos.HeaderText = "idRecursos"
-        Me.idRecursos.MinimumWidth = 6
-        Me.idRecursos.Name = "idRecursos"
-        Me.idRecursos.Width = 125
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "descripción"
-        Me.descripcion.MinimumWidth = 6
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 125
-        '
-        'idcategoría
-        '
-        Me.idcategoría.HeaderText = "idCategoria"
-        Me.idcategoría.MinimumWidth = 6
-        Me.idcategoría.Name = "idcategoría"
-        Me.idcategoría.Width = 125
         '
         'Recursos
         '

@@ -121,6 +121,7 @@ Partial Class Computadoras
         '
         'cboNombreRecursos
         '
+        Me.cboNombreRecursos.Enabled = False
         Me.cboNombreRecursos.FormattingEnabled = True
         Me.cboNombreRecursos.Location = New System.Drawing.Point(272, 46)
         Me.cboNombreRecursos.Name = "cboNombreRecursos"
@@ -327,6 +328,7 @@ Partial Class Computadoras
         Me.dgwComputadora.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecurso, Me.INVCAPECE, Me.FechaAdq, Me.FechaUltMantto, Me.Modelo, Me.Marca, Me.NoSerie, Me.Procesador, Me.Memoria, Me.HDD, Me.Estado})
         Me.dgwComputadora.Location = New System.Drawing.Point(10, 581)
         Me.dgwComputadora.Name = "dgwComputadora"
+        Me.dgwComputadora.ReadOnly = True
         Me.dgwComputadora.RowHeadersWidth = 51
         Me.dgwComputadora.RowTemplate.Height = 24
         Me.dgwComputadora.Size = New System.Drawing.Size(560, 182)
