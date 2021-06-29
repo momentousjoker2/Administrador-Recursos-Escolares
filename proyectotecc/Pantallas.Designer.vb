@@ -24,9 +24,9 @@ Partial Class Pantallas
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtidRecursos = New System.Windows.Forms.TextBox()
         Me.cboNombreRecursos = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
@@ -42,6 +42,7 @@ Partial Class Pantallas
         Me.txtTipo = New System.Windows.Forms.TextBox()
         Me.dgwPantalla = New System.Windows.Forms.DataGridView()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,9 +77,9 @@ Partial Class Pantallas
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtidRecursos)
         Me.GroupBox2.Controls.Add(Me.cboNombreRecursos)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtEstado)
@@ -99,6 +100,14 @@ Partial Class Pantallas
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Pantalla:"
         '
+        'txtidRecursos
+        '
+        Me.txtidRecursos.Location = New System.Drawing.Point(16, 46)
+        Me.txtidRecursos.Multiline = True
+        Me.txtidRecursos.Name = "txtidRecursos"
+        Me.txtidRecursos.Size = New System.Drawing.Size(218, 45)
+        Me.txtidRecursos.TabIndex = 57
+        '
         'cboNombreRecursos
         '
         Me.cboNombreRecursos.Enabled = False
@@ -113,35 +122,27 @@ Partial Class Pantallas
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(328, 26)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(121, 17)
+        Me.Label2.Size = New System.Drawing.Size(136, 17)
         Me.Label2.TabIndex = 55
-        Me.Label2.Text = "Nombre recursos:"
-        '
-        'cboIdRecurso
-        '
-        Me.cboIdRecurso.FormattingEnabled = True
-        Me.cboIdRecurso.Location = New System.Drawing.Point(16, 46)
-        Me.cboIdRecurso.Name = "cboIdRecurso"
-        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
-        Me.cboIdRecurso.TabIndex = 35
+        Me.Label2.Text = "Nombre de pantalla:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(13, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.Size = New System.Drawing.Size(99, 17)
         Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Id Recurso:"
+        Me.Label1.Text = "ID de pantalla:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(327, 264)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(56, 17)
+        Me.Label10.Size = New System.Drawing.Size(130, 17)
         Me.Label10.TabIndex = 32
-        Me.Label10.Text = "Estado:"
+        Me.Label10.Text = "Estado de pantalla:"
         '
         'txtEstado
         '
@@ -156,9 +157,9 @@ Partial Class Pantallas
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(327, 184)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 17)
+        Me.Label9.Size = New System.Drawing.Size(132, 17)
         Me.Label9.TabIndex = 30
-        Me.Label9.Text = "Modelo:"
+        Me.Label9.Text = "Modelo de pantalla:"
         '
         'txtModelo
         '
@@ -173,9 +174,9 @@ Partial Class Pantallas
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(327, 99)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(88, 17)
+        Me.Label8.Size = New System.Drawing.Size(162, 17)
         Me.Label8.TabIndex = 28
-        Me.Label8.Text = "INVCAPECE:"
+        Me.Label8.Text = "INVCAPECE de pantalla:"
         '
         'txtInvcapece
         '
@@ -190,9 +191,9 @@ Partial Class Pantallas
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(13, 264)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 17)
+        Me.Label7.Size = New System.Drawing.Size(152, 17)
         Me.Label7.TabIndex = 26
-        Me.Label7.Text = "Dimension:"
+        Me.Label7.Text = "Dimension de pantalla:"
         '
         'txtDimension
         '
@@ -207,9 +208,9 @@ Partial Class Pantallas
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(13, 182)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 17)
+        Me.Label6.Size = New System.Drawing.Size(125, 17)
         Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Marca:"
+        Me.Label6.Text = "Marca de pantalla:"
         '
         'txtMarca
         '
@@ -224,9 +225,9 @@ Partial Class Pantallas
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(9, 101)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 17)
+        Me.Label5.Size = New System.Drawing.Size(114, 17)
         Me.Label5.TabIndex = 22
-        Me.Label5.Text = "Tipo:"
+        Me.Label5.Text = "Tipo de pantalla:"
         '
         'txtTipo
         '
@@ -239,7 +240,7 @@ Partial Class Pantallas
         'dgwPantalla
         '
         Me.dgwPantalla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgwPantalla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Tipo, Me.INVCAPECE, Me.Marca, Me.Modelo, Me.Dimension, Me.Estado})
+        Me.dgwPantalla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Nombre, Me.Tipo, Me.INVCAPECE, Me.Marca, Me.Modelo, Me.Dimension, Me.Estado})
         Me.dgwPantalla.Location = New System.Drawing.Point(12, 471)
         Me.dgwPantalla.Name = "dgwPantalla"
         Me.dgwPantalla.RowHeadersWidth = 51
@@ -253,6 +254,13 @@ Partial Class Pantallas
         Me.Id.MinimumWidth = 6
         Me.Id.Name = "Id"
         Me.Id.Width = 125
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 125
         '
         'Tipo
         '
@@ -301,11 +309,12 @@ Partial Class Pantallas
         Me.GroupBox4.Controls.Add(Me.btnNuevo)
         Me.GroupBox4.Controls.Add(Me.btnRegistrar)
         Me.GroupBox4.Controls.Add(Me.btnSalir)
-        Me.GroupBox4.Location = New System.Drawing.Point(342, 627)
+        Me.GroupBox4.Location = New System.Drawing.Point(342, 644)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(230, 110)
         Me.GroupBox4.TabIndex = 21
         Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Opciones"
         '
         'btnNuevo
         '
@@ -340,11 +349,12 @@ Partial Class Pantallas
         Me.gb1.Controls.Add(Me.btnInicio)
         Me.gb1.Controls.Add(Me.btnSiguiente)
         Me.gb1.Controls.Add(Me.btnAnterior)
-        Me.gb1.Location = New System.Drawing.Point(12, 627)
+        Me.gb1.Location = New System.Drawing.Point(12, 645)
         Me.gb1.Name = "gb1"
         Me.gb1.Size = New System.Drawing.Size(230, 109)
         Me.gb1.TabIndex = 20
         Me.gb1.TabStop = False
+        Me.gb1.Text = "Navegacion"
         '
         'btnUltimo
         '
@@ -428,15 +438,16 @@ Partial Class Pantallas
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cboNombreRecursos As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtidRecursos As TextBox
     Friend WithEvents Id As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Tipo As DataGridViewTextBoxColumn
     Friend WithEvents INVCAPECE As DataGridViewTextBoxColumn
     Friend WithEvents Marca As DataGridViewTextBoxColumn
     Friend WithEvents Modelo As DataGridViewTextBoxColumn
     Friend WithEvents Dimension As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents cboIdRecurso As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cboNombreRecursos As ComboBox
-    Friend WithEvents Label2 As Label
 End Class

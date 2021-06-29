@@ -5,39 +5,25 @@ Public Class Pantallas
     Dim comando As MySqlCommand
     Dim lector As MySqlDataReader
     Dim filas As Integer = 0
-    Dim opcion As Integer = 0
+
+
     Private Sub Pantallas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
 
 
-        comando.CommandText = "Select * from RECURSOS where idCategoria = 3"
+        comando.CommandText = "SELECT * FROM RECURSOS WHERE RECURSOS.idRecursos NOT IN (SELECT PANTALLAS.IdRecurso FROM PANTALLAS) AND RECURSOS.idCategoria = 3"
         lector = comando.ExecuteReader
         While lector.Read()
-            cboIdRecurso.Items.Add(lector(0))
+            cboNombreRecursos.Items.Add(lector(1))
         End While
         lector.Close()
-
-        comando.CommandText = "Select * from PANTALLAS "
-        lector = comando.ExecuteReader
-        While lector.Read()
-            cboIdRecurso.Items.Remove(lector(0))
-        End While
-        lector.Close()
-
-        If Not cboIdRecurso.Items.Count.Equals(0) Then
-            For y = 0 To (cboIdRecurso.Items.Count) - 1
-                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Items.Item(y)
-                lector = comando.ExecuteReader
-                lector.Read()
-                cboNombreRecursos.Items.Add(lector(1))
-                lector.Close()
-
-            Next
+        If cboNombreRecursos.Items.Count >= 0 Then
+            cboNombreRecursos.SelectedItem = 0
         End If
 
-        cboIdRecurso.Enabled = False
+        txtidRecursos.Enabled = False
         txtTipo.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
@@ -55,7 +41,7 @@ Public Class Pantallas
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If cboIdRecurso.Items.Count = 0 Then
+        If cboNombreRecursos.Items.Count = 0 Then
             MsgBox("Usted no tiene nuevos recusos que registar en esta categoría")
         Else
             txtTipo.Enabled = True
@@ -63,29 +49,22 @@ Public Class Pantallas
             txtMarca.Enabled = True
             txtModelo.Enabled = True
             txtDimension.Enabled = True
-            txtEstado.Text = "Disponible"
             btnRegistrar.Enabled = True
             btnNuevo.Enabled = False
             gb1.Enabled = False
-
-            opcion = 1
+            txtidRecursos.Enabled = False
             filas = dgwPantalla.RowCount
             filas -= 1
             colocar(filas)
-            cboIdRecurso.Enabled = True
+            cboNombreRecursos.Enabled = True
         End If
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
-            '					
-
-            If opcion = 2 Then
-                comando.CommandText = "UPDATE PANTALLAS set Tipo = '" & txtTipo.Text & "' , INVCAPECE  = '" & txtInvcapece.Text & "' , Marca  = '" & txtTipo.Text & "' , Modelo  = '" & txtModelo.Text & "' ,  Dimension  = '" & txtDimension.Text & "' , Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.Text.ToString
-            ElseIf opcion = 1 Then
-                comando.CommandText = "insert into PANTALLAS(IdRecurso,Tipo,INVCAPECE,Marca,Modelo,Dimension,Estado) values('" & cboIdRecurso.SelectedItem.ToString & "','" & txtTipo.Text & "','" & txtInvcapece.Text & "','" & txtMarca.Text & "','" & txtModelo.Text & "','" & txtDimension.Text & "','" & txtEstado.Text & "')"
-            End If
+            comando.CommandText = "insert into PANTALLAS(IdRecurso,Tipo,INVCAPECE,Marca,Modelo,Dimension,Estado) values('" & txtidRecursos.Text & "','" & txtTipo.Text & "','" & txtInvcapece.Text & "','" & txtMarca.Text & "','" & txtModelo.Text & "','" & txtDimension.Text & "','" & txtEstado.Text & "')"
             comando.ExecuteNonQuery()
+            cboNombreRecursos.Items.Remove(cboNombreRecursos.SelectedItem)
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar grabar compruebe los datos " & ex.Message)
         End Try
@@ -96,7 +75,8 @@ Public Class Pantallas
         txtModelo.Enabled = False
         txtDimension.Enabled = False
         btnRegistrar.Enabled = False
-        cboIdRecurso.Enabled = False
+        cboNombreRecursos.Enabled = False
+        txtidRecursos.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
 
@@ -108,10 +88,10 @@ Public Class Pantallas
     End Sub
     Private Sub actualizar()
         dgwPantalla.Rows.Clear()
-        comando.CommandText = "Select * from PANTALLAS"
+        comando.CommandText = "Select r.idRecursos, r.descripcion,p.Tipo,p.INVCAPECE,p.Marca,p.Modelo,p.Dimension,p.Estado from PANTALLAS as p INNER JOIN RECURSOS as r on p.IdRecurso = r.idRecursos"
         lector = comando.ExecuteReader
         While lector.Read()
-            dgwPantalla.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), lector(5), lector(6))
+            dgwPantalla.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), lector(5), lector(6), lector(7))
         End While
         lector.Close()
     End Sub
@@ -153,30 +133,37 @@ Public Class Pantallas
 
     Private Sub colocar(fila As Integer)
         dgwPantalla.CurrentCell = dgwPantalla(0, fila)
-        If (IsNothing(dgwPantalla.Item(0, fila).Value)) Then
-            cboIdRecurso.SelectedIndex = 0
+        If (IsNothing(dgwPantalla.Item(1, fila).Value)) Then
+            cboNombreRecursos.SelectedIndex = 0
 
         Else
-            cboIdRecurso.Text = dgwPantalla.Item(0, fila).Value
+            cboNombreRecursos.Text = dgwPantalla.Item(1, fila).Value
         End If
 
-        comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
+        comando.CommandText = "Select * from RECURSOS where descripcion =   '" & cboNombreRecursos.Text & "'"
         lector = comando.ExecuteReader
         lector.Read()
-        cboNombreRecursos.Text = lector(1)
+        txtidRecursos.Text = lector(0)
         lector.Close()
 
-        txtTipo.Text = dgwPantalla.Item(1, fila).Value
-        txtInvcapece.Text = dgwPantalla.Item(2, fila).Value
-        txtMarca.Text = dgwPantalla.Item(3, fila).Value
-        txtModelo.Text = dgwPantalla.Item(4, fila).Value
-        txtDimension.Text = dgwPantalla.Item(5, fila).Value
+        txtTipo.Text = dgwPantalla.Item(2, fila).Value
+        txtInvcapece.Text = dgwPantalla.Item(3, fila).Value
+        txtMarca.Text = dgwPantalla.Item(4, fila).Value
+        txtModelo.Text = dgwPantalla.Item(5, fila).Value
+        txtDimension.Text = dgwPantalla.Item(6, fila).Value
 
-        txtEstado.Text = dgwPantalla.Item(6, fila).Value
+        txtEstado.Text = dgwPantalla.Item(7, fila).Value
         If txtEstado.Text.Length.Equals(0) Then
             txtEstado.Text = "Disponible"
         End If
 
     End Sub
 
+    Private Sub cboNombreRecursos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboNombreRecursos.SelectedIndexChanged
+        comando.CommandText = "Select * from RECURSOS where descripcion =   '" & cboNombreRecursos.Text & "'"
+        lector = comando.ExecuteReader
+        lector.Read()
+        txtidRecursos.Text = lector(0)
+        lector.Close()
+    End Sub
 End Class

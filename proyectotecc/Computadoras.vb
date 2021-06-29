@@ -5,40 +5,21 @@ Public Class Computadoras
     Dim comando As MySqlCommand
     Dim lector As MySqlDataReader
     Dim filas As Integer = 0
-    Dim opcion As Integer = 0
 
     Private Sub Computadoras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
 
-
-        comando.CommandText = "Select * from RECURSOS where idCategoria = 2"
+        comando.CommandText = "SELECT * FROM RECURSOS WHERE RECURSOS.idRecursos NOT IN (SELECT COMPUTADORAS.IdRecurso FROM COMPUTADORAS) AND RECURSOS.idCategoria = 2"
         lector = comando.ExecuteReader
         While lector.Read()
-            cboIdRecurso.Items.Add(lector(0))
+            cboNombreRecursos.Items.Add(lector(1))
         End While
         lector.Close()
 
-        comando.CommandText = "Select * from COMPUTADORAS "
-        lector = comando.ExecuteReader
-        While lector.Read()
-            cboIdRecurso.Items.Remove(lector(0))
-        End While
-        lector.Close()
 
-        If Not cboIdRecurso.Items.Count.Equals(0) Then
-            For y = 0 To cboIdRecurso.Items.Count
-                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.GetItemText(y)
-                lector = comando.ExecuteReader
-                lector.Read()
-                cboNombreRecursos.Items.Add(lector(1))
-                lector.Close()
-
-            Next
-        End If
-
-        cboIdRecurso.Enabled = False
+        txtId.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
         txtModelo.Enabled = False
@@ -59,9 +40,10 @@ Public Class Computadoras
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If cboIdRecurso.Items.Count = 0 Then
+        If cboNombreRecursos.Items.Count = 0 Then
             MsgBox("Usted no tiene nuevos recusos que registar en esta categoría")
         Else
+            cboNombreRecursos.Enabled = True
             txtInvcapece.Enabled = True
             txtMarca.Enabled = True
             txtModelo.Enabled = True
@@ -76,12 +58,11 @@ Public Class Computadoras
             gb1.Enabled = False
             txtEstado.Text = "Disponible"
 
-            opcion = 1
 
             filas = dgwComputadora.RowCount
             filas -= 1
             colocar(filas)
-            cboIdRecurso.Enabled = True
+            txtId.Enabled = False
         End If
 
     End Sub
@@ -93,11 +74,9 @@ Public Class Computadoras
 
             FechaA = dtpFechaAdqui.Value
             FechaM = dtpFechaUltMan.Value
-            If opcion = 2 Then
-                comando.CommandText = "UPDATE COMPUTADORAS set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , Procesador = '" & txtProcesador.Text & "', Memoria = '" & txtMemoria.Text & "',  HDD	 = '" & txtHdd.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.Text
-            ElseIf opcion = 1 Then
-                comando.CommandText = "insert into COMPUTADORAS (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & cboIdRecurso.Text & "' ,'" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
-            End If
+
+            comando.CommandText = "insert into COMPUTADORAS (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,Procesador,Memoria,HDD,Estado) values( '" & txtId.Text & "' ,'" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtProcesador.Text & "', '" & txtMemoria.Text & "',  '" & txtHdd.Text & "','" & txtEstado.Text & "')"
+
             comando.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar grabar compruebe los datos " & ex.Message)
@@ -115,6 +94,7 @@ Public Class Computadoras
         btnRegistrar.Enabled = False
         btnNuevo.Enabled = True
         gb1.Enabled = True
+        cboNombreRecursos.Enabled = False
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -123,10 +103,10 @@ Public Class Computadoras
 
     Private Sub actualizar()
         dgwComputadora.Rows.Clear()
-        comando.CommandText = "Select * from COMPUTADORAS"
+        comando.CommandText = "Select r.idRecursos, r.descripcion, c.INVCAPECE, c.FechaAdq, c.FechaUltMantto, c.Modelo, c.Marca, c.NoSerie, c.Procesador, c.Memoria, c.HDD, c.Estado from COMPUTADORAS as c INNER JOIN RECURSOS as r on c.IdRecurso = r.idRecursos"
         lector = comando.ExecuteReader
         While lector.Read()
-            dgwComputadora.Rows.Add(lector(0), lector(1), String.Format(lector(2)), String.Format(lector(3)), lector(4), lector(5), lector(6), lector(7), lector(8), lector(9), lector(10))
+            dgwComputadora.Rows.Add(lector(0), lector(1), lector(2), String.Format(lector(3)), String.Format(lector(4)), lector(5), lector(6), lector(7), lector(8), lector(9), lector(10), lector(11))
         End While
         lector.Close()
 
@@ -169,22 +149,42 @@ Public Class Computadoras
 
     Private Sub colocar(fila As Integer)
         dgwComputadora.CurrentCell = dgwComputadora(0, fila)
-        cboIdRecurso.Text = dgwComputadora.Item(0, fila).Value
-        comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
+        If (IsNothing(dgwComputadora.Item(1, fila).Value)) Then
+            cboNombreRecursos.SelectedIndex = 0
+        Else
+            cboNombreRecursos.Text = dgwComputadora.Item(1, fila).Value
+        End If
+
+        comando.CommandText = "Select * from RECURSOS where descripcion =   '" & cboNombreRecursos.Text & "'"
         lector = comando.ExecuteReader
         lector.Read()
-        cboNombreRecursos.Text = lector(1)
+        txtId.Text = lector(0)
         lector.Close()
-        txtInvcapece.Text = dgwComputadora.Item(1, fila).Value
-        dtpFechaAdqui.Text = dgwComputadora.Item(2, fila).Value
-        dtpFechaUltMan.Text = dgwComputadora.Item(3, fila).Value
-        txtModelo.Text = dgwComputadora.Item(4, fila).Value
-        txtMarca.Text = dgwComputadora.Item(5, fila).Value
-        txtNoSerie.Text = dgwComputadora.Item(6, fila).Value
-        txtProcesador.Text = dgwComputadora.Item(7, fila).Value
-        txtMemoria.Text = dgwComputadora.Item(8, fila).Value
-        txtHdd.Text = dgwComputadora.Item(9, fila).Value
-        txtEstado.Text = dgwComputadora.Item(10, fila).Value
 
+
+        txtInvcapece.Text = dgwComputadora.Item(2, fila).Value
+        dtpFechaAdqui.Text = dgwComputadora.Item(3, fila).Value
+        dtpFechaUltMan.Text = dgwComputadora.Item(4, fila).Value
+        txtModelo.Text = dgwComputadora.Item(5, fila).Value
+        txtMarca.Text = dgwComputadora.Item(6, fila).Value
+        txtNoSerie.Text = dgwComputadora.Item(7, fila).Value
+        txtProcesador.Text = dgwComputadora.Item(8, fila).Value
+        txtMemoria.Text = dgwComputadora.Item(9, fila).Value
+        txtHdd.Text = dgwComputadora.Item(10, fila).Value
+
+
+        txtEstado.Text = dgwComputadora.Item(11, fila).Value
+        If txtEstado.Text.Length.Equals(0) Then
+            txtEstado.Text = "Disponible"
+        End If
+
+    End Sub
+
+    Private Sub cboNombreRecursos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboNombreRecursos.SelectedIndexChanged
+        comando.CommandText = "Select * from RECURSOS where descripcion =   '" & cboNombreRecursos.Text & "'"
+        lector = comando.ExecuteReader
+        lector.Read()
+        txtId.Text = lector(0)
+        lector.Close()
     End Sub
 End Class

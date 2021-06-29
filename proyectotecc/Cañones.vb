@@ -13,33 +13,15 @@ Public Class Cañones
         conexion.Open()
         comando = conexion.CreateCommand
 
-        comando.CommandText = "Select * from RECURSOS where idCategoria = 1"
+        comando.CommandText = "SELECT * FROM RECURSOS WHERE RECURSOS.idRecursos NOT IN (SELECT CAÑONES.IdRecurso FROM CAÑONES) AND RECURSOS.idCategoria = 1"
         lector = comando.ExecuteReader
         While lector.Read()
-            cboIdRecurso.Items.Add(lector(0))
+            cboNombreRecursos.Items.Add(lector(1))
         End While
         lector.Close()
-
-        comando.CommandText = "Select * from CAÑONES "
-        lector = comando.ExecuteReader
-        While lector.Read()
-            cboIdRecurso.Items.Remove(lector(0))
-        End While
-        lector.Close()
-
-        If Not cboIdRecurso.Items.Count.Equals(0) Then
-            For y = 0 To cboIdRecurso.Items.Count
-                comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.GetItemText(y)
-                lector = comando.ExecuteReader
-                lector.Read()
-                cboNombreRecursos.Items.Add(lector(1))
-                lector.Close()
-
-            Next
-        End If
 
         cboNombreRecursos.Enabled = False
-        cboIdRecurso.Enabled = False
+        txtid.Enabled = False
         txtInvcapece.Enabled = False
         txtMarca.Enabled = False
         txtModelo.Enabled = False
@@ -62,7 +44,7 @@ Public Class Cañones
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If cboIdRecurso.Items.Count = 0 Then
+        If cboNombreRecursos.Items.Count = 0 Then
             MsgBox("Usted no tiene nuevos recusos que registar en esta categoría")
         Else
             cboNombreRecursos.Enabled = True
@@ -89,7 +71,7 @@ Public Class Cañones
             lector = comando.ExecuteReader
             lector.Read()
             lector.Close()
-            cboIdRecurso.Enabled = True
+            txtid.Enabled = True
             btnRegistrar.Text = "Guardar"
         End If
 
@@ -102,11 +84,8 @@ Public Class Cañones
 
             FechaA = dtpFechaAdqui.Value
             FechaM = dtpFechaUltiMan.Value
-            If opcion = 2 Then
-                comando.CommandText = "UPDATE CAÑONES Set  INVCAPECE  = '" & txtInvcapece.Text & "' , FechaAdq  = '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , FechaUltMantto  = '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,  Modelo  = '" & txtModelo.Text & "' , Marca = '" & txtMarca.Text & "' , NoSerie = '" & txtNoSerie.Text & "' , HorasLampara = '" & txtHorasLampara.Text & "', Observaciones = '" & txtObservaciones.Text & "', Estado = '" & txtEstado.Text & "'   Where IdRecurso =" & cboIdRecurso.SelectedItem.ToString
-            ElseIf opcion = 1 Then
-                comando.CommandText = "insert into CAÑONES (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,HorasLampara,Observaciones,Estado) values( '" & cboIdRecurso.SelectedItem.ToString & "' ,  '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtHorasLampara.Text & "', '" & txtObservaciones.Text & "', '" & txtEstado.Text & "')"
-            End If
+
+            comando.CommandText = "insert into CAÑONES (IdRecurso,INVCAPECE,FechaAdq,FechaUltMantto,Modelo,Marca,NoSerie,HorasLampara,Observaciones,Estado) values( '" & txtid.Text.ToString & "' ,  '" & txtInvcapece.Text & "' , '" & FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "' , '" & FechaM.Year & "-" & FechaM.Month & "-" & FechaM.Day & "' ,   '" & txtModelo.Text & "' , '" & txtMarca.Text & "' , '" & txtNoSerie.Text & "' , '" & txtHorasLampara.Text & "', '" & txtObservaciones.Text & "', '" & txtEstado.Text & "')"
             comando.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar grabar compruebe los datos " & ex.Message)
@@ -134,10 +113,10 @@ Public Class Cañones
     End Sub
     Private Sub actualizar()
         dgwCañon.Rows.Clear()
-        comando.CommandText = "Select * from CAÑONES"
+        comando.CommandText = "Select r.idRecursos, r.descripcion,c.INVCAPECE,c.FechaAdq,c.FechaUltMantto,c.Modelo,c.Marca,c.NoSerie,c.HorasLampara,c.Observaciones,c.Estado from CAÑONES as c INNER JOIN RECURSOS as r on c.IdRecurso = r.idRecursos"
         lector = comando.ExecuteReader
         While lector.Read()
-            dgwCañon.Rows.Add(lector(0), lector(1), String.Format(lector(2)), String.Format(lector(3)), lector(4), lector(5), lector(6), lector(7), lector(8), lector(9))
+            dgwCañon.Rows.Add(lector(0), lector(1), lector(2), String.Format(lector(3)), String.Format(lector(4)), lector(5), lector(6), lector(7), lector(8), lector(9), lector(10))
         End While
         lector.Close()
 
@@ -180,28 +159,44 @@ Public Class Cañones
 
     Private Sub colocar(fila As Integer)
         dgwCañon.CurrentCell = dgwCañon(0, fila)
-        cboIdRecurso.Text = dgwCañon.Item(0, fila).Value
-        comando.CommandText = "Select * from RECURSOS where idRecursos =   " & cboIdRecurso.Text
-        lector = comando.ExecuteReader
-        lector.Read()
-        cboNombreRecursos.Text = lector(1)
-        lector.Close()
-        txtInvcapece.Text = dgwCañon.Item(1, fila).Value
-        dtpFechaAdqui.Text = dgwCañon.Item(2, fila).Value
-        dtpFechaUltiMan.Text = dgwCañon.Item(3, fila).Value
-        txtModelo.Text = dgwCañon.Item(4, fila).Value
-        txtMarca.Text = dgwCañon.Item(5, fila).Value
-        txtNoSerie.Text = dgwCañon.Item(6, fila).Value
-        If IsNothing(dgwCañon.Item(7, fila).Value) Then
-            txtHorasLampara.Value = 0
+        If (IsNothing(dgwCañon.Item(1, fila).Value)) Then
+            cboNombreRecursos.SelectedIndex = 0
         Else
-            txtHorasLampara.Value = Integer.Parse(dgwCañon.Item(7, fila).Value)
-
+            cboNombreRecursos.Text = dgwCañon.Item(1, fila).Value
         End If
 
-        txtObservaciones.Text = dgwCañon.Item(8, fila).Value
-        txtEstado.Text = dgwCañon.Item(9, fila).Value
+
+        comando.CommandText = "Select * from RECURSOS where descripcion =   '" & cboNombreRecursos.Text & "'"
+        lector = comando.ExecuteReader
+        lector.Read()
+        txtid.Text = lector(0)
+        lector.Close()
+
+        txtInvcapece.Text = dgwCañon.Item(2, fila).Value
+        dtpFechaAdqui.Text = dgwCañon.Item(3, fila).Value
+        dtpFechaUltiMan.Text = dgwCañon.Item(4, fila).Value
+        txtModelo.Text = dgwCañon.Item(5, fila).Value
+        txtMarca.Text = dgwCañon.Item(6, fila).Value
+        txtNoSerie.Text = dgwCañon.Item(7, fila).Value
+        If IsNothing(dgwCañon.Item(8, fila).Value) Then
+            txtHorasLampara.Value = 0
+        Else
+            txtHorasLampara.Value = Integer.Parse(dgwCañon.Item(8, fila).Value)
+
+        End If
+        txtObservaciones.Text = dgwCañon.Item(9, fila).Value
+        txtEstado.Text = dgwCañon.Item(10, fila).Value
+        If txtEstado.Text.Length.Equals(0) Then
+            txtEstado.Text = "Disponible"
+        End If
 
     End Sub
 
+    Private Sub cboNombreRecursos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboNombreRecursos.SelectedIndexChanged
+        comando.CommandText = "Select * from RECURSOS where descripcion =   '" & cboNombreRecursos.Text & "'"
+        lector = comando.ExecuteReader
+        lector.Read()
+        txtid.Text = lector(0)
+        lector.Close()
+    End Sub
 End Class

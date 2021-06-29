@@ -24,9 +24,9 @@ Partial Class Computadoras
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtId = New System.Windows.Forms.TextBox()
         Me.cboNombreRecursos = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cboIdRecurso = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtEstado = New System.Windows.Forms.TextBox()
         Me.txtProcesador = New System.Windows.Forms.TextBox()
@@ -49,7 +49,17 @@ Partial Class Computadoras
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgwComputadora = New System.Windows.Forms.DataGridView()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.gb1 = New System.Windows.Forms.GroupBox()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.idRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAdq = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaUltMantto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,15 +70,6 @@ Partial Class Computadoras
         Me.Memoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HDD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.gb1 = New System.Windows.Forms.GroupBox()
-        Me.btnUltimo = New System.Windows.Forms.Button()
-        Me.btnInicio = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,9 +89,9 @@ Partial Class Computadoras
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtId)
         Me.GroupBox2.Controls.Add(Me.cboNombreRecursos)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.cboIdRecurso)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtEstado)
         Me.GroupBox2.Controls.Add(Me.txtProcesador)
@@ -119,6 +120,14 @@ Partial Class Computadoras
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Computadora:"
         '
+        'txtId
+        '
+        Me.txtId.Location = New System.Drawing.Point(43, 42)
+        Me.txtId.Multiline = True
+        Me.txtId.Name = "txtId"
+        Me.txtId.Size = New System.Drawing.Size(221, 28)
+        Me.txtId.TabIndex = 55
+        '
         'cboNombreRecursos
         '
         Me.cboNombreRecursos.Enabled = False
@@ -133,26 +142,18 @@ Partial Class Computadoras
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(270, 26)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(121, 17)
+        Me.Label2.Size = New System.Drawing.Size(169, 17)
         Me.Label2.TabIndex = 53
-        Me.Label2.Text = "Nombre recursos:"
-        '
-        'cboIdRecurso
-        '
-        Me.cboIdRecurso.FormattingEnabled = True
-        Me.cboIdRecurso.Location = New System.Drawing.Point(125, 46)
-        Me.cboIdRecurso.Name = "cboIdRecurso"
-        Me.cboIdRecurso.Size = New System.Drawing.Size(121, 24)
-        Me.cboIdRecurso.TabIndex = 47
+        Me.Label2.Text = "Nombre de computadora:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(122, 26)
+        Me.Label1.Location = New System.Drawing.Point(51, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.Size = New System.Drawing.Size(187, 17)
         Me.Label1.TabIndex = 46
-        Me.Label1.Text = "Id Recurso:"
+        Me.Label1.Text = "Id Recurso de computadora:"
         '
         'txtEstado
         '
@@ -237,95 +238,95 @@ Partial Class Computadoras
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(325, 87)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(56, 17)
+        Me.Label14.Size = New System.Drawing.Size(163, 17)
         Me.Label14.TabIndex = 36
-        Me.Label14.Text = "Estado:"
+        Me.Label14.Text = "Estado de computadora:"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(323, 330)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(42, 17)
+        Me.Label13.Size = New System.Drawing.Size(145, 17)
         Me.Label13.TabIndex = 35
-        Me.Label13.Text = "HDD:"
+        Me.Label13.Text = "HDD de computadora"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(323, 396)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(66, 17)
+        Me.Label12.Size = New System.Drawing.Size(169, 17)
         Me.Label12.TabIndex = 34
-        Me.Label12.Text = "Memoria:"
+        Me.Label12.Text = "Memoria de computadora"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(162, 202)
+        Me.Label11.Location = New System.Drawing.Point(122, 202)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(210, 17)
+        Me.Label11.Size = New System.Drawing.Size(317, 17)
         Me.Label11.TabIndex = 33
-        Me.Label11.Text = "Fecha de Ultimo Mantenimiento:"
+        Me.Label11.Text = "Fecha de Ultimo Mantenimiento de computadora:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(7, 391)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(80, 17)
+        Me.Label10.Size = New System.Drawing.Size(183, 17)
         Me.Label10.TabIndex = 32
-        Me.Label10.Text = "Procesado:"
+        Me.Label10.Text = "Procesado de computadora"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(7, 262)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 17)
+        Me.Label9.Size = New System.Drawing.Size(161, 17)
         Me.Label9.TabIndex = 30
-        Me.Label9.Text = "Modelo:"
+        Me.Label9.Text = "Modelo de computadora"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(4, 87)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(88, 17)
+        Me.Label8.Size = New System.Drawing.Size(195, 17)
         Me.Label8.TabIndex = 28
-        Me.Label8.Text = "INVCAPECE:"
+        Me.Label8.Text = "INVCAPECE de computadora:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(7, 325)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 17)
+        Me.Label7.Size = New System.Drawing.Size(174, 17)
         Me.Label7.TabIndex = 26
-        Me.Label7.Text = "No. Serie:"
+        Me.Label7.Text = "No. Serie de computadora"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(323, 267)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 17)
+        Me.Label6.Size = New System.Drawing.Size(154, 17)
         Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Marca:"
+        Me.Label6.Text = "Marca de computadora"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(203, 144)
+        Me.Label5.Location = New System.Drawing.Point(159, 144)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(147, 17)
+        Me.Label5.Size = New System.Drawing.Size(254, 17)
         Me.Label5.TabIndex = 22
-        Me.Label5.Text = "Fecha de Adquisición:"
+        Me.Label5.Text = "Fecha de Adquisición de computadora:"
         '
         'dgwComputadora
         '
         Me.dgwComputadora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgwComputadora.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecurso, Me.INVCAPECE, Me.FechaAdq, Me.FechaUltMantto, Me.Modelo, Me.Marca, Me.NoSerie, Me.Procesador, Me.Memoria, Me.HDD, Me.Estado})
+        Me.dgwComputadora.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecurso, Me.descripcion, Me.INVCAPECE, Me.FechaAdq, Me.FechaUltMantto, Me.Modelo, Me.Marca, Me.NoSerie, Me.Procesador, Me.Memoria, Me.HDD, Me.Estado})
         Me.dgwComputadora.Location = New System.Drawing.Point(10, 581)
         Me.dgwComputadora.Name = "dgwComputadora"
         Me.dgwComputadora.ReadOnly = True
@@ -333,83 +334,6 @@ Partial Class Computadoras
         Me.dgwComputadora.RowTemplate.Height = 24
         Me.dgwComputadora.Size = New System.Drawing.Size(560, 182)
         Me.dgwComputadora.TabIndex = 26
-        '
-        'idRecurso
-        '
-        Me.idRecurso.HeaderText = "idRecurso"
-        Me.idRecurso.MinimumWidth = 6
-        Me.idRecurso.Name = "idRecurso"
-        Me.idRecurso.Width = 125
-        '
-        'INVCAPECE
-        '
-        Me.INVCAPECE.HeaderText = "INVCAPECE"
-        Me.INVCAPECE.MinimumWidth = 6
-        Me.INVCAPECE.Name = "INVCAPECE"
-        Me.INVCAPECE.Width = 125
-        '
-        'FechaAdq
-        '
-        Me.FechaAdq.HeaderText = "FechaAdq"
-        Me.FechaAdq.MinimumWidth = 6
-        Me.FechaAdq.Name = "FechaAdq"
-        Me.FechaAdq.Width = 125
-        '
-        'FechaUltMantto
-        '
-        Me.FechaUltMantto.HeaderText = "FechaUltMantto"
-        Me.FechaUltMantto.MinimumWidth = 6
-        Me.FechaUltMantto.Name = "FechaUltMantto"
-        Me.FechaUltMantto.Width = 125
-        '
-        'Modelo
-        '
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.MinimumWidth = 6
-        Me.Modelo.Name = "Modelo"
-        Me.Modelo.Width = 125
-        '
-        'Marca
-        '
-        Me.Marca.HeaderText = "Marca"
-        Me.Marca.MinimumWidth = 6
-        Me.Marca.Name = "Marca"
-        Me.Marca.Width = 125
-        '
-        'NoSerie
-        '
-        Me.NoSerie.HeaderText = "NoSerie"
-        Me.NoSerie.MinimumWidth = 6
-        Me.NoSerie.Name = "NoSerie"
-        Me.NoSerie.Width = 125
-        '
-        'Procesador
-        '
-        Me.Procesador.HeaderText = "Procesador"
-        Me.Procesador.MinimumWidth = 6
-        Me.Procesador.Name = "Procesador"
-        Me.Procesador.Width = 125
-        '
-        'Memoria
-        '
-        Me.Memoria.HeaderText = "Memoria" & Global.Microsoft.VisualBasic.ChrW(9)
-        Me.Memoria.MinimumWidth = 6
-        Me.Memoria.Name = "Memoria"
-        Me.Memoria.Width = 125
-        '
-        'HDD
-        '
-        Me.HDD.HeaderText = "HDD"
-        Me.HDD.MinimumWidth = 6
-        Me.HDD.Name = "HDD"
-        Me.HDD.Width = 125
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.MinimumWidth = 6
-        Me.Estado.Name = "Estado"
-        Me.Estado.Width = 125
         '
         'GroupBox4
         '
@@ -497,6 +421,102 @@ Partial Class Computadoras
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
+        'idRecurso
+        '
+        Me.idRecurso.HeaderText = "idRecurso"
+        Me.idRecurso.MinimumWidth = 6
+        Me.idRecurso.Name = "idRecurso"
+        Me.idRecurso.ReadOnly = True
+        Me.idRecurso.Width = 125
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "decripcion"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 125
+        '
+        'INVCAPECE
+        '
+        Me.INVCAPECE.HeaderText = "INVCAPECE"
+        Me.INVCAPECE.MinimumWidth = 6
+        Me.INVCAPECE.Name = "INVCAPECE"
+        Me.INVCAPECE.ReadOnly = True
+        Me.INVCAPECE.Width = 125
+        '
+        'FechaAdq
+        '
+        Me.FechaAdq.HeaderText = "FechaAdq"
+        Me.FechaAdq.MinimumWidth = 6
+        Me.FechaAdq.Name = "FechaAdq"
+        Me.FechaAdq.ReadOnly = True
+        Me.FechaAdq.Width = 125
+        '
+        'FechaUltMantto
+        '
+        Me.FechaUltMantto.HeaderText = "FechaUltMantto"
+        Me.FechaUltMantto.MinimumWidth = 6
+        Me.FechaUltMantto.Name = "FechaUltMantto"
+        Me.FechaUltMantto.ReadOnly = True
+        Me.FechaUltMantto.Width = 125
+        '
+        'Modelo
+        '
+        Me.Modelo.HeaderText = "Modelo"
+        Me.Modelo.MinimumWidth = 6
+        Me.Modelo.Name = "Modelo"
+        Me.Modelo.ReadOnly = True
+        Me.Modelo.Width = 125
+        '
+        'Marca
+        '
+        Me.Marca.HeaderText = "Marca"
+        Me.Marca.MinimumWidth = 6
+        Me.Marca.Name = "Marca"
+        Me.Marca.ReadOnly = True
+        Me.Marca.Width = 125
+        '
+        'NoSerie
+        '
+        Me.NoSerie.HeaderText = "NoSerie"
+        Me.NoSerie.MinimumWidth = 6
+        Me.NoSerie.Name = "NoSerie"
+        Me.NoSerie.ReadOnly = True
+        Me.NoSerie.Width = 125
+        '
+        'Procesador
+        '
+        Me.Procesador.HeaderText = "Procesador"
+        Me.Procesador.MinimumWidth = 6
+        Me.Procesador.Name = "Procesador"
+        Me.Procesador.ReadOnly = True
+        Me.Procesador.Width = 125
+        '
+        'Memoria
+        '
+        Me.Memoria.HeaderText = "Memoria" & Global.Microsoft.VisualBasic.ChrW(9)
+        Me.Memoria.MinimumWidth = 6
+        Me.Memoria.Name = "Memoria"
+        Me.Memoria.ReadOnly = True
+        Me.Memoria.Width = 125
+        '
+        'HDD
+        '
+        Me.HDD.HeaderText = "HDD"
+        Me.HDD.MinimumWidth = 6
+        Me.HDD.Name = "HDD"
+        Me.HDD.ReadOnly = True
+        Me.HDD.Width = 125
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 6
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        Me.Estado.Width = 125
+        '
         'Computadoras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -551,7 +571,12 @@ Partial Class Computadoras
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cboNombreRecursos As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtId As TextBox
     Friend WithEvents idRecurso As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents INVCAPECE As DataGridViewTextBoxColumn
     Friend WithEvents FechaAdq As DataGridViewTextBoxColumn
     Friend WithEvents FechaUltMantto As DataGridViewTextBoxColumn
@@ -562,8 +587,4 @@ Partial Class Computadoras
     Friend WithEvents Memoria As DataGridViewTextBoxColumn
     Friend WithEvents HDD As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents cboIdRecurso As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cboNombreRecursos As ComboBox
-    Friend WithEvents Label2 As Label
 End Class
