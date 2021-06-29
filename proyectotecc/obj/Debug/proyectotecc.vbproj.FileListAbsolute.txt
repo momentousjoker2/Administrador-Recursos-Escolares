@@ -127,3 +127,6 @@ C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.exe
 C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.xml
 C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.pdb
 C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.ApartadoLugar.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.ConsultaApartadoLugar.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.ConsultaApartadoRecurso.resources
+C:\Users\spide\Source\Repos\Servicio\proyectotecc\obj\Debug\proyectotecc.ConsultaBajas.resources

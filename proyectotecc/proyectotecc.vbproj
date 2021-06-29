@@ -119,6 +119,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
+    <Compile Include="ConsultaApartadoLugar.Designer.vb">
+      <DependentUpon>ConsultaApartadoLugar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaApartadoLugar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaApartadoRecurso.Designer.vb">
+      <DependentUpon>ConsultaApartadoRecurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaApartadoRecurso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaBajas.Designer.vb">
+      <DependentUpon>ConsultaBajas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaBajas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Lugar.Designer.vb">
       <DependentUpon>Lugar.vb</DependentUpon>
     </Compile>
@@ -179,6 +197,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Computadoras.resx">
       <DependentUpon>Computadoras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaApartadoLugar.resx">
+      <DependentUpon>ConsultaApartadoLugar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaApartadoRecurso.resx">
+      <DependentUpon>ConsultaApartadoRecurso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaBajas.resx">
+      <DependentUpon>ConsultaBajas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lugar.resx">
       <DependentUpon>Lugar.vb</DependentUpon>

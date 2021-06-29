@@ -38,4 +38,8 @@
     Private Sub ApartarLugarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApartarLugarToolStripMenuItem.Click
         ApartadoLugar.Show()
     End Sub
+
+    Private Sub ConsultaBajasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaBajasToolStripMenuItem.Click
+        ConsultaBajas.Show()
+    End Sub
 End Class
