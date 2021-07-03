@@ -24,9 +24,6 @@ Partial Class AsignarRecursos
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TxtIdRecurso = New System.Windows.Forms.TextBox()
         Me.TxtIdCategoria = New System.Windows.Forms.TextBox()
@@ -36,37 +33,43 @@ Partial Class AsignarRecursos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtConcepto = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.PanelFiltro = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.CboFiltroCategoria = New System.Windows.Forms.ComboBox()
         Me.TxtFiltroCategoria = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DGVRecursos = New System.Windows.Forms.DataGridView()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TxtEdificio = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TxtAula = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TxtResponsable = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.BtnLimpiarSeleccion = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.idRecursos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TxtResponsable = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TxtAula = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtEdificio = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.BtnLimpiarSeleccion = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.PanelFiltro.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DGVRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
@@ -96,40 +99,6 @@ Partial Class AsignarRecursos
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(824, 127)
         Me.Panel2.TabIndex = 17
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TxtDescripcion)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(262, 127)
-        Me.GroupBox1.TabIndex = 8
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos de los recursos"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 24)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Descripción:"
-        '
-        'TxtDescripcion
-        '
-        Me.TxtDescripcion.Location = New System.Drawing.Point(11, 45)
-        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(2)
-        Me.TxtDescripcion.Multiline = True
-        Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.ReadOnly = True
-        Me.TxtDescripcion.Size = New System.Drawing.Size(247, 34)
-        Me.TxtDescripcion.TabIndex = 3
         '
         'GroupBox2
         '
@@ -231,8 +200,43 @@ Partial Class AsignarRecursos
         Me.txtConcepto.Size = New System.Drawing.Size(213, 30)
         Me.txtConcepto.TabIndex = 6
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.TxtDescripcion)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(262, 127)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Datos de los recursos"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(8, 24)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Descripción:"
+        '
+        'TxtDescripcion
+        '
+        Me.TxtDescripcion.Location = New System.Drawing.Point(11, 45)
+        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtDescripcion.Multiline = True
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.ReadOnly = True
+        Me.TxtDescripcion.Size = New System.Drawing.Size(247, 34)
+        Me.TxtDescripcion.TabIndex = 3
+        '
         'PanelFiltro
         '
+        Me.PanelFiltro.Controls.Add(Me.Panel3)
         Me.PanelFiltro.Controls.Add(Me.GroupBox3)
         Me.PanelFiltro.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelFiltro.Location = New System.Drawing.Point(0, 65)
@@ -240,16 +244,40 @@ Partial Class AsignarRecursos
         Me.PanelFiltro.Size = New System.Drawing.Size(824, 71)
         Me.PanelFiltro.TabIndex = 19
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(468, 71)
+        Me.Panel3.TabIndex = 20
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 18.0!)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(24, 17)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(212, 30)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "Asignar Recursos"
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.CboFiltroCategoria)
         Me.GroupBox3.Controls.Add(Me.TxtFiltroCategoria)
         Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupBox3.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.GroupBox3.Location = New System.Drawing.Point(468, 0)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(812, 71)
+        Me.GroupBox3.Size = New System.Drawing.Size(356, 71)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Filtro de búsqueda"
@@ -313,6 +341,39 @@ Partial Class AsignarRecursos
         Me.DGVRecursos.Size = New System.Drawing.Size(809, 145)
         Me.DGVRecursos.TabIndex = 13
         '
+        'idRecursos
+        '
+        Me.idRecursos.HeaderText = "IdRecursos"
+        Me.idRecursos.MinimumWidth = 6
+        Me.idRecursos.Name = "idRecursos"
+        Me.idRecursos.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        '
+        'idCategoria
+        '
+        Me.idCategoria.HeaderText = "IdCategoría"
+        Me.idCategoria.MinimumWidth = 6
+        Me.idCategoria.Name = "idCategoria"
+        Me.idCategoria.ReadOnly = True
+        '
+        'Categoria
+        '
+        Me.Categoria.HeaderText = "Categoría"
+        Me.Categoria.Name = "Categoria"
+        Me.Categoria.ReadOnly = True
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.DGVRecursos)
@@ -342,43 +403,24 @@ Partial Class AsignarRecursos
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Datos de la Asignación"
         '
-        'dtpFecha
+        'TxtResponsable
         '
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(657, 37)
-        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(116, 20)
-        Me.dtpFecha.TabIndex = 39
+        Me.TxtResponsable.Location = New System.Drawing.Point(13, 76)
+        Me.TxtResponsable.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtResponsable.Multiline = True
+        Me.TxtResponsable.Name = "TxtResponsable"
+        Me.TxtResponsable.Size = New System.Drawing.Size(760, 24)
+        Me.TxtResponsable.TabIndex = 54
         '
-        'Label8
+        'Label12
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(654, 22)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(110, 13)
-        Me.Label8.TabIndex = 38
-        Me.Label8.Text = "Fecha de Asignación:"
-        '
-        'TxtEdificio
-        '
-        Me.TxtEdificio.Location = New System.Drawing.Point(13, 33)
-        Me.TxtEdificio.Margin = New System.Windows.Forms.Padding(2)
-        Me.TxtEdificio.Multiline = True
-        Me.TxtEdificio.Name = "TxtEdificio"
-        Me.TxtEdificio.Size = New System.Drawing.Size(488, 24)
-        Me.TxtEdificio.TabIndex = 48
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(11, 16)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(44, 13)
-        Me.Label9.TabIndex = 49
-        Me.Label9.Text = "Edificio:"
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(11, 59)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(72, 13)
+        Me.Label12.TabIndex = 55
+        Me.Label12.Text = "Responsable:"
         '
         'TxtAula
         '
@@ -399,24 +441,43 @@ Partial Class AsignarRecursos
         Me.Label10.TabIndex = 51
         Me.Label10.Text = "Aula:"
         '
-        'TxtResponsable
+        'TxtEdificio
         '
-        Me.TxtResponsable.Location = New System.Drawing.Point(13, 76)
-        Me.TxtResponsable.Margin = New System.Windows.Forms.Padding(2)
-        Me.TxtResponsable.Multiline = True
-        Me.TxtResponsable.Name = "TxtResponsable"
-        Me.TxtResponsable.Size = New System.Drawing.Size(760, 24)
-        Me.TxtResponsable.TabIndex = 54
+        Me.TxtEdificio.Location = New System.Drawing.Point(13, 33)
+        Me.TxtEdificio.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtEdificio.Multiline = True
+        Me.TxtEdificio.Name = "TxtEdificio"
+        Me.TxtEdificio.Size = New System.Drawing.Size(488, 24)
+        Me.TxtEdificio.TabIndex = 48
         '
-        'Label12
+        'Label9
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(11, 59)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(72, 13)
-        Me.Label12.TabIndex = 55
-        Me.Label12.Text = "Responsable:"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(11, 16)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(44, 13)
+        Me.Label9.TabIndex = 49
+        Me.Label9.Text = "Edificio:"
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.Location = New System.Drawing.Point(657, 37)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(116, 20)
+        Me.dtpFecha.TabIndex = 39
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(654, 22)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(110, 13)
+        Me.Label8.TabIndex = 38
+        Me.Label8.Text = "Fecha de Asignación:"
         '
         'Panel1
         '
@@ -457,39 +518,6 @@ Partial Class AsignarRecursos
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'idRecursos
-        '
-        Me.idRecursos.HeaderText = "IdRecursos"
-        Me.idRecursos.MinimumWidth = 6
-        Me.idRecursos.Name = "idRecursos"
-        Me.idRecursos.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.MinimumWidth = 6
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        '
-        'idCategoria
-        '
-        Me.idCategoria.HeaderText = "IdCategoría"
-        Me.idCategoria.MinimumWidth = 6
-        Me.idCategoria.Name = "idCategoria"
-        Me.idCategoria.ReadOnly = True
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoría"
-        Me.Categoria.Name = "Categoria"
-        Me.Categoria.ReadOnly = True
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        '
         'AsignarRecursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -506,11 +534,13 @@ Partial Class AsignarRecursos
         Me.Text = "AsignarRecursos"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.PanelFiltro.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DGVRecursos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -563,4 +593,6 @@ Partial Class AsignarRecursos
     Friend WithEvents idCategoria As DataGridViewTextBoxColumn
     Friend WithEvents Categoria As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label11 As Label
 End Class

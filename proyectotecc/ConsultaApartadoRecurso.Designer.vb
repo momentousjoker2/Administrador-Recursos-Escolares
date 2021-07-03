@@ -48,6 +48,8 @@ Partial Class ConsultaApartadoRecurso
         Me.CantidadPrest = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CantidadDev = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDev = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DGVApartado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,16 +57,18 @@ Partial Class ConsultaApartadoRecurso
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Controls.Add(Me.dtpFecha)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 80)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Padding = New System.Windows.Forms.Padding(12)
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(5)
         Me.Panel2.Size = New System.Drawing.Size(824, 71)
         Me.Panel2.TabIndex = 44
         '
@@ -72,17 +76,17 @@ Partial Class ConsultaApartadoRecurso
         '
         Me.dtpFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(354, 34)
+        Me.dtpFecha.Location = New System.Drawing.Point(674, 33)
         Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(116, 23)
+        Me.dtpFecha.Size = New System.Drawing.Size(139, 23)
         Me.dtpFecha.TabIndex = 39
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(335, 14)
+        Me.Label5.Location = New System.Drawing.Point(671, 14)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(148, 17)
@@ -308,6 +312,30 @@ Partial Class ConsultaApartadoRecurso
         Me.FechaDev.Name = "FechaDev"
         Me.FechaDev.ReadOnly = True
         '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(5, 5)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(658, 61)
+        Me.Panel5.TabIndex = 45
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 18.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(11, 16)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(347, 30)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Consulta: Apartado Recurso"
+        '
         'ConsultaApartadoRecurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -329,6 +357,8 @@ Partial Class ConsultaApartadoRecurso
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGVDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -359,4 +389,6 @@ Partial Class ConsultaApartadoRecurso
     Friend WithEvents CantidadPrest As DataGridViewTextBoxColumn
     Friend WithEvents CantidadDev As DataGridViewTextBoxColumn
     Friend WithEvents FechaDev As DataGridViewTextBoxColumn
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label10 As Label
 End Class

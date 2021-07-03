@@ -56,6 +56,8 @@ Partial Class ApartadoLugar
         Me.HoraFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGVLugar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
@@ -65,6 +67,7 @@ Partial Class ApartadoLugar
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVReservaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox4
@@ -298,6 +301,7 @@ Partial Class ApartadoLugar
         '
         'PanelFiltro
         '
+        Me.PanelFiltro.Controls.Add(Me.Panel3)
         Me.PanelFiltro.Controls.Add(Me.Panel2)
         Me.PanelFiltro.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelFiltro.Location = New System.Drawing.Point(0, 80)
@@ -424,6 +428,30 @@ Partial Class ApartadoLugar
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(528, 65)
+        Me.Panel3.TabIndex = 41
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 18.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(24, 17)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(240, 30)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Apartados: Lugares"
+        '
         'ApartadoLugar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -448,6 +476,8 @@ Partial Class ApartadoLugar
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGVReservaciones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -486,4 +516,6 @@ Partial Class ApartadoLugar
     Friend WithEvents HoraInicial As DataGridViewTextBoxColumn
     Friend WithEvents HoraFinal As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label6 As Label
 End Class

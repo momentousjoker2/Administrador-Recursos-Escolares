@@ -72,7 +72,8 @@ Public Class ApartadoLugar
                 HoraInicio.Items.Add(i & ":00:00")
                 HoraFin.Items.Add(i & ":00:00")
             Next
-
+            HoraInicio.SelectedIndex = 0
+            HoraFin.SelectedIndex = 0
             Exit Sub
         End If
 
@@ -93,6 +94,8 @@ Public Class ApartadoLugar
 
             HoraFin.Items.Add(i & ":00:00")
         Next
+        HoraInicio.SelectedIndex = 0
+        HoraFin.SelectedIndex = 0
 
     End Sub
 
@@ -115,7 +118,6 @@ Public Class ApartadoLugar
         comando.ExecuteNonQuery()
 
         DGVReservaciones.Rows.Clear()
-        BtnGrabar.Enabled = False
 
         LimpiarDatos()
         MessageBox.Show("El registro se completó exitosamente", "Éxito")
@@ -126,6 +128,10 @@ Public Class ApartadoLugar
         TxtAlumno.Clear()
         TxtNC.Clear()
         TxtConcepto.Clear()
+        DGVReservaciones.Rows.Clear()
+        HoraInicio.SelectedIndex = 0
+        HoraFin.SelectedIndex = 0
+
 
     End Sub
 
@@ -136,4 +142,5 @@ Public Class ApartadoLugar
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ConsultaApartadoLugar.Show()
     End Sub
+
 End Class

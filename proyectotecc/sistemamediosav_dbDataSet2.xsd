@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sistemamediosav_dbDataSet2" targetNamespace="http://tempuri.org/sistemamediosav_dbDataSet2.xsd" xmlns:mstns="http://tempuri.org/sistemamediosav_dbDataSet2.xsd" xmlns="http://tempuri.org/sistemamediosav_dbDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="sistemamediosav_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemamediosav_dbConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.proyectotecc.My.MySettings.GlobalReference.Default.sistemamediosav_dbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteBajasTableAdapter" GeneratorDataComponentClassName="ReporteBajasTableAdapter" Name="ReporteBajas" UserDataComponentName="ReporteBajasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistemamediosav_dbConnectionString (MySettings)" DbObjectName="`sistemamediosav_db`.`ReporteBajas`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`sistemamediosav_db`.`ReporteBajas`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdBaja" DataSetColumn="IdBaja" />
+              <Mapping SourceColumn="IdRecurso" DataSetColumn="IdRecurso" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="Concepto" DataSetColumn="Concepto" />
+              <Mapping SourceColumn="Autoriza" DataSetColumn="Autoriza" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="sistemamediosav_dbDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="sistemamediosav_dbDataSet2" msprop:Generator_UserDSName="sistemamediosav_dbDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReporteBajas" msprop:Generator_TableClassName="ReporteBajasDataTable" msprop:Generator_TableVarName="tableReporteBajas" msprop:Generator_TablePropName="ReporteBajas" msprop:Generator_RowDeletingName="ReporteBajasRowDeleting" msprop:Generator_RowChangingName="ReporteBajasRowChanging" msprop:Generator_RowEvHandlerName="ReporteBajasRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteBajasRowDeleted" msprop:Generator_UserTableName="ReporteBajas" msprop:Generator_RowChangedName="ReporteBajasRowChanged" msprop:Generator_RowEvArgName="ReporteBajasRowChangeEvent" msprop:Generator_RowClassName="ReporteBajasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdBaja" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIdBaja" msprop:Generator_ColumnPropNameInRow="IdBaja" msprop:Generator_ColumnPropNameInTable="IdBajaColumn" msprop:Generator_UserColumnName="IdBaja" type="xs:int" />
+              <xs:element name="IdRecurso" msprop:Generator_ColumnVarNameInTable="columnIdRecurso" msprop:Generator_ColumnPropNameInRow="IdRecurso" msprop:Generator_ColumnPropNameInTable="IdRecursoColumn" msprop:Generator_UserColumnName="IdRecurso" type="xs:int" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Autoriza" msprop:Generator_ColumnVarNameInTable="columnAutoriza" msprop:Generator_ColumnPropNameInRow="Autoriza" msprop:Generator_ColumnPropNameInTable="AutorizaColumn" msprop:Generator_UserColumnName="Autoriza">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReporteBajas" />
+      <xs:field xpath="mstns:IdBaja" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

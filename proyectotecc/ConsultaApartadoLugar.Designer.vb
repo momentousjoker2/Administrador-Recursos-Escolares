@@ -29,21 +29,24 @@ Partial Class ConsultaApartadoLugar
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGVReservaciones = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.IdApartado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Docente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoraInicial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoraFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelFiltro.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVReservaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -69,12 +72,13 @@ Partial Class ConsultaApartadoLugar
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Controls.Add(Me.dtpFecha)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Padding = New System.Windows.Forms.Padding(12)
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(3)
         Me.Panel2.Size = New System.Drawing.Size(824, 71)
         Me.Panel2.TabIndex = 40
         '
@@ -82,17 +86,17 @@ Partial Class ConsultaApartadoLugar
         '
         Me.dtpFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(354, 34)
+        Me.dtpFecha.Location = New System.Drawing.Point(668, 34)
         Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(116, 23)
+        Me.dtpFecha.Size = New System.Drawing.Size(145, 23)
         Me.dtpFecha.TabIndex = 39
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(335, 14)
+        Me.Label5.Location = New System.Drawing.Point(665, 13)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(148, 17)
@@ -127,39 +131,6 @@ Partial Class ConsultaApartadoLugar
         Me.DGVReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVReservaciones.Size = New System.Drawing.Size(818, 228)
         Me.DGVReservaciones.TabIndex = 13
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 416)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(5)
-        Me.Panel1.Size = New System.Drawing.Size(824, 49)
-        Me.Panel1.TabIndex = 45
-        '
-        'Button3
-        '
-        Me.Button3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(683, 5)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(136, 39)
-        Me.Button3.TabIndex = 32
-        Me.Button3.Text = "Salir"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(5, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(250, 39)
-        Me.Button2.TabIndex = 31
-        Me.Button2.Text = "Cancelar Apartado Seleccionado"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'IdApartado
         '
@@ -198,6 +169,63 @@ Partial Class ConsultaApartadoLugar
         Me.Estado.Name = "Estado"
         Me.Estado.ReadOnly = True
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 416)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(5)
+        Me.Panel1.Size = New System.Drawing.Size(824, 49)
+        Me.Panel1.TabIndex = 45
+        '
+        'Button3
+        '
+        Me.Button3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(683, 5)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(136, 39)
+        Me.Button3.TabIndex = 32
+        Me.Button3.Text = "Salir"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(5, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(250, 39)
+        Me.Button2.TabIndex = 31
+        Me.Button2.Text = "Cancelar Apartado Seleccionado"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(3, 3)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(658, 65)
+        Me.Panel5.TabIndex = 44
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 18.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(11, 16)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(317, 30)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Consulta: Apartado Lugar"
+        '
         'ConsultaApartadoLugar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -216,6 +244,8 @@ Partial Class ConsultaApartadoLugar
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGVReservaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -235,4 +265,6 @@ Partial Class ConsultaApartadoLugar
     Friend WithEvents HoraInicial As DataGridViewTextBoxColumn
     Friend WithEvents HoraFinal As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label10 As Label
 End Class

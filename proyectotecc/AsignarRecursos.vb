@@ -206,4 +206,5 @@ Public Class AsignarRecursos
         TxtIdRecurso.Clear()
         txtINVCA.Clear()
     End Sub
+
 End Class

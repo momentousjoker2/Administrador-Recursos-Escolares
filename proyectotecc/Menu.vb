@@ -42,4 +42,12 @@
     Private Sub ConsultaBajasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaBajasToolStripMenuItem.Click
         ConsultaBajas.Show()
     End Sub
+
+    Private Sub LugarPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LugarPeriodoToolStripMenuItem.Click
+        ReporteLugarPeriodo.Show()
+    End Sub
+
+    Private Sub BajasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajasToolStripMenuItem1.Click
+        ReporteBajas.Show()
+    End Sub
 End Class
