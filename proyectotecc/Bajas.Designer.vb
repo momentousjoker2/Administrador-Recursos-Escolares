@@ -51,6 +51,8 @@ Partial Class Bajas
         Me.CboFiltroCategoria = New System.Windows.Forms.ComboBox()
         Me.TxtFiltroCategoria = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxConcepto.SuspendLayout()
@@ -61,6 +63,7 @@ Partial Class Bajas
         Me.PanelFiltro.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -85,7 +88,7 @@ Partial Class Bajas
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 65)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(824, 476)
+        Me.Panel1.Size = New System.Drawing.Size(824, 568)
         Me.Panel1.TabIndex = 13
         '
         'GroupBoxConcepto
@@ -93,7 +96,7 @@ Partial Class Bajas
         Me.GroupBoxConcepto.Controls.Add(Me.txtConcepto)
         Me.GroupBoxConcepto.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GroupBoxConcepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxConcepto.Location = New System.Drawing.Point(0, 289)
+        Me.GroupBoxConcepto.Location = New System.Drawing.Point(0, 381)
         Me.GroupBoxConcepto.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBoxConcepto.Name = "GroupBoxConcepto"
         Me.GroupBoxConcepto.Padding = New System.Windows.Forms.Padding(12)
@@ -118,7 +121,7 @@ Partial Class Bajas
         Me.Panel6.Controls.Add(Me.BtnGuardar)
         Me.Panel6.Controls.Add(Me.txtAutoriza)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 416)
+        Me.Panel6.Location = New System.Drawing.Point(0, 508)
         Me.Panel6.MinimumSize = New System.Drawing.Size(0, 60)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Padding = New System.Windows.Forms.Padding(12)
@@ -163,7 +166,7 @@ Partial Class Bajas
         Me.Panel4.Controls.Add(Me.BtnDeshacer)
         Me.Panel4.Controls.Add(Me.BtnSeleccionar)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 229)
+        Me.Panel4.Location = New System.Drawing.Point(0, 298)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Padding = New System.Windows.Forms.Padding(12)
         Me.Panel4.Size = New System.Drawing.Size(824, 64)
@@ -196,7 +199,7 @@ Partial Class Bajas
         '
         Me.Panel3.Controls.Add(Me.DGVRecursos)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 71)
+        Me.Panel3.Location = New System.Drawing.Point(0, 140)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Padding = New System.Windows.Forms.Padding(12)
         Me.Panel3.Size = New System.Drawing.Size(824, 158)
@@ -254,12 +257,13 @@ Partial Class Bajas
         '
         'PanelFiltro
         '
+        Me.PanelFiltro.Controls.Add(Me.Panel5)
         Me.PanelFiltro.Controls.Add(Me.Panel2)
         Me.PanelFiltro.Controls.Add(Me.GroupBox3)
         Me.PanelFiltro.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelFiltro.Location = New System.Drawing.Point(0, 0)
         Me.PanelFiltro.Name = "PanelFiltro"
-        Me.PanelFiltro.Size = New System.Drawing.Size(824, 71)
+        Me.PanelFiltro.Size = New System.Drawing.Size(824, 140)
         Me.PanelFiltro.TabIndex = 18
         '
         'Panel2
@@ -272,7 +276,7 @@ Partial Class Bajas
         Me.Panel2.Location = New System.Drawing.Point(528, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(12)
-        Me.Panel2.Size = New System.Drawing.Size(296, 71)
+        Me.Panel2.Size = New System.Drawing.Size(296, 62)
         Me.Panel2.TabIndex = 40
         '
         'dtpFecha
@@ -321,9 +325,10 @@ Partial Class Bajas
         Me.GroupBox3.Controls.Add(Me.CboFiltroCategoria)
         Me.GroupBox3.Controls.Add(Me.TxtFiltroCategoria)
         Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 6)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 62)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(350, 61)
+        Me.GroupBox3.Size = New System.Drawing.Size(824, 78)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Filtro de búsqueda"
@@ -370,11 +375,35 @@ Partial Class Bajas
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Id categoría:"
         '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(528, 62)
+        Me.Panel5.TabIndex = 43
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 18.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(11, 16)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(194, 30)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Consulta: Bajas"
+        '
         'Bajas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 541)
+        Me.ClientSize = New System.Drawing.Size(824, 633)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.MinimumSize = New System.Drawing.Size(840, 580)
@@ -394,6 +423,8 @@ Partial Class Bajas
         Me.Panel2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -427,4 +458,6 @@ Partial Class Bajas
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtIdBaja As TextBox
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label10 As Label
 End Class

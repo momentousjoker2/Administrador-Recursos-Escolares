@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="sistemamediosav_dbDataSet" targetNamespace="http://tempuri.org/sistemamediosav_dbDataSet.xsd" xmlns:mstns="http://tempuri.org/sistemamediosav_dbDataSet.xsd" xmlns="http://tempuri.org/sistemamediosav_dbDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="sistemamediosav_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sistemamediosav_dbConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.proyectotecc.My.MySettings.GlobalReference.Default.sistemamediosav_dbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteLugaresPeriodoTableAdapter" GeneratorDataComponentClassName="ReporteLugaresPeriodoTableAdapter" Name="ReporteLugaresPeriodo" UserDataComponentName="ReporteLugaresPeriodoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistemamediosav_dbConnectionString (MySettings)" DbObjectName="`sistemamediosav_db`.`ReporteLugaresPeriodo`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`sistemamediosav_db`.`ReporteLugaresPeriodo`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdApartado" DataSetColumn="IdApartado" />
+              <Mapping SourceColumn="Concepto" DataSetColumn="Concepto" />
+              <Mapping SourceColumn="Docente" DataSetColumn="Docente" />
+              <Mapping SourceColumn="HoraInicial" DataSetColumn="HoraInicial" />
+              <Mapping SourceColumn="HoraFinal" DataSetColumn="HoraFinal" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="sistemamediosav_dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="sistemamediosav_dbDataSet" msprop:Generator_UserDSName="sistemamediosav_dbDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReporteLugaresPeriodo" msprop:Generator_TableClassName="ReporteLugaresPeriodoDataTable" msprop:Generator_TableVarName="tableReporteLugaresPeriodo" msprop:Generator_TablePropName="ReporteLugaresPeriodo" msprop:Generator_RowDeletingName="ReporteLugaresPeriodoRowDeleting" msprop:Generator_RowChangingName="ReporteLugaresPeriodoRowChanging" msprop:Generator_RowEvHandlerName="ReporteLugaresPeriodoRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteLugaresPeriodoRowDeleted" msprop:Generator_UserTableName="ReporteLugaresPeriodo" msprop:Generator_RowChangedName="ReporteLugaresPeriodoRowChanged" msprop:Generator_RowEvArgName="ReporteLugaresPeriodoRowChangeEvent" msprop:Generator_RowClassName="ReporteLugaresPeriodoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdApartado" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIdApartado" msprop:Generator_ColumnPropNameInRow="IdApartado" msprop:Generator_ColumnPropNameInTable="IdApartadoColumn" msprop:Generator_UserColumnName="IdApartado" type="xs:int" />
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Docente" msprop:Generator_ColumnVarNameInTable="columnDocente" msprop:Generator_ColumnPropNameInRow="Docente" msprop:Generator_ColumnPropNameInTable="DocenteColumn" msprop:Generator_UserColumnName="Docente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HoraInicial" msprop:Generator_ColumnVarNameInTable="columnHoraInicial" msprop:Generator_ColumnPropNameInRow="HoraInicial" msprop:Generator_ColumnPropNameInTable="HoraInicialColumn" msprop:Generator_UserColumnName="HoraInicial" type="xs:duration" />
+              <xs:element name="HoraFinal" msprop:Generator_ColumnVarNameInTable="columnHoraFinal" msprop:Generator_ColumnPropNameInRow="HoraFinal" msprop:Generator_ColumnPropNameInTable="HoraFinalColumn" msprop:Generator_UserColumnName="HoraFinal" type="xs:duration" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReporteLugaresPeriodo" />
+      <xs:field xpath="mstns:IdApartado" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
