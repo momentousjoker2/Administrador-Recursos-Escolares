@@ -61,7 +61,7 @@ Public Class ReporteLugarPeriodo
         Dim p3 As New ReportParameter("lugar", ComboBoxLugar.Text)
         Dim p4 As New ReportParameter("fecha", DateAndTime.Now.ToString)
 
-        FormReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\ReporteLugarPeriodo.rdlc"
+        FormReport.ReportViewer1.LocalReport.ReportPath = rutaReportes & "ReporteLugarPeriodo.rdlc"
 
         FormReport.ReportViewer1.LocalReport.DataSources.Clear()
         FormReport.ReportViewer1.LocalReport.DataSources.Add(DataSource)

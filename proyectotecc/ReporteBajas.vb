@@ -35,7 +35,7 @@ Public Class ReporteBajas
         Dim p2 As New ReportParameter("fechaFinal", fechaFin)
         Dim p3 As New ReportParameter("fecha", DateAndTime.Now.ToString)
 
-        FormReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\ReporteBaja.rdlc"
+        FormReport.ReportViewer1.LocalReport.ReportPath = rutaReportes & "ReporteBaja.rdlc"
 
         FormReport.ReportViewer1.LocalReport.DataSources.Clear()
         FormReport.ReportViewer1.LocalReport.DataSources.Add(DataSource)
