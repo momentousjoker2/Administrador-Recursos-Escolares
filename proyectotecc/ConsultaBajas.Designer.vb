@@ -51,9 +51,10 @@ Partial Class ConsultaBajas
         Me.Panel2.Controls.Add(Me.dtpFecha)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 80)
+        Me.Panel2.Location = New System.Drawing.Point(0, 98)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(824, 65)
+        Me.Panel2.Size = New System.Drawing.Size(1099, 80)
         Me.Panel2.TabIndex = 45
         '
         'Panel3
@@ -62,9 +63,9 @@ Partial Class ConsultaBajas
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(664, 65)
+        Me.Panel3.Size = New System.Drawing.Size(885, 80)
         Me.Panel3.TabIndex = 42
         '
         'Label10
@@ -73,10 +74,9 @@ Partial Class ConsultaBajas
         Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 18.0!)
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(24, 17)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Location = New System.Drawing.Point(32, 21)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(194, 30)
+        Me.Label10.Size = New System.Drawing.Size(237, 37)
         Me.Label10.TabIndex = 8
         Me.Label10.Text = "Consulta: Bajas"
         '
@@ -84,20 +84,19 @@ Partial Class ConsultaBajas
         '
         Me.dtpFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(671, 33)
-        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpFecha.Location = New System.Drawing.Point(895, 41)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(142, 23)
+        Me.dtpFecha.Size = New System.Drawing.Size(188, 26)
         Me.dtpFecha.TabIndex = 39
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(668, 14)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(891, 17)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(148, 17)
+        Me.Label5.Size = New System.Drawing.Size(174, 20)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "Selecciona una fecha:"
         '
@@ -106,9 +105,9 @@ Partial Class ConsultaBajas
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = Global.proyectotecc.My.Resources.Resources.logoitcg
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(824, 80)
+        Me.PictureBox1.Size = New System.Drawing.Size(1099, 98)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 44
         Me.PictureBox1.TabStop = False
@@ -118,9 +117,11 @@ Partial Class ConsultaBajas
         Me.GroupBox5.Controls.Add(Me.DGVBajas)
         Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(0, 145)
+        Me.GroupBox5.Location = New System.Drawing.Point(0, 178)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(824, 200)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Size = New System.Drawing.Size(1099, 246)
         Me.GroupBox5.TabIndex = 46
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Bajas"
@@ -133,43 +134,48 @@ Partial Class ConsultaBajas
         Me.DGVBajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVBajas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdBaja, Me.IdRecurso, Me.Descripcion, Me.Concepto, Me.Autoriza})
         Me.DGVBajas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGVBajas.Location = New System.Drawing.Point(3, 19)
-        Me.DGVBajas.Margin = New System.Windows.Forms.Padding(2)
+        Me.DGVBajas.Location = New System.Drawing.Point(4, 23)
+        Me.DGVBajas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DGVBajas.Name = "DGVBajas"
         Me.DGVBajas.ReadOnly = True
         Me.DGVBajas.RowHeadersWidth = 51
         Me.DGVBajas.RowTemplate.Height = 24
         Me.DGVBajas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVBajas.Size = New System.Drawing.Size(818, 178)
+        Me.DGVBajas.Size = New System.Drawing.Size(1091, 219)
         Me.DGVBajas.TabIndex = 13
         '
         'IdBaja
         '
         Me.IdBaja.HeaderText = "Id Baja"
+        Me.IdBaja.MinimumWidth = 6
         Me.IdBaja.Name = "IdBaja"
         Me.IdBaja.ReadOnly = True
         '
         'IdRecurso
         '
         Me.IdRecurso.HeaderText = "Id Recurso"
+        Me.IdRecurso.MinimumWidth = 6
         Me.IdRecurso.Name = "IdRecurso"
         Me.IdRecurso.ReadOnly = True
         '
         'Descripcion
         '
         Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.MinimumWidth = 6
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
         '
         'Concepto
         '
         Me.Concepto.HeaderText = "Concepto"
+        Me.Concepto.MinimumWidth = 6
         Me.Concepto.Name = "Concepto"
         Me.Concepto.ReadOnly = True
         '
         'Autoriza
         '
         Me.Autoriza.HeaderText = "Autoriza"
+        Me.Autoriza.MinimumWidth = 6
         Me.Autoriza.Name = "Autoriza"
         Me.Autoriza.ReadOnly = True
         '
@@ -177,32 +183,36 @@ Partial Class ConsultaBajas
         '
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 362)
+        Me.Panel1.Location = New System.Drawing.Point(0, 446)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(5)
-        Me.Panel1.Size = New System.Drawing.Size(824, 49)
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.Panel1.Size = New System.Drawing.Size(1099, 60)
         Me.Panel1.TabIndex = 47
         '
         'Button3
         '
         Me.Button3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(603, 5)
+        Me.Button3.Location = New System.Drawing.Point(804, 6)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(216, 39)
+        Me.Button3.Size = New System.Drawing.Size(288, 48)
         Me.Button3.TabIndex = 32
         Me.Button3.Text = "Salir"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'ConsultaBajas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 411)
+        Me.ClientSize = New System.Drawing.Size(1099, 506)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ConsultaBajas"
         Me.Text = "ConsultaBajas"
         Me.Panel2.ResumeLayout(False)

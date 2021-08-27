@@ -63,37 +63,37 @@ Partial Class Menu
         'RecursosToolStripMenuItem1
         '
         Me.RecursosToolStripMenuItem1.Name = "RecursosToolStripMenuItem1"
-        Me.RecursosToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.RecursosToolStripMenuItem1.Size = New System.Drawing.Size(190, 26)
         Me.RecursosToolStripMenuItem1.Text = "Recursos"
         '
         'PantallasToolStripMenuItem
         '
         Me.PantallasToolStripMenuItem.Name = "PantallasToolStripMenuItem"
-        Me.PantallasToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.PantallasToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.PantallasToolStripMenuItem.Text = "Pantallas"
         '
         'LugarToolStripMenuItem1
         '
         Me.LugarToolStripMenuItem1.Name = "LugarToolStripMenuItem1"
-        Me.LugarToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.LugarToolStripMenuItem1.Size = New System.Drawing.Size(190, 26)
         Me.LugarToolStripMenuItem1.Text = "Lugar"
         '
         'ComputadorasToolStripMenuItem1
         '
         Me.ComputadorasToolStripMenuItem1.Name = "ComputadorasToolStripMenuItem1"
-        Me.ComputadorasToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.ComputadorasToolStripMenuItem1.Size = New System.Drawing.Size(190, 26)
         Me.ComputadorasToolStripMenuItem1.Text = "Computadoras"
         '
         'CategoriaToolStripMenuItem
         '
         Me.CategoriaToolStripMenuItem.Name = "CategoriaToolStripMenuItem"
-        Me.CategoriaToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.CategoriaToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.CategoriaToolStripMenuItem.Text = "categoría"
         '
         'CañonesToolStripMenuItem1
         '
         Me.CañonesToolStripMenuItem1.Name = "CañonesToolStripMenuItem1"
-        Me.CañonesToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.CañonesToolStripMenuItem1.Size = New System.Drawing.Size(190, 26)
         Me.CañonesToolStripMenuItem1.Text = "Cañones"
         '
         'MovimientosToolStripMenuItem
@@ -106,50 +106,50 @@ Partial Class Menu
         'BajasToolStripMenuItem
         '
         Me.BajasToolStripMenuItem.Name = "BajasToolStripMenuItem"
-        Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
         Me.BajasToolStripMenuItem.Text = "Bajas"
         '
         'ConsultaBajasToolStripMenuItem
         '
         Me.ConsultaBajasToolStripMenuItem.Name = "ConsultaBajasToolStripMenuItem"
-        Me.ConsultaBajasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ConsultaBajasToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
         Me.ConsultaBajasToolStripMenuItem.Text = "Consulta Bajas"
         '
         'AsignarRecursosToolStripMenuItem
         '
         Me.AsignarRecursosToolStripMenuItem.Name = "AsignarRecursosToolStripMenuItem"
-        Me.AsignarRecursosToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.AsignarRecursosToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
         Me.AsignarRecursosToolStripMenuItem.Text = "Asignar Recursos"
         '
         'ApartarRecursosToolStripMenuItem
         '
         Me.ApartarRecursosToolStripMenuItem.Name = "ApartarRecursosToolStripMenuItem"
-        Me.ApartarRecursosToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ApartarRecursosToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
         Me.ApartarRecursosToolStripMenuItem.Text = "Apartar Recursos"
         '
         'ApartarLugarToolStripMenuItem
         '
         Me.ApartarLugarToolStripMenuItem.Name = "ApartarLugarToolStripMenuItem"
-        Me.ApartarLugarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ApartarLugarToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
         Me.ApartarLugarToolStripMenuItem.Text = "Apartar Lugar"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LugarPeriodoToolStripMenuItem, Me.BajasToolStripMenuItem1})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'LugarPeriodoToolStripMenuItem
         '
         Me.LugarPeriodoToolStripMenuItem.Name = "LugarPeriodoToolStripMenuItem"
-        Me.LugarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LugarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.LugarPeriodoToolStripMenuItem.Text = "Lugar Periodo"
         '
         'BajasToolStripMenuItem1
         '
         Me.BajasToolStripMenuItem1.Name = "BajasToolStripMenuItem1"
-        Me.BajasToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.BajasToolStripMenuItem1.Size = New System.Drawing.Size(184, 26)
         Me.BajasToolStripMenuItem1.Text = "Bajas"
         '
         'Menu
@@ -158,6 +158,7 @@ Partial Class Menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Menu"

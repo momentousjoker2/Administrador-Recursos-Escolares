@@ -50,4 +50,10 @@
     Private Sub BajasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajasToolStripMenuItem1.Click
         ReporteBajas.Show()
     End Sub
+
+    Private Sub Menu_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start(rutaAyuda)
+        End If
+    End Sub
 End Class

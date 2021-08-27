@@ -166,4 +166,10 @@ Public Class Pantallas
         txtidRecursos.Text = lector(0)
         lector.Close()
     End Sub
+
+    Private Sub Pantallas_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start(rutaAyuda)
+        End If
+    End Sub
 End Class

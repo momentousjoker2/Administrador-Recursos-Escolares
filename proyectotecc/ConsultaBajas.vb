@@ -41,4 +41,10 @@ Public Class ConsultaBajas
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Dispose()
     End Sub
+
+    Private Sub ConsultaBajas_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start(rutaAyuda)
+        End If
+    End Sub
 End Class

@@ -289,6 +289,7 @@ Partial Class Recursos
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Name = "Recursos"
         Me.Text = "Recursos"
         Me.GroupBox1.ResumeLayout(False)

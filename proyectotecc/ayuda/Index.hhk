@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Menu">
+		<param name="Name" value="MENU">
+		<param name="Local" value="menu.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CATALOGO CATEGORIAS">
+			<param name="Name" value="CATALOGO CATEGORIAS">
+			<param name="Local" value="Categoria.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CATALOGO CA&Ntilde;ONES">
+			<param name="Name" value="CATALOGO CAÑONES">
+			<param name="Local" value="Canones.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CATALOGO DE COMPUTADORAS">
+			<param name="Name" value="CATALOGO DE COMPUTADORAS">
+			<param name="Local" value="Computadora.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CATALOGO LUGAR">
+			<param name="Name" value="CATALOGO LUGAR">
+			<param name="Local" value="Lugar.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CATALOGO PANTALLAS">
+			<param name="Name" value="CATALOGO PANTALLAS">
+			<param name="Local" value="Pantalla.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CATALOGO RECURSOS">
+			<param name="Name" value="CATALOGO RECURSOS">
+			<param name="Local" value="Recursos.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MOVIMIENTO APARTADO DE RECURSOS">
+			<param name="Name" value="MOVIMIENTO APARTADO DE RECURSOS">
+			<param name="Local" value="ApartadoRecurso.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MOVIMIENTO ASIGNAR RECURSO">
+			<param name="Name" value="MOVIMIENTO ASIGNAR RECURSO">
+			<param name="Local" value="AsginarRecursos.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MOVIMIENTO BAJAS">
+			<param name="Name" value="MOVIMIENTO BAJAS">
+			<param name="Local" value="Bajas.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MOVIMIENTOO APARTADO DE LUGAR">
+			<param name="Name" value="MOVIMIENTOO APARTADO DE LUGAR">
+			<param name="Local" value="ApartadoLugar.html">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

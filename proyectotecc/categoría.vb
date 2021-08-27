@@ -112,4 +112,10 @@ Public Class categoría
         txtIdCategoria.Text = dgwCategoria.Item(0, fila).Value
         txtConcepto.Text = dgwCategoria.Item(1, fila).Value
     End Sub
+
+    Private Sub categoría_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start(rutaAyuda)
+        End If
+    End Sub
 End Class

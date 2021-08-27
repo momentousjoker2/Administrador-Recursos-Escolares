@@ -41,6 +41,8 @@ Partial Class Bajas
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelFiltro = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -51,8 +53,6 @@ Partial Class Bajas
         Me.CboFiltroCategoria = New System.Windows.Forms.ComboBox()
         Me.TxtFiltroCategoria = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxConcepto.SuspendLayout()
@@ -61,9 +61,9 @@ Partial Class Bajas
         Me.Panel3.SuspendLayout()
         CType(Me.DGVRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelFiltro.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -71,9 +71,9 @@ Partial Class Bajas
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = Global.proyectotecc.My.Resources.Resources.logoitcg
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(824, 65)
+        Me.PictureBox1.Size = New System.Drawing.Size(1099, 80)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
@@ -86,9 +86,10 @@ Partial Class Bajas
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.PanelFiltro)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 65)
+        Me.Panel1.Location = New System.Drawing.Point(0, 80)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(824, 568)
+        Me.Panel1.Size = New System.Drawing.Size(1099, 699)
         Me.Panel1.TabIndex = 13
         '
         'GroupBoxConcepto
@@ -96,11 +97,11 @@ Partial Class Bajas
         Me.GroupBoxConcepto.Controls.Add(Me.txtConcepto)
         Me.GroupBoxConcepto.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GroupBoxConcepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxConcepto.Location = New System.Drawing.Point(0, 381)
-        Me.GroupBoxConcepto.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBoxConcepto.Location = New System.Drawing.Point(0, 469)
+        Me.GroupBoxConcepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBoxConcepto.Name = "GroupBoxConcepto"
-        Me.GroupBoxConcepto.Padding = New System.Windows.Forms.Padding(12)
-        Me.GroupBoxConcepto.Size = New System.Drawing.Size(824, 127)
+        Me.GroupBoxConcepto.Padding = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.GroupBoxConcepto.Size = New System.Drawing.Size(1099, 156)
         Me.GroupBoxConcepto.TabIndex = 24
         Me.GroupBoxConcepto.TabStop = False
         Me.GroupBoxConcepto.Text = "Concepto:"
@@ -108,11 +109,11 @@ Partial Class Bajas
         'txtConcepto
         '
         Me.txtConcepto.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtConcepto.Location = New System.Drawing.Point(12, 28)
-        Me.txtConcepto.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtConcepto.Location = New System.Drawing.Point(16, 34)
+        Me.txtConcepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtConcepto.Multiline = True
         Me.txtConcepto.Name = "txtConcepto"
-        Me.txtConcepto.Size = New System.Drawing.Size(800, 87)
+        Me.txtConcepto.Size = New System.Drawing.Size(1067, 107)
         Me.txtConcepto.TabIndex = 23
         '
         'Panel6
@@ -121,21 +122,21 @@ Partial Class Bajas
         Me.Panel6.Controls.Add(Me.BtnGuardar)
         Me.Panel6.Controls.Add(Me.txtAutoriza)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 508)
-        Me.Panel6.MinimumSize = New System.Drawing.Size(0, 60)
+        Me.Panel6.Location = New System.Drawing.Point(0, 625)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.MinimumSize = New System.Drawing.Size(0, 74)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Padding = New System.Windows.Forms.Padding(12)
-        Me.Panel6.Size = New System.Drawing.Size(824, 60)
+        Me.Panel6.Padding = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.Panel6.Size = New System.Drawing.Size(1099, 74)
         Me.Panel6.TabIndex = 22
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(18, 5)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(24, 6)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(105, 17)
+        Me.Label8.Size = New System.Drawing.Size(123, 20)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Autorizado por:"
         '
@@ -144,21 +145,22 @@ Partial Class Bajas
         Me.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnGuardar.Enabled = False
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardar.Location = New System.Drawing.Point(572, 12)
+        Me.BtnGuardar.Location = New System.Drawing.Point(763, 15)
+        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Padding = New System.Windows.Forms.Padding(2)
-        Me.BtnGuardar.Size = New System.Drawing.Size(240, 36)
+        Me.BtnGuardar.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnGuardar.Size = New System.Drawing.Size(320, 44)
         Me.BtnGuardar.TabIndex = 21
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'txtAutoriza
         '
-        Me.txtAutoriza.Location = New System.Drawing.Point(21, 24)
-        Me.txtAutoriza.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtAutoriza.Location = New System.Drawing.Point(28, 30)
+        Me.txtAutoriza.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtAutoriza.Multiline = True
         Me.txtAutoriza.Name = "txtAutoriza"
-        Me.txtAutoriza.Size = New System.Drawing.Size(384, 21)
+        Me.txtAutoriza.Size = New System.Drawing.Size(511, 25)
         Me.txtAutoriza.TabIndex = 14
         '
         'Panel4
@@ -166,10 +168,11 @@ Partial Class Bajas
         Me.Panel4.Controls.Add(Me.BtnDeshacer)
         Me.Panel4.Controls.Add(Me.BtnSeleccionar)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 298)
+        Me.Panel4.Location = New System.Drawing.Point(0, 366)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Padding = New System.Windows.Forms.Padding(12)
-        Me.Panel4.Size = New System.Drawing.Size(824, 64)
+        Me.Panel4.Padding = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.Panel4.Size = New System.Drawing.Size(1099, 79)
         Me.Panel4.TabIndex = 20
         '
         'BtnDeshacer
@@ -177,9 +180,10 @@ Partial Class Bajas
         Me.BtnDeshacer.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnDeshacer.Enabled = False
         Me.BtnDeshacer.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDeshacer.Location = New System.Drawing.Point(412, 12)
+        Me.BtnDeshacer.Location = New System.Drawing.Point(550, 15)
+        Me.BtnDeshacer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnDeshacer.Name = "BtnDeshacer"
-        Me.BtnDeshacer.Size = New System.Drawing.Size(400, 40)
+        Me.BtnDeshacer.Size = New System.Drawing.Size(533, 49)
         Me.BtnDeshacer.TabIndex = 20
         Me.BtnDeshacer.Text = "Deshacer Selección"
         Me.BtnDeshacer.UseVisualStyleBackColor = True
@@ -188,9 +192,10 @@ Partial Class Bajas
         '
         Me.BtnSeleccionar.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSeleccionar.Location = New System.Drawing.Point(12, 12)
+        Me.BtnSeleccionar.Location = New System.Drawing.Point(16, 15)
+        Me.BtnSeleccionar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSeleccionar.Name = "BtnSeleccionar"
-        Me.BtnSeleccionar.Size = New System.Drawing.Size(400, 40)
+        Me.BtnSeleccionar.Size = New System.Drawing.Size(533, 49)
         Me.BtnSeleccionar.TabIndex = 19
         Me.BtnSeleccionar.Text = "Seleccionar"
         Me.BtnSeleccionar.UseVisualStyleBackColor = True
@@ -199,10 +204,11 @@ Partial Class Bajas
         '
         Me.Panel3.Controls.Add(Me.DGVRecursos)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 140)
+        Me.Panel3.Location = New System.Drawing.Point(0, 172)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Padding = New System.Windows.Forms.Padding(12)
-        Me.Panel3.Size = New System.Drawing.Size(824, 158)
+        Me.Panel3.Padding = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.Panel3.Size = New System.Drawing.Size(1099, 194)
         Me.Panel3.TabIndex = 17
         '
         'DGVRecursos
@@ -213,14 +219,14 @@ Partial Class Bajas
         Me.DGVRecursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVRecursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecursos, Me.Concepto, Me.descripcion, Me.INVCAPECE, Me.Estado})
         Me.DGVRecursos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGVRecursos.Location = New System.Drawing.Point(12, 12)
-        Me.DGVRecursos.Margin = New System.Windows.Forms.Padding(2)
+        Me.DGVRecursos.Location = New System.Drawing.Point(16, 15)
+        Me.DGVRecursos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DGVRecursos.Name = "DGVRecursos"
         Me.DGVRecursos.ReadOnly = True
         Me.DGVRecursos.RowHeadersWidth = 51
         Me.DGVRecursos.RowTemplate.Height = 24
         Me.DGVRecursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVRecursos.Size = New System.Drawing.Size(800, 134)
+        Me.DGVRecursos.Size = New System.Drawing.Size(1067, 164)
         Me.DGVRecursos.TabIndex = 13
         '
         'idRecursos
@@ -233,6 +239,7 @@ Partial Class Bajas
         'Concepto
         '
         Me.Concepto.HeaderText = "Concepto"
+        Me.Concepto.MinimumWidth = 6
         Me.Concepto.Name = "Concepto"
         Me.Concepto.ReadOnly = True
         '
@@ -246,12 +253,14 @@ Partial Class Bajas
         'INVCAPECE
         '
         Me.INVCAPECE.HeaderText = "INVCAPECE"
+        Me.INVCAPECE.MinimumWidth = 6
         Me.INVCAPECE.Name = "INVCAPECE"
         Me.INVCAPECE.ReadOnly = True
         '
         'Estado
         '
         Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 6
         Me.Estado.Name = "Estado"
         Me.Estado.ReadOnly = True
         '
@@ -262,9 +271,33 @@ Partial Class Bajas
         Me.PanelFiltro.Controls.Add(Me.GroupBox3)
         Me.PanelFiltro.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelFiltro.Location = New System.Drawing.Point(0, 0)
+        Me.PanelFiltro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PanelFiltro.Name = "PanelFiltro"
-        Me.PanelFiltro.Size = New System.Drawing.Size(824, 140)
+        Me.PanelFiltro.Size = New System.Drawing.Size(1099, 172)
         Me.PanelFiltro.TabIndex = 18
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(704, 76)
+        Me.Panel5.TabIndex = 43
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 18.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(15, 20)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(237, 37)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Consulta: Bajas"
         '
         'Panel2
         '
@@ -273,50 +306,49 @@ Partial Class Bajas
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.TxtIdBaja)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(528, 0)
+        Me.Panel2.Location = New System.Drawing.Point(704, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Padding = New System.Windows.Forms.Padding(12)
-        Me.Panel2.Size = New System.Drawing.Size(296, 62)
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.Panel2.Size = New System.Drawing.Size(395, 76)
         Me.Panel2.TabIndex = 40
         '
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(24, 37)
-        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpFecha.Location = New System.Drawing.Point(32, 46)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(113, 20)
+        Me.dtpFecha.Size = New System.Drawing.Size(149, 22)
         Me.dtpFecha.TabIndex = 39
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(240, 21)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(320, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "IdBaja:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(97, 22)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(129, 27)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 13)
+        Me.Label5.Size = New System.Drawing.Size(51, 17)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "Fecha:"
         '
         'TxtIdBaja
         '
-        Me.TxtIdBaja.Location = New System.Drawing.Point(141, 36)
-        Me.TxtIdBaja.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtIdBaja.Location = New System.Drawing.Point(188, 44)
+        Me.TxtIdBaja.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtIdBaja.Multiline = True
         Me.TxtIdBaja.Name = "TxtIdBaja"
         Me.TxtIdBaja.ReadOnly = True
         Me.TxtIdBaja.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtIdBaja.Size = New System.Drawing.Size(141, 21)
+        Me.TxtIdBaja.Size = New System.Drawing.Size(187, 25)
         Me.TxtIdBaja.TabIndex = 14
         '
         'GroupBox3
@@ -326,9 +358,11 @@ Partial Class Bajas
         Me.GroupBox3.Controls.Add(Me.TxtFiltroCategoria)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupBox3.Location = New System.Drawing.Point(0, 62)
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 76)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(824, 78)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(1099, 96)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Filtro de búsqueda"
@@ -336,10 +370,9 @@ Partial Class Bajas
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(95, 16)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Location = New System.Drawing.Point(127, 20)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(57, 13)
+        Me.Label7.Size = New System.Drawing.Size(73, 17)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Categoría:"
         '
@@ -347,66 +380,43 @@ Partial Class Bajas
         '
         Me.CboFiltroCategoria.FormattingEnabled = True
         Me.CboFiltroCategoria.Items.AddRange(New Object() {"0"})
-        Me.CboFiltroCategoria.Location = New System.Drawing.Point(9, 31)
-        Me.CboFiltroCategoria.Margin = New System.Windows.Forms.Padding(2)
+        Me.CboFiltroCategoria.Location = New System.Drawing.Point(12, 38)
+        Me.CboFiltroCategoria.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CboFiltroCategoria.Name = "CboFiltroCategoria"
-        Me.CboFiltroCategoria.Size = New System.Drawing.Size(75, 21)
+        Me.CboFiltroCategoria.Size = New System.Drawing.Size(99, 24)
         Me.CboFiltroCategoria.TabIndex = 12
         Me.CboFiltroCategoria.Text = "0"
         '
         'TxtFiltroCategoria
         '
-        Me.TxtFiltroCategoria.Location = New System.Drawing.Point(98, 31)
-        Me.TxtFiltroCategoria.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtFiltroCategoria.Location = New System.Drawing.Point(131, 38)
+        Me.TxtFiltroCategoria.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtFiltroCategoria.Multiline = True
         Me.TxtFiltroCategoria.Name = "TxtFiltroCategoria"
         Me.TxtFiltroCategoria.ReadOnly = True
-        Me.TxtFiltroCategoria.Size = New System.Drawing.Size(243, 21)
+        Me.TxtFiltroCategoria.Size = New System.Drawing.Size(323, 25)
         Me.TxtFiltroCategoria.TabIndex = 12
         Me.TxtFiltroCategoria.Text = "TODAS LAS CATEGORÍAS"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 16)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(8, 20)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.Size = New System.Drawing.Size(86, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Id categoría:"
         '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.Label10)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(528, 62)
-        Me.Panel5.TabIndex = 43
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 18.0!)
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(11, 16)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(194, 30)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Consulta: Bajas"
-        '
         'Bajas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 633)
+        Me.ClientSize = New System.Drawing.Size(1099, 779)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.MinimumSize = New System.Drawing.Size(840, 580)
+        Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MinimumSize = New System.Drawing.Size(1114, 703)
         Me.Name = "Bajas"
         Me.Text = "Bajas"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -419,12 +429,12 @@ Partial Class Bajas
         Me.Panel3.ResumeLayout(False)
         CType(Me.DGVRecursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelFiltro.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

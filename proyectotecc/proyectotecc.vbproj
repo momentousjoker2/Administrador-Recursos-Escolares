@@ -277,11 +277,11 @@
     <EmbeddedResource Include="Recursos.resx">
       <DependentUpon>Recursos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteBaja.rdlc" />
+    <EmbeddedResource Include="Reporte\ReporteBaja.rdlc" />
     <EmbeddedResource Include="ReporteBajas.resx">
       <DependentUpon>ReporteBajas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteLugarPeriodo.rdlc" />
+    <EmbeddedResource Include="Reporte\ReporteLugarPeriodo.rdlc" />
     <EmbeddedResource Include="ReporteLugarPeriodo.resx">
       <DependentUpon>ReporteLugarPeriodo.vb</DependentUpon>
     </EmbeddedResource>
@@ -340,5 +340,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

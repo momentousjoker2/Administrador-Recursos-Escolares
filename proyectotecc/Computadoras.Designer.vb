@@ -49,15 +49,6 @@ Partial Class Computadoras
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgwComputadora = New System.Windows.Forms.DataGridView()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.gb1 = New System.Windows.Forms.GroupBox()
-        Me.btnUltimo = New System.Windows.Forms.Button()
-        Me.btnInicio = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.idRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,6 +61,15 @@ Partial Class Computadoras
         Me.Memoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HDD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.gb1 = New System.Windows.Forms.GroupBox()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgwComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -335,92 +335,6 @@ Partial Class Computadoras
         Me.dgwComputadora.Size = New System.Drawing.Size(560, 182)
         Me.dgwComputadora.TabIndex = 26
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.btnNuevo)
-        Me.GroupBox4.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox4.Controls.Add(Me.btnSalir)
-        Me.GroupBox4.Location = New System.Drawing.Point(340, 769)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(230, 110)
-        Me.GroupBox4.TabIndex = 28
-        Me.GroupBox4.TabStop = False
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.Location = New System.Drawing.Point(12, 18)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(100, 36)
-        Me.btnNuevo.TabIndex = 19
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.UseVisualStyleBackColor = True
-        '
-        'btnRegistrar
-        '
-        Me.btnRegistrar.Location = New System.Drawing.Point(118, 18)
-        Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.Size = New System.Drawing.Size(100, 36)
-        Me.btnRegistrar.TabIndex = 9
-        Me.btnRegistrar.Text = "Registrar"
-        Me.btnRegistrar.UseVisualStyleBackColor = True
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Location = New System.Drawing.Point(12, 60)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
-        Me.btnSalir.TabIndex = 17
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
-        'gb1
-        '
-        Me.gb1.Controls.Add(Me.btnUltimo)
-        Me.gb1.Controls.Add(Me.btnInicio)
-        Me.gb1.Controls.Add(Me.btnSiguiente)
-        Me.gb1.Controls.Add(Me.btnAnterior)
-        Me.gb1.Location = New System.Drawing.Point(10, 769)
-        Me.gb1.Name = "gb1"
-        Me.gb1.Size = New System.Drawing.Size(230, 109)
-        Me.gb1.TabIndex = 27
-        Me.gb1.TabStop = False
-        '
-        'btnUltimo
-        '
-        Me.btnUltimo.Location = New System.Drawing.Point(118, 61)
-        Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(100, 36)
-        Me.btnUltimo.TabIndex = 19
-        Me.btnUltimo.Text = "Ultimo"
-        Me.btnUltimo.UseVisualStyleBackColor = True
-        '
-        'btnInicio
-        '
-        Me.btnInicio.Location = New System.Drawing.Point(12, 19)
-        Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(100, 36)
-        Me.btnInicio.TabIndex = 16
-        Me.btnInicio.Text = "inicio"
-        Me.btnInicio.UseVisualStyleBackColor = True
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Location = New System.Drawing.Point(118, 19)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(100, 36)
-        Me.btnSiguiente.TabIndex = 14
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(12, 61)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(100, 36)
-        Me.btnAnterior.TabIndex = 15
-        Me.btnAnterior.Text = "Anterior"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
         'idRecurso
         '
         Me.idRecurso.HeaderText = "idRecurso"
@@ -517,6 +431,92 @@ Partial Class Computadoras
         Me.Estado.ReadOnly = True
         Me.Estado.Width = 125
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.btnNuevo)
+        Me.GroupBox4.Controls.Add(Me.btnRegistrar)
+        Me.GroupBox4.Controls.Add(Me.btnSalir)
+        Me.GroupBox4.Location = New System.Drawing.Point(340, 769)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(230, 110)
+        Me.GroupBox4.TabIndex = 28
+        Me.GroupBox4.TabStop = False
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(12, 18)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(100, 36)
+        Me.btnNuevo.TabIndex = 19
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
+        '
+        'btnRegistrar
+        '
+        Me.btnRegistrar.Location = New System.Drawing.Point(118, 18)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.Size = New System.Drawing.Size(100, 36)
+        Me.btnRegistrar.TabIndex = 9
+        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.UseVisualStyleBackColor = True
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Location = New System.Drawing.Point(12, 60)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
+        Me.btnSalir.TabIndex = 17
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'gb1
+        '
+        Me.gb1.Controls.Add(Me.btnUltimo)
+        Me.gb1.Controls.Add(Me.btnInicio)
+        Me.gb1.Controls.Add(Me.btnSiguiente)
+        Me.gb1.Controls.Add(Me.btnAnterior)
+        Me.gb1.Location = New System.Drawing.Point(10, 769)
+        Me.gb1.Name = "gb1"
+        Me.gb1.Size = New System.Drawing.Size(230, 109)
+        Me.gb1.TabIndex = 27
+        Me.gb1.TabStop = False
+        '
+        'btnUltimo
+        '
+        Me.btnUltimo.Location = New System.Drawing.Point(118, 61)
+        Me.btnUltimo.Name = "btnUltimo"
+        Me.btnUltimo.Size = New System.Drawing.Size(100, 36)
+        Me.btnUltimo.TabIndex = 19
+        Me.btnUltimo.Text = "Ultimo"
+        Me.btnUltimo.UseVisualStyleBackColor = True
+        '
+        'btnInicio
+        '
+        Me.btnInicio.Location = New System.Drawing.Point(12, 19)
+        Me.btnInicio.Name = "btnInicio"
+        Me.btnInicio.Size = New System.Drawing.Size(100, 36)
+        Me.btnInicio.TabIndex = 16
+        Me.btnInicio.Text = "inicio"
+        Me.btnInicio.UseVisualStyleBackColor = True
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(118, 19)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(100, 36)
+        Me.btnSiguiente.TabIndex = 14
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(12, 61)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(100, 36)
+        Me.btnAnterior.TabIndex = 15
+        Me.btnAnterior.Text = "Anterior"
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
         'Computadoras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -527,6 +527,7 @@ Partial Class Computadoras
         Me.Controls.Add(Me.dgwComputadora)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.Name = "Computadoras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Computadoras"

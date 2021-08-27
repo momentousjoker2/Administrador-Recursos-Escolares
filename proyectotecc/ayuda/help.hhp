@@ -1,0 +1,25 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=Table of Contents.hhc
+Default topic=menu.html
+Display compile progress=No
+Index file=Index.hhk
+Language=0x80a Español (México)
+
+
+[FILES]
+ApartadoLugar.html
+ApartadoRecurso.html
+AsginarRecursos.html
+Bajas.html
+Canones.html
+Categoria.html
+Computadora.html
+Lugar.html
+menu.html
+Pantalla.html
+Recursos.html
+
+[INFOTYPES]
+

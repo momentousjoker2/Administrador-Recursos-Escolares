@@ -402,6 +402,7 @@ Partial Class Pantallas
         Me.Controls.Add(Me.dgwPantalla)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.Name = "Pantallas"
         Me.Text = "Pantallas"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

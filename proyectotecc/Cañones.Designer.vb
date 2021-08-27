@@ -24,6 +24,7 @@ Partial Class Cañones
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
         Me.cboNombreRecursos = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -46,16 +47,6 @@ Partial Class Cañones
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgwCañon = New System.Windows.Forms.DataGridView()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.gb1 = New System.Windows.Forms.GroupBox()
-        Me.btnUltimo = New System.Windows.Forms.Button()
-        Me.btnInicio = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.txtid = New System.Windows.Forms.TextBox()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.INVCAPECE = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,6 +58,15 @@ Partial Class Cañones
         Me.HorasLampara = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.gb1 = New System.Windows.Forms.GroupBox()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.txtHorasLampara, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +115,14 @@ Partial Class Cañones
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos Cañon:"
+        '
+        'txtid
+        '
+        Me.txtid.Location = New System.Drawing.Point(71, 55)
+        Me.txtid.Multiline = True
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(177, 29)
+        Me.txtid.TabIndex = 53
         '
         'cboNombreRecursos
         '
@@ -307,102 +315,6 @@ Partial Class Cañones
         Me.dgwCañon.Size = New System.Drawing.Size(560, 150)
         Me.dgwCañon.TabIndex = 28
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.btnNuevo)
-        Me.GroupBox4.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox4.Controls.Add(Me.btnSalir)
-        Me.GroupBox4.Location = New System.Drawing.Point(342, 768)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(230, 110)
-        Me.GroupBox4.TabIndex = 30
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Opciones"
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.Location = New System.Drawing.Point(12, 18)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(100, 36)
-        Me.btnNuevo.TabIndex = 19
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.UseVisualStyleBackColor = True
-        '
-        'btnRegistrar
-        '
-        Me.btnRegistrar.Location = New System.Drawing.Point(118, 18)
-        Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.Size = New System.Drawing.Size(100, 36)
-        Me.btnRegistrar.TabIndex = 9
-        Me.btnRegistrar.Text = "Registrar"
-        Me.btnRegistrar.UseVisualStyleBackColor = True
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Location = New System.Drawing.Point(12, 60)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
-        Me.btnSalir.TabIndex = 17
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
-        'gb1
-        '
-        Me.gb1.Controls.Add(Me.btnUltimo)
-        Me.gb1.Controls.Add(Me.btnInicio)
-        Me.gb1.Controls.Add(Me.btnSiguiente)
-        Me.gb1.Controls.Add(Me.btnAnterior)
-        Me.gb1.Location = New System.Drawing.Point(12, 768)
-        Me.gb1.Name = "gb1"
-        Me.gb1.Size = New System.Drawing.Size(230, 109)
-        Me.gb1.TabIndex = 29
-        Me.gb1.TabStop = False
-        Me.gb1.Text = "Navegaciones"
-        '
-        'btnUltimo
-        '
-        Me.btnUltimo.Location = New System.Drawing.Point(118, 61)
-        Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(100, 36)
-        Me.btnUltimo.TabIndex = 19
-        Me.btnUltimo.Text = "Ultimo"
-        Me.btnUltimo.UseVisualStyleBackColor = True
-        '
-        'btnInicio
-        '
-        Me.btnInicio.Location = New System.Drawing.Point(12, 19)
-        Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(100, 36)
-        Me.btnInicio.TabIndex = 16
-        Me.btnInicio.Text = "inicio"
-        Me.btnInicio.UseVisualStyleBackColor = True
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Location = New System.Drawing.Point(118, 19)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(100, 36)
-        Me.btnSiguiente.TabIndex = 14
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(12, 61)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(100, 36)
-        Me.btnAnterior.TabIndex = 15
-        Me.btnAnterior.Text = "Anterior"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
-        'txtid
-        '
-        Me.txtid.Location = New System.Drawing.Point(71, 55)
-        Me.txtid.Multiline = True
-        Me.txtid.Name = "txtid"
-        Me.txtid.Size = New System.Drawing.Size(177, 29)
-        Me.txtid.TabIndex = 53
-        '
         'id
         '
         Me.id.HeaderText = "id"
@@ -491,6 +403,94 @@ Partial Class Cañones
         Me.Estado.ReadOnly = True
         Me.Estado.Width = 125
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.btnNuevo)
+        Me.GroupBox4.Controls.Add(Me.btnRegistrar)
+        Me.GroupBox4.Controls.Add(Me.btnSalir)
+        Me.GroupBox4.Location = New System.Drawing.Point(342, 768)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(230, 110)
+        Me.GroupBox4.TabIndex = 30
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Opciones"
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(12, 18)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(100, 36)
+        Me.btnNuevo.TabIndex = 19
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
+        '
+        'btnRegistrar
+        '
+        Me.btnRegistrar.Location = New System.Drawing.Point(118, 18)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.Size = New System.Drawing.Size(100, 36)
+        Me.btnRegistrar.TabIndex = 9
+        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.UseVisualStyleBackColor = True
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Location = New System.Drawing.Point(12, 60)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(206, 36)
+        Me.btnSalir.TabIndex = 17
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'gb1
+        '
+        Me.gb1.Controls.Add(Me.btnUltimo)
+        Me.gb1.Controls.Add(Me.btnInicio)
+        Me.gb1.Controls.Add(Me.btnSiguiente)
+        Me.gb1.Controls.Add(Me.btnAnterior)
+        Me.gb1.Location = New System.Drawing.Point(12, 768)
+        Me.gb1.Name = "gb1"
+        Me.gb1.Size = New System.Drawing.Size(230, 109)
+        Me.gb1.TabIndex = 29
+        Me.gb1.TabStop = False
+        Me.gb1.Text = "Navegaciones"
+        '
+        'btnUltimo
+        '
+        Me.btnUltimo.Location = New System.Drawing.Point(118, 61)
+        Me.btnUltimo.Name = "btnUltimo"
+        Me.btnUltimo.Size = New System.Drawing.Size(100, 36)
+        Me.btnUltimo.TabIndex = 19
+        Me.btnUltimo.Text = "Ultimo"
+        Me.btnUltimo.UseVisualStyleBackColor = True
+        '
+        'btnInicio
+        '
+        Me.btnInicio.Location = New System.Drawing.Point(12, 19)
+        Me.btnInicio.Name = "btnInicio"
+        Me.btnInicio.Size = New System.Drawing.Size(100, 36)
+        Me.btnInicio.TabIndex = 16
+        Me.btnInicio.Text = "inicio"
+        Me.btnInicio.UseVisualStyleBackColor = True
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(118, 19)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(100, 36)
+        Me.btnSiguiente.TabIndex = 14
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(12, 61)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(100, 36)
+        Me.btnAnterior.TabIndex = 15
+        Me.btnAnterior.Text = "Anterior"
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
         'Cañones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -501,6 +501,7 @@ Partial Class Cañones
         Me.Controls.Add(Me.dgwCañon)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.Name = "Cañones"
         Me.Text = "Cañones"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

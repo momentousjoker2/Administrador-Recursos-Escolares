@@ -61,4 +61,10 @@ Public Class ConsultaApartadoLugar
 
         Me.Dispose()
     End Sub
+
+    Private Sub ConsultaApartadoLugar_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start(rutaAyuda)
+        End If
+    End Sub
 End Class

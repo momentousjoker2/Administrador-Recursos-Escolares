@@ -224,6 +224,7 @@ Partial Class categoría
         Me.Controls.Add(Me.dgwCategoria)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.Name = "categoría"
         Me.Text = "categoría"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

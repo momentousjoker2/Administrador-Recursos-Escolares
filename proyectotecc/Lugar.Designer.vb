@@ -224,6 +224,7 @@ Partial Class Lugar
         Me.Controls.Add(Me.dgwLugar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.Name = "Lugar"
         Me.Text = "Lugar"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

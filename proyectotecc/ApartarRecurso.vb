@@ -272,4 +272,10 @@ Public Class ApartarRecurso
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ConsultaApartadoRecurso.Show()
     End Sub
+
+    Private Sub ApartarRecurso_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            System.Diagnostics.Process.Start(rutaAyuda)
+        End If
+    End Sub
 End Class
