@@ -156,6 +156,12 @@
     <Compile Include="ConsultaBajas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmRespaldo-Restaurar.Designer.vb">
+      <DependentUpon>FrmRespaldo-Restaurar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRespaldo-Restaurar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RecursosPendientePeriodo.Designer.vb">
       <DependentUpon>RecursosPendientePeriodo.vb</DependentUpon>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaBajas.resx">
       <DependentUpon>ConsultaBajas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRespaldo-Restaurar.resx">
+      <DependentUpon>FrmRespaldo-Restaurar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecursosPendientePeriodo.resx">
       <DependentUpon>RecursosPendientePeriodo.vb</DependentUpon>
