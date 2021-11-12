@@ -101,8 +101,6 @@ Public Class ApartadoLugar
 
     Private Sub BtnGrabar_Click(sender As Object, e As EventArgs) Handles BtnGrabar.Click
         Dim R As String
-        Dim cat As String
-        Dim id As String
 
         Dim FechaA As Date = dtpFecha.Value
         R = "INSERT INTO `APARTADOS-LUGAR` (IdLugar,Docente,Alumno,Nc,Concepto,Fecha,HoraInicial,HoraFinal, Estado) VALUES (" &

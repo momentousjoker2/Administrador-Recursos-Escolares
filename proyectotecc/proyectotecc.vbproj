@@ -73,6 +73,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -155,6 +156,24 @@
     <Compile Include="ConsultaBajas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RecursosPendientePeriodo.Designer.vb">
+      <DependentUpon>RecursosPendientePeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosPendientePeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteApartadoRecursos.Designer.vb">
+      <DependentUpon>ReporteApartadoRecursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteApartadoRecursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCategoria.Designer.vb">
+      <DependentUpon>ReporteCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReport.Designer.vb">
       <DependentUpon>FormReport.vb</DependentUpon>
     </Compile>
@@ -214,6 +233,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ReporteRecursosAulaEdificio.Designer.vb">
+      <DependentUpon>ReporteRecursosAulaEdificio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRecursosAulaEdificio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="sistemamediosav_dbDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,6 +248,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sistemamediosav_dbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sistemamediosav_dbDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemamediosav_dbDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sistemamediosav_dbDataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemamediosav_dbDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sistemamediosav_dbDataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemamediosav_dbDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sistemamediosav_dbDataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemamediosav_dbDataSet6.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +301,15 @@
     <EmbeddedResource Include="ConsultaBajas.resx">
       <DependentUpon>ConsultaBajas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecursosPendientePeriodo.resx">
+      <DependentUpon>RecursosPendientePeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteApartadoRecursos.resx">
+      <DependentUpon>ReporteApartadoRecursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCategoria.resx">
+      <DependentUpon>ReporteCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +331,13 @@
     <EmbeddedResource Include="Recursos.resx">
       <DependentUpon>Recursos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteRecursosAulaEdificio.resx">
+      <DependentUpon>ReporteRecursosAulaEdificio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\RecursosAulaEdificio.rdlc" />
+    <EmbeddedResource Include="Reporte\RecursosPendientePeriodo.rdlc" />
+    <EmbeddedResource Include="Reporte\ReporteRecursosCategoria.rdlc" />
+    <EmbeddedResource Include="Reporte\ReporteApartadoRecursos.rdlc" />
     <EmbeddedResource Include="Reporte\ReporteBaja.rdlc" />
     <EmbeddedResource Include="ReporteBajas.resx">
       <DependentUpon>ReporteBajas.vb</DependentUpon>
@@ -318,6 +379,50 @@
     </None>
     <None Include="sistemamediosav_dbDataSet2.xss">
       <DependentUpon>sistemamediosav_dbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet3.xsc">
+      <DependentUpon>sistemamediosav_dbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemamediosav_dbDataSet3.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="sistemamediosav_dbDataSet3.xss">
+      <DependentUpon>sistemamediosav_dbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet4.xsc">
+      <DependentUpon>sistemamediosav_dbDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemamediosav_dbDataSet4.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="sistemamediosav_dbDataSet4.xss">
+      <DependentUpon>sistemamediosav_dbDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet5.xsc">
+      <DependentUpon>sistemamediosav_dbDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet5.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemamediosav_dbDataSet5.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="sistemamediosav_dbDataSet5.xss">
+      <DependentUpon>sistemamediosav_dbDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet6.xsc">
+      <DependentUpon>sistemamediosav_dbDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamediosav_dbDataSet6.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemamediosav_dbDataSet6.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="sistemamediosav_dbDataSet6.xss">
+      <DependentUpon>sistemamediosav_dbDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

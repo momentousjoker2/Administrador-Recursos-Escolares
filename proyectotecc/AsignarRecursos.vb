@@ -163,7 +163,7 @@ Public Class AsignarRecursos
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim R As String
+        Dim R As String = ""
         Dim cat As String = txtConcepto.Text.ToString
         Dim id As String = TxtIdRecurso.Text.ToString
         If cat = "CAÑON" Then

@@ -102,9 +102,9 @@ Partial Class ApartarRecurso
         Me.PanelFiltro.Controls.Add(Me.GroupBox3)
         Me.PanelFiltro.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelFiltro.Location = New System.Drawing.Point(0, 98)
-        Me.PanelFiltro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelFiltro.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelFiltro.Name = "PanelFiltro"
-        Me.PanelFiltro.Size = New System.Drawing.Size(1099, 159)
+        Me.PanelFiltro.Size = New System.Drawing.Size(1098, 159)
         Me.PanelFiltro.TabIndex = 19
         '
         'Panel3
@@ -115,7 +115,7 @@ Partial Class ApartarRecurso
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(704, 80)
+        Me.Panel3.Size = New System.Drawing.Size(703, 80)
         Me.Panel3.TabIndex = 41
         '
         'Label10
@@ -137,8 +137,8 @@ Partial Class ApartarRecurso
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.TxtIdApartado)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(704, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(703, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(16, 15, 16, 15)
         Me.Panel2.Size = New System.Drawing.Size(395, 84)
@@ -190,10 +190,10 @@ Partial Class ApartarRecurso
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GroupBox3.Location = New System.Drawing.Point(0, 84)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(1099, 75)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox3.Size = New System.Drawing.Size(1098, 75)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Filtro de búsqueda"
@@ -243,10 +243,10 @@ Partial Class ApartarRecurso
         Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(0, 257)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox4.Size = New System.Drawing.Size(1099, 202)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox4.Size = New System.Drawing.Size(1098, 202)
         Me.GroupBox4.TabIndex = 22
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Recursos"
@@ -260,13 +260,13 @@ Partial Class ApartarRecurso
         Me.DGVRecursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRecursos, Me.descripcion, Me.idCategoria, Me.Categoria, Me.Estado})
         Me.DGVRecursos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVRecursos.Location = New System.Drawing.Point(4, 23)
-        Me.DGVRecursos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVRecursos.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVRecursos.Name = "DGVRecursos"
         Me.DGVRecursos.ReadOnly = True
         Me.DGVRecursos.RowHeadersWidth = 51
         Me.DGVRecursos.RowTemplate.Height = 24
         Me.DGVRecursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVRecursos.Size = New System.Drawing.Size(1091, 175)
+        Me.DGVRecursos.Size = New System.Drawing.Size(1090, 175)
         Me.DGVRecursos.TabIndex = 13
         '
         'idRecursos
@@ -310,9 +310,9 @@ Partial Class ApartarRecurso
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 459)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1099, 156)
+        Me.Panel1.Size = New System.Drawing.Size(1098, 156)
         Me.Panel1.TabIndex = 23
         '
         'GroupBox2
@@ -438,7 +438,7 @@ Partial Class ApartarRecurso
         '
         Me.txtCantidad.Enabled = False
         Me.txtCantidad.Location = New System.Drawing.Point(297, 117)
-        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(55, 26)
         Me.txtCantidad.TabIndex = 16
@@ -458,7 +458,7 @@ Partial Class ApartarRecurso
         '
         Me.BtnAgregar.Enabled = False
         Me.BtnAgregar.Location = New System.Drawing.Point(360, 103)
-        Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(123, 46)
         Me.BtnAgregar.TabIndex = 4
@@ -491,10 +491,10 @@ Partial Class ApartarRecurso
         Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.Location = New System.Drawing.Point(0, 615)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox5.Size = New System.Drawing.Size(1099, 202)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox5.Size = New System.Drawing.Size(1098, 202)
         Me.GroupBox5.TabIndex = 24
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Detalle de Apartado"
@@ -514,7 +514,7 @@ Partial Class ApartarRecurso
         Me.DataGridViewDetalle.RowHeadersWidth = 51
         Me.DataGridViewDetalle.RowTemplate.Height = 24
         Me.DataGridViewDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewDetalle.Size = New System.Drawing.Size(1091, 175)
+        Me.DataGridViewDetalle.Size = New System.Drawing.Size(1090, 175)
         Me.DataGridViewDetalle.TabIndex = 13
         '
         'DataGridViewTextBoxColumn1
@@ -555,10 +555,10 @@ Partial Class ApartarRecurso
         'BtnGrabar
         '
         Me.BtnGrabar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGrabar.Location = New System.Drawing.Point(803, 898)
-        Me.BtnGrabar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnGrabar.Location = New System.Drawing.Point(844, 77)
+        Me.BtnGrabar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnGrabar.Name = "BtnGrabar"
-        Me.BtnGrabar.Size = New System.Drawing.Size(292, 46)
+        Me.BtnGrabar.Size = New System.Drawing.Size(217, 46)
         Me.BtnGrabar.TabIndex = 25
         Me.BtnGrabar.Text = "Grabar"
         Me.BtnGrabar.UseVisualStyleBackColor = True
@@ -566,10 +566,10 @@ Partial Class ApartarRecurso
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(4, 898)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Location = New System.Drawing.Point(804, 23)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(201, 46)
+        Me.Button2.Size = New System.Drawing.Size(134, 46)
         Me.Button2.TabIndex = 26
         Me.Button2.Text = "Consultar"
         Me.Button2.UseVisualStyleBackColor = True
@@ -577,10 +577,10 @@ Partial Class ApartarRecurso
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(613, 898)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button3.Location = New System.Drawing.Point(954, 23)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(181, 46)
+        Me.Button3.Size = New System.Drawing.Size(140, 46)
         Me.Button3.TabIndex = 27
         Me.Button3.Text = "Cancelar"
         Me.Button3.UseVisualStyleBackColor = True
@@ -588,7 +588,10 @@ Partial Class ApartarRecurso
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.TxtNC)
+        Me.GroupBox6.Controls.Add(Me.Button3)
         Me.GroupBox6.Controls.Add(Me.Label16)
+        Me.GroupBox6.Controls.Add(Me.BtnGrabar)
+        Me.GroupBox6.Controls.Add(Me.Button2)
         Me.GroupBox6.Controls.Add(Me.TxtDocente)
         Me.GroupBox6.Controls.Add(Me.Label15)
         Me.GroupBox6.Controls.Add(Me.TxtAula)
@@ -600,17 +603,17 @@ Partial Class ApartarRecurso
         Me.GroupBox6.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(0, 817)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox6.Size = New System.Drawing.Size(1099, 145)
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox6.Size = New System.Drawing.Size(1098, 138)
         Me.GroupBox6.TabIndex = 28
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Datos del Apartado"
         '
         'TxtNC
         '
-        Me.TxtNC.Location = New System.Drawing.Point(799, 94)
+        Me.TxtNC.Location = New System.Drawing.Point(513, 94)
         Me.TxtNC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtNC.Multiline = True
         Me.TxtNC.Name = "TxtNC"
@@ -621,7 +624,7 @@ Partial Class ApartarRecurso
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(796, 73)
+        Me.Label16.Location = New System.Drawing.Point(510, 73)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(34, 18)
         Me.Label16.TabIndex = 60
@@ -633,7 +636,7 @@ Partial Class ApartarRecurso
         Me.TxtDocente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtDocente.Multiline = True
         Me.TxtDocente.Name = "TxtDocente"
-        Me.TxtDocente.Size = New System.Drawing.Size(777, 29)
+        Me.TxtDocente.Size = New System.Drawing.Size(488, 29)
         Me.TxtDocente.TabIndex = 57
         '
         'Label15
@@ -650,7 +653,7 @@ Partial Class ApartarRecurso
         '
         Me.TxtAula.FormattingEnabled = True
         Me.TxtAula.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08"})
-        Me.TxtAula.Location = New System.Drawing.Point(947, 41)
+        Me.TxtAula.Location = New System.Drawing.Point(661, 41)
         Me.TxtAula.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtAula.Name = "TxtAula"
         Me.TxtAula.Size = New System.Drawing.Size(132, 28)
@@ -661,7 +664,7 @@ Partial Class ApartarRecurso
         '
         Me.TxtEdificio.FormattingEnabled = True
         Me.TxtEdificio.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"})
-        Me.TxtEdificio.Location = New System.Drawing.Point(799, 41)
+        Me.TxtEdificio.Location = New System.Drawing.Point(513, 41)
         Me.TxtEdificio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtEdificio.Name = "TxtEdificio"
         Me.TxtEdificio.Size = New System.Drawing.Size(132, 28)
@@ -674,7 +677,7 @@ Partial Class ApartarRecurso
         Me.TxtAlumno.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtAlumno.Multiline = True
         Me.TxtAlumno.Name = "TxtAlumno"
-        Me.TxtAlumno.Size = New System.Drawing.Size(777, 29)
+        Me.TxtAlumno.Size = New System.Drawing.Size(488, 29)
         Me.TxtAlumno.TabIndex = 54
         '
         'Label12
@@ -691,7 +694,7 @@ Partial Class ApartarRecurso
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(943, 20)
+        Me.Label13.Location = New System.Drawing.Point(657, 20)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(40, 18)
         Me.Label13.TabIndex = 51
@@ -701,7 +704,7 @@ Partial Class ApartarRecurso
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(795, 20)
+        Me.Label14.Location = New System.Drawing.Point(509, 20)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(60, 18)
         Me.Label14.TabIndex = 49
@@ -714,7 +717,7 @@ Partial Class ApartarRecurso
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1099, 98)
+        Me.PictureBox1.Size = New System.Drawing.Size(1098, 98)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 14
         Me.PictureBox1.TabStop = False
@@ -723,11 +726,8 @@ Partial Class ApartarRecurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1099, 955)
+        Me.ClientSize = New System.Drawing.Size(1098, 964)
         Me.Controls.Add(Me.GroupBox6)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.BtnGrabar)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox4)

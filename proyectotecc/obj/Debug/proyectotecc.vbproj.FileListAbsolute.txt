@@ -294,3 +294,7 @@ C:\ACAD\proyectotecc\obj\Debug\proyectotecc.vbproj.CopyComplete
 C:\ACAD\proyectotecc\obj\Debug\proyectotecc.exe
 C:\ACAD\proyectotecc\obj\Debug\proyectotecc.xml
 C:\ACAD\proyectotecc\obj\Debug\proyectotecc.pdb
+C:\ACAD\proyectotecc\obj\Debug\proyectotecc.ReporteCategoria.resources
+C:\ACAD\proyectotecc\obj\Debug\proyectotecc.ReporteRecursosAulaEdificio.resources
+C:\ACAD\proyectotecc\obj\Debug\proyectotecc.ReporteApartadoRecursos.resources
+C:\ACAD\proyectotecc\obj\Debug\proyectotecc.RecursosPendientePeriodo.resources

@@ -56,4 +56,20 @@
             System.Diagnostics.Process.Start(rutaAyuda)
         End If
     End Sub
+
+    Private Sub CategoriaPorRecursosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriaPorRecursosToolStripMenuItem.Click
+        ReporteCategoria.Show()
+    End Sub
+
+    Private Sub RecursosApartadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecursosApartadosToolStripMenuItem.Click
+        ReporteRecursosAulaEdificio.Show()
+    End Sub
+
+    Private Sub RecursosApartadosPorUnPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecursosApartadosPorUnPeriodoToolStripMenuItem.Click
+        ReporteApartadoRecursos.Show()
+    End Sub
+
+    Private Sub RecursosPendientesEnUnPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecursosPendientesEnUnPeriodoToolStripMenuItem.Click
+        RecursosPendientePeriodo.Show()
+    End Sub
 End Class

@@ -167,7 +167,7 @@ Public Class Bajas
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
 
-        Dim R As String
+        Dim R As String = ""
 
         If cat = "CAÑON" Then
             R = "UPDATE CAÑONES SET Estado = 'Baja' WHERE IdRecurso = " & id

@@ -39,6 +39,10 @@ Partial Class Menu
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LugarPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoriaPorRecursosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecursosApartadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecursosApartadosPorUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecursosPendientesEnUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -135,7 +139,7 @@ Partial Class Menu
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LugarPeriodoToolStripMenuItem, Me.BajasToolStripMenuItem1})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LugarPeriodoToolStripMenuItem, Me.BajasToolStripMenuItem1, Me.CategoriaPorRecursosToolStripMenuItem, Me.RecursosApartadosToolStripMenuItem, Me.RecursosApartadosPorUnPeriodoToolStripMenuItem, Me.RecursosPendientesEnUnPeriodoToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -143,14 +147,38 @@ Partial Class Menu
         'LugarPeriodoToolStripMenuItem
         '
         Me.LugarPeriodoToolStripMenuItem.Name = "LugarPeriodoToolStripMenuItem"
-        Me.LugarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.LugarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(325, 26)
         Me.LugarPeriodoToolStripMenuItem.Text = "Lugar Periodo"
         '
         'BajasToolStripMenuItem1
         '
         Me.BajasToolStripMenuItem1.Name = "BajasToolStripMenuItem1"
-        Me.BajasToolStripMenuItem1.Size = New System.Drawing.Size(184, 26)
+        Me.BajasToolStripMenuItem1.Size = New System.Drawing.Size(325, 26)
         Me.BajasToolStripMenuItem1.Text = "Bajas"
+        '
+        'CategoriaPorRecursosToolStripMenuItem
+        '
+        Me.CategoriaPorRecursosToolStripMenuItem.Name = "CategoriaPorRecursosToolStripMenuItem"
+        Me.CategoriaPorRecursosToolStripMenuItem.Size = New System.Drawing.Size(325, 26)
+        Me.CategoriaPorRecursosToolStripMenuItem.Text = "Recursos por categoria"
+        '
+        'RecursosApartadosToolStripMenuItem
+        '
+        Me.RecursosApartadosToolStripMenuItem.Name = "RecursosApartadosToolStripMenuItem"
+        Me.RecursosApartadosToolStripMenuItem.Size = New System.Drawing.Size(325, 26)
+        Me.RecursosApartadosToolStripMenuItem.Text = "Recursos Apartados por aula"
+        '
+        'RecursosApartadosPorUnPeriodoToolStripMenuItem
+        '
+        Me.RecursosApartadosPorUnPeriodoToolStripMenuItem.Name = "RecursosApartadosPorUnPeriodoToolStripMenuItem"
+        Me.RecursosApartadosPorUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(325, 26)
+        Me.RecursosApartadosPorUnPeriodoToolStripMenuItem.Text = "Recursos Apartados Por un periodo"
+        '
+        'RecursosPendientesEnUnPeriodoToolStripMenuItem
+        '
+        Me.RecursosPendientesEnUnPeriodoToolStripMenuItem.Name = "RecursosPendientesEnUnPeriodoToolStripMenuItem"
+        Me.RecursosPendientesEnUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(325, 26)
+        Me.RecursosPendientesEnUnPeriodoToolStripMenuItem.Text = "Recursos Pendientes en un periodo"
         '
         'Menu
         '
@@ -186,4 +214,8 @@ Partial Class Menu
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LugarPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BajasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CategoriaPorRecursosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecursosApartadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecursosApartadosPorUnPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecursosPendientesEnUnPeriodoToolStripMenuItem As ToolStripMenuItem
 End Class
