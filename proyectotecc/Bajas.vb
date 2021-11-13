@@ -6,7 +6,8 @@ Public Class Bajas
     Public lector As MySqlDataReader
     Dim id, cat, desc, inv As String
     Private Sub Bajas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection(conn)
+        Try
+            conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
 
@@ -26,11 +27,16 @@ Public Class Bajas
         lector.Read()
         TxtIdBaja.Text = CInt(lector(0)) + 1
 
-        lector.Close()
+            lector.Close()
+
+        Catch ex As Exception
+            bitacora("Bajas - Load", ex)
+        End Try
     End Sub
 
     Private Sub FillData()
-        conexion = New MySqlConnection(conn)
+        Try
+            conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
         Dim R As String
@@ -66,11 +72,17 @@ Public Class Bajas
         While lector.Read()
             DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
         End While
-        lector.Close()
+            lector.Close()
+
+        Catch ex As Exception
+            bitacora("Bajas - FillData", ex)
+
+        End Try
     End Sub
 
     Private Sub CboFiltroCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboFiltroCategoria.SelectedIndexChanged
-        DGVRecursos.Rows.Clear()
+        Try
+            DGVRecursos.Rows.Clear()
 
         If CboFiltroCategoria.SelectedItem.ToString = "0" Then
             TxtFiltroCategoria.Text = "TODAS LAS CATEGORÍAS"
@@ -119,6 +131,10 @@ Public Class Bajas
 
         End If
 
+        Catch ex As Exception
+            bitacora("Bajas - FillDataCategoria", ex)
+
+        End Try
     End Sub
 
     Private Sub BtnSeleccionar_Click(sender As Object, e As EventArgs) Handles BtnSeleccionar.Click
@@ -166,8 +182,8 @@ Public Class Bajas
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-
-        Dim R As String = ""
+        Try
+            Dim R As String = ""
 
         If cat = "CAÑON" Then
             R = "UPDATE CAÑONES SET Estado = 'Baja' WHERE IdRecurso = " & id
@@ -193,6 +209,11 @@ Public Class Bajas
         txtConcepto.Clear()
         txtAutoriza.Clear()
 
+        Catch ex As Exception
+            bitacora("Bajas - Update", ex)
+
+
+        End Try
     End Sub
 
     Private Sub Bajas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

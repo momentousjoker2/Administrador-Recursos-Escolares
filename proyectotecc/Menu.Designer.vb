@@ -43,13 +43,16 @@ Partial Class Menu
         Me.RecursosApartadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecursosApartadosPorUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecursosPendientesEnUnPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtileriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RespaldoRestararToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HolaToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HolaToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.UtileriasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
@@ -180,6 +183,25 @@ Partial Class Menu
         Me.RecursosPendientesEnUnPeriodoToolStripMenuItem.Size = New System.Drawing.Size(325, 26)
         Me.RecursosPendientesEnUnPeriodoToolStripMenuItem.Text = "Recursos Pendientes en un periodo"
         '
+        'UtileriasToolStripMenuItem
+        '
+        Me.UtileriasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BitacoraToolStripMenuItem, Me.RespaldoRestararToolStripMenuItem})
+        Me.UtileriasToolStripMenuItem.Name = "UtileriasToolStripMenuItem"
+        Me.UtileriasToolStripMenuItem.Size = New System.Drawing.Size(77, 24)
+        Me.UtileriasToolStripMenuItem.Text = "Utilerias"
+        '
+        'BitacoraToolStripMenuItem
+        '
+        Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
+        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.BitacoraToolStripMenuItem.Text = "Bitacora"
+        '
+        'RespaldoRestararToolStripMenuItem
+        '
+        Me.RespaldoRestararToolStripMenuItem.Name = "RespaldoRestararToolStripMenuItem"
+        Me.RespaldoRestararToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RespaldoRestararToolStripMenuItem.Text = "Respaldo-Restarar"
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -218,4 +240,7 @@ Partial Class Menu
     Friend WithEvents RecursosApartadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecursosApartadosPorUnPeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecursosPendientesEnUnPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UtileriasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BitacoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RespaldoRestararToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -6,28 +6,34 @@ Public Class ConsultaBajas
     Public lector As MySqlDataReader
 
     Private Sub FillData()
-        conexion = New MySqlConnection(conn)
-        conexion.Open()
-        comando = conexion.CreateCommand
-
-        Dim R As String
-        Dim FechaA As Date = dtpFecha.Value
-
-        R = "SELECT B.IdBaja, B.IdRecurso, R.descripcion, B.Concepto, B.Autoriza FROM `BAJAS` AS B  INNER JOIN RECURSOS AS R ON B.IdRecurso = R.idRecursos WHERE Fecha = '" &
-                                                                       FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "'"
-        comando.CommandText = R
-        lector = comando.ExecuteReader
+        Try
 
 
-        DGVBajas.Rows.Clear()
+            conexion = New MySqlConnection(conn)
+            conexion.Open()
+            comando = conexion.CreateCommand
 
-        While lector.Read()
+            Dim R As String
+            Dim FechaA As Date = dtpFecha.Value
 
-            DGVBajas.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+            R = "SELECT B.IdBaja, B.IdRecurso, R.descripcion, B.Concepto, B.Autoriza FROM `BAJAS` AS B  INNER JOIN RECURSOS AS R ON B.IdRecurso = R.idRecursos WHERE Fecha = '" &
+                                                                           FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "'"
+            comando.CommandText = R
+            lector = comando.ExecuteReader
 
-        End While
-        lector.Close()
-        conexion.Close()
+
+            DGVBajas.Rows.Clear()
+
+            While lector.Read()
+
+                DGVBajas.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+
+            End While
+            lector.Close()
+            conexion.Close()
+        Catch ex As Exception
+            bitacora("ConsultarBajas - FillDatos", ex)
+        End Try
     End Sub
 
     Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFecha.ValueChanged

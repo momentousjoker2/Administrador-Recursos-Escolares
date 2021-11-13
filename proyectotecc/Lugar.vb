@@ -9,7 +9,10 @@ Public Class Lugar
     Dim filas As Integer = 0
     Dim opcion As Integer = 0
     Private Sub Lugar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection(conn)
+        Try
+
+
+            conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
         txtIdLugar.Enabled = False
@@ -23,26 +26,35 @@ Public Class Lugar
         colocar(0)
 
         lector.Close()
-
+        Catch ex As Exception
+            bitacora("Lugar - load", ex)
+        End Try
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        txtIdLugar.Enabled = False
-        txtConcepto.Enabled = True
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
+        Try
 
-        opcion = 1
 
-        filas = dgwLugar.RowCount
-        filas -= 1
-        colocar(filas)
-        comando.CommandText = "SELECT count(idLugar	) FROM LUGAR"
-        lector = comando.ExecuteReader
-        lector.Read()
-        txtIdLugar.Text = CInt(lector(0)) + 1
-        lector.Close()
+            txtIdLugar.Enabled = False
+            txtConcepto.Enabled = True
+            btnRegistrar.Enabled = True
+            btnNuevo.Enabled = False
+            gb1.Enabled = False
+
+            opcion = 1
+
+            filas = dgwLugar.RowCount
+            filas -= 1
+            colocar(filas)
+            comando.CommandText = "SELECT count(idLugar	) FROM LUGAR"
+            lector = comando.ExecuteReader
+            lector.Read()
+            txtIdLugar.Text = CInt(lector(0)) + 1
+            lector.Close()
+        Catch ex As Exception
+            bitacora("Lugar - nuevo", ex)
+
+        End Try
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -53,15 +65,18 @@ Public Class Lugar
                 comando.CommandText = "insert into LUGAR(Concepto) values('" & txtConcepto.Text & "')"
             End If
             comando.ExecuteNonQuery()
+
+            actualizar()
+            txtIdLugar.Enabled = False
+            txtConcepto.Enabled = False
+            btnRegistrar.Enabled = False
+            btnNuevo.Enabled = True
+            gb1.Enabled = True
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar grabar compruebe los datos")
+            bitacora("Lugar - Regristar", ex)
+
         End Try
-        actualizar()
-        txtIdLugar.Enabled = False
-        txtConcepto.Enabled = False
-        btnRegistrar.Enabled = False
-        btnNuevo.Enabled = True
-        gb1.Enabled = True
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs)
@@ -80,13 +95,20 @@ Public Class Lugar
 
 
     Private Sub actualizar()
-        dgwLugar.Rows.Clear()
+        Try
+
+            dgwLugar.Rows.Clear()
         comando.CommandText = "Select * from LUGAR"
         lector = comando.ExecuteReader
         While lector.Read()
             dgwLugar.Rows.Add(lector(0), lector(1))
         End While
-        lector.Close()
+            lector.Close()
+
+        Catch ex As Exception
+            bitacora("Lugar - Update", ex)
+
+        End Try
     End Sub
 
     Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click

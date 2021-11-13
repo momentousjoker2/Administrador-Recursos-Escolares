@@ -6,28 +6,34 @@ Public Class ConsultaApartadoRecurso
     Public lector As MySqlDataReader
 
     Private Sub FillData()
-        conexion = New MySqlConnection(conn)
-        conexion.Open()
-        comando = conexion.CreateCommand
-
-        Dim R As String
-        Dim FechaA As Date = dtpFecha.Value
-
-        R = "SELECT * FROM `APARTADORECURSO` WHERE Fecha = '" &
-                                                                       FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "'"
-        comando.CommandText = R
-        lector = comando.ExecuteReader
+        Try
 
 
-        DGVApartado.Rows.Clear()
+            conexion = New MySqlConnection(conn)
+            conexion.Open()
+            comando = conexion.CreateCommand
 
-        While lector.Read()
+            Dim R As String
+            Dim FechaA As Date = dtpFecha.Value
 
-            DGVApartado.Rows.Add(lector(0), lector(2), lector(3), lector(4), lector(5), lector(6))
+            R = "SELECT * FROM `APARTADORECURSO` WHERE Fecha = '" &
+                                                                           FechaA.Year & "-" & FechaA.Month & "-" & FechaA.Day & "'"
+            comando.CommandText = R
+            lector = comando.ExecuteReader
 
-        End While
-        lector.Close()
-        conexion.Close()
+
+            DGVApartado.Rows.Clear()
+
+            While lector.Read()
+
+                DGVApartado.Rows.Add(lector(0), lector(2), lector(3), lector(4), lector(5), lector(6))
+
+            End While
+            lector.Close()
+            conexion.Close()
+        Catch ex As Exception
+            bitacora("ConsultarApartadoRecursos - FillData", ex)
+        End Try
     End Sub
 
     Private Sub ConsultaApartadoRecurso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -40,7 +46,9 @@ Public Class ConsultaApartadoRecurso
 
 
     Private Sub DGVApartado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVApartado.CellClick
-        conexion = New MySqlConnection(conn)
+        Try
+
+            conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
 
@@ -61,7 +69,12 @@ Public Class ConsultaApartadoRecurso
 
         End While
         lector.Close()
-        conexion.Close()
+            conexion.Close()
+
+        Catch ex As Exception
+            bitacora("ConsultarApartadoRecursos - DGVApartado", ex)
+
+        End Try
     End Sub
 
 
@@ -78,7 +91,10 @@ Public Class ConsultaApartadoRecurso
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        conexion = New MySqlConnection(conn)
+        Try
+
+
+            conexion = New MySqlConnection(conn)
         conexion.Open()
         comando = conexion.CreateCommand
 
@@ -95,7 +111,12 @@ Public Class ConsultaApartadoRecurso
         lector.Close()
         conexion.Close()
 
-        FillData()
+            FillData()
+
+        Catch ex As Exception
+            bitacora("ConsultarApartadoRecursos - Button2", ex)
+
+        End Try
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

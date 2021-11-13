@@ -72,4 +72,12 @@
     Private Sub RecursosPendientesEnUnPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecursosPendientesEnUnPeriodoToolStripMenuItem.Click
         RecursosPendientePeriodo.Show()
     End Sub
+
+    Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click
+        FrmBitacora.Show()
+    End Sub
+
+    Private Sub RespaldoRestararToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldoRestararToolStripMenuItem.Click
+        FrmRespaldo_Restaurar.Show()
+    End Sub
 End Class

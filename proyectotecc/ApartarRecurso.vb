@@ -5,89 +5,41 @@ Public Class ApartarRecurso
     Public lector As MySqlDataReader
 
     Private Sub ApartarRecurso_Load(sender As Object, e As EventArgs) Handles Me.Load
-        conexion = New MySqlConnection(conn)
-        conexion.Open()
-        comando = conexion.CreateCommand
+        Try
 
-        Dim R As String
 
-        R = "SELECT * FROM CATEGORIA"
+            conexion = New MySqlConnection(conn)
+            conexion.Open()
+            comando = conexion.CreateCommand
 
-        comando.CommandText = R
-        lector = comando.ExecuteReader
-        While lector.Read()
-            CboFiltroCategoria.Items.Add(lector(0))
-        End While
-        lector.Close()
+            Dim R As String
 
-        comando.CommandText = "SELECT count(IdApartadoRec) FROM APARTADORECURSO"
-        lector = comando.ExecuteReader
-        lector.Read()
-        TxtIdApartado.Text = CInt(lector(0)) + 1
+            R = "SELECT * FROM CATEGORIA"
 
-        lector.Close()
+            comando.CommandText = R
+            lector = comando.ExecuteReader
+            While lector.Read()
+                CboFiltroCategoria.Items.Add(lector(0))
+            End While
+            lector.Close()
+
+            comando.CommandText = "SELECT count(IdApartadoRec) FROM APARTADORECURSO"
+            lector = comando.ExecuteReader
+            lector.Read()
+            TxtIdApartado.Text = CInt(lector(0)) + 1
+
+            lector.Close()
+        Catch ex As Exception
+            bitacora("ApartarRecursos - Load", ex)
+        End Try
     End Sub
     Private Sub FillData()
-        conexion = New MySqlConnection(conn)
-        conexion.Open()
-        comando = conexion.CreateCommand
-        Dim R As String
+        Try
 
-        R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, CA.Estado FROM RECURSOS AS R 
-                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
-                            INNER JOIN CAÑONES AS CA ON R.idRecursos = CA.IdRecurso
-                            WHERE CA.Estado = 'Disponible'"
 
-        comando.CommandText = R
-        lector = comando.ExecuteReader
-        While lector.Read()
-            DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
-        End While
-        lector.Close()
-
-        R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, Com.Estado FROM RECURSOS AS R 
-                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
-                            INNER JOIN COMPUTADORAS AS Com ON R.idRecursos = Com.IdRecurso
-                            WHERE Com.Estado = 'Disponible'"
-
-        comando.CommandText = R
-        lector = comando.ExecuteReader
-        While lector.Read()
-            DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
-        End While
-        lector.Close()
-
-        R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, P.Estado FROM RECURSOS AS R 
-                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
-                            INNER JOIN PANTALLAS AS P ON R.idRecursos = P.IdRecurso
-                            WHERE P.Estado = 'Disponible'"
-
-        comando.CommandText = R
-        lector = comando.ExecuteReader
-        While lector.Read()
-            DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
-        End While
-        lector.Close()
-
-        R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto FROM RECURSOS AS R 
-                INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria
-                WHERE NOT R.idCategoria = 1 AND R.idCategoria = 2 AND R.idCategoria = 3"
-
-        comando.CommandText = R
-        lector = comando.ExecuteReader
-        While lector.Read()
-            DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3))
-        End While
-        lector.Close()
-    End Sub
-
-    Private Sub CboFiltroCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboFiltroCategoria.SelectedIndexChanged
-        DGVRecursos.Rows.Clear()
-
-        If CboFiltroCategoria.SelectedItem.ToString = "0" Then
-            TxtFiltroCategoria.Text = "TODAS LAS CATEGORÍAS"
-            FillData()
-        ElseIf CboFiltroCategoria.SelectedItem.ToString = "1" Then
+            conexion = New MySqlConnection(conn)
+            conexion.Open()
+            comando = conexion.CreateCommand
             Dim R As String
 
             R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, CA.Estado FROM RECURSOS AS R 
@@ -102,13 +54,10 @@ Public Class ApartarRecurso
             End While
             lector.Close()
 
-        ElseIf CboFiltroCategoria.SelectedItem.ToString = "2" Then
-            Dim R As String
-
-            R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, COM.Estado FROM RECURSOS AS R 
+            R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, Com.Estado FROM RECURSOS AS R 
                             INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
-                            INNER JOIN COMPUTADORAS AS COM ON R.idRecursos = COM.IdRecurso
-                            WHERE COM.Estado = 'Disponible'"
+                            INNER JOIN COMPUTADORAS AS Com ON R.idRecursos = Com.IdRecurso
+                            WHERE Com.Estado = 'Disponible'"
 
             comando.CommandText = R
             lector = comando.ExecuteReader
@@ -116,9 +65,6 @@ Public Class ApartarRecurso
                 DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
             End While
             lector.Close()
-
-        ElseIf CboFiltroCategoria.SelectedItem.ToString = "3" Then
-            Dim R As String
 
             R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, P.Estado FROM RECURSOS AS R 
                             INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
@@ -131,24 +77,98 @@ Public Class ApartarRecurso
                 DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
             End While
             lector.Close()
-        Else
-            Dim R As String
 
-            R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, P.Estado FROM RECURSOS AS R 
-                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
-                            WHERE R.idCategoria = " & CboFiltroCategoria.Text
+            R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto FROM RECURSOS AS R 
+                INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria
+                WHERE NOT R.idCategoria = 1 AND R.idCategoria = 2 AND R.idCategoria = 3"
 
             comando.CommandText = R
             lector = comando.ExecuteReader
             While lector.Read()
-                DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+                DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3))
             End While
             lector.Close()
-        End If
+        Catch ex As Exception
+            bitacora("ApartarRecursos - Fill Data", ex)
+        End Try
+    End Sub
+
+    Private Sub CboFiltroCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboFiltroCategoria.SelectedIndexChanged
+        Try
+
+            DGVRecursos.Rows.Clear()
+
+            If CboFiltroCategoria.SelectedItem.ToString = "0" Then
+                TxtFiltroCategoria.Text = "TODAS LAS CATEGORÍAS"
+                FillData()
+            ElseIf CboFiltroCategoria.SelectedItem.ToString = "1" Then
+                Dim R As String
+
+                R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, CA.Estado FROM RECURSOS AS R 
+                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
+                            INNER JOIN CAÑONES AS CA ON R.idRecursos = CA.IdRecurso
+                            WHERE CA.Estado = 'Disponible'"
+
+                comando.CommandText = R
+                lector = comando.ExecuteReader
+                While lector.Read()
+                    DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+                End While
+                lector.Close()
+
+            ElseIf CboFiltroCategoria.SelectedItem.ToString = "2" Then
+                Dim R As String
+
+                R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, COM.Estado FROM RECURSOS AS R 
+                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
+                            INNER JOIN COMPUTADORAS AS COM ON R.idRecursos = COM.IdRecurso
+                            WHERE COM.Estado = 'Disponible'"
+
+                comando.CommandText = R
+                lector = comando.ExecuteReader
+                While lector.Read()
+                    DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+                End While
+                lector.Close()
+
+            ElseIf CboFiltroCategoria.SelectedItem.ToString = "3" Then
+                Dim R As String
+
+                R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, P.Estado FROM RECURSOS AS R 
+                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
+                            INNER JOIN PANTALLAS AS P ON R.idRecursos = P.IdRecurso
+                            WHERE P.Estado = 'Disponible'"
+
+                comando.CommandText = R
+                lector = comando.ExecuteReader
+                While lector.Read()
+                    DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+                End While
+                lector.Close()
+            Else
+                Dim R As String
+
+                R = "SELECT R.idRecursos,R.descripcion,R.idCategoria, C.Concepto, P.Estado FROM RECURSOS AS R 
+                            INNER Join CATEGORIA AS C On R.idCategoria = C.idCategoria  
+                            WHERE R.idCategoria = " & CboFiltroCategoria.Text
+
+                comando.CommandText = R
+                lector = comando.ExecuteReader
+                While lector.Read()
+                    DGVRecursos.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4))
+                End While
+                lector.Close()
+            End If
+
+        Catch ex As Exception
+            bitacora("ApartarRecursos - Filtar", ex)
+        End Try
     End Sub
 
     Private Sub UpdateData()
-        TxtIdRecurso.Text = DGVRecursos.SelectedRows(0).Cells(0).Value.ToString
+        Try
+
+            TxtIdRecurso.Text = DGVRecursos.SelectedRows(0).Cells(0).Value.ToString
         TxtDescripcion.Text = DGVRecursos.SelectedRows(0).Cells(1).Value.ToString
         TxtIdCategoria.Text = DGVRecursos.SelectedRows(0).Cells(2).Value.ToString
         txtConcepto.Text = DGVRecursos.SelectedRows(0).Cells(3).Value.ToString
@@ -189,6 +209,9 @@ Public Class ApartarRecurso
             txtCantidad.Enabled = True
         End If
 
+        Catch ex As Exception
+            bitacora("ApartarRecursos - Update", ex)
+        End Try
     End Sub
 
     Private Sub DGVRecursos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVRecursos.CellClick
@@ -204,10 +227,7 @@ Public Class ApartarRecurso
     Private Sub BtnGrabar_Click(sender As Object, e As EventArgs) Handles BtnGrabar.Click
         Try
 
-        Catch ex As Exception
-
-        End Try
-        Dim R As String
+            Dim R As String
         Dim cat As String
         Dim id As String
 
@@ -247,7 +267,11 @@ Public Class ApartarRecurso
         DGVRecursos.Rows.Clear()
         BtnGrabar.Enabled = False
 
-        LimpiarDatos()
+            LimpiarDatos()
+
+        Catch ex As Exception
+            bitacora("ApartarRecursos - Grabar", ex)
+        End Try
     End Sub
 
     Private Sub LimpiarDatos()

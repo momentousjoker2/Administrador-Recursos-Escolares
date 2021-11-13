@@ -7,38 +7,50 @@ Public Class categoría
     Dim filas As Integer = 0
     Dim opcion As Integer = 0
     Private Sub categoría_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New MySqlConnection(conn)
-        conexion.Open()
-        comando = conexion.CreateCommand
-        txtIdCategoria.Enabled = False
-        txtConcepto.Enabled = False
-        btnRegistrar.Enabled = False
-        btnNuevo.Enabled = True
-        gb1.Enabled = True
-        dgwCategoria.Rows.Clear()
-        actualizar()
-        colocar(0)
-        lector.Close()
+        Try
+
+
+            conexion = New MySqlConnection(conn)
+            conexion.Open()
+            comando = conexion.CreateCommand
+            txtIdCategoria.Enabled = False
+            txtConcepto.Enabled = False
+            btnRegistrar.Enabled = False
+            btnNuevo.Enabled = True
+            gb1.Enabled = True
+            dgwCategoria.Rows.Clear()
+            actualizar()
+            colocar(0)
+            lector.Close()
+        Catch ex As Exception
+            bitacora("Categoria - Load", ex)
+
+        End Try
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        txtIdCategoria.Enabled = False
-        txtConcepto.Enabled = True
-        btnRegistrar.Enabled = True
-        btnNuevo.Enabled = False
-        gb1.Enabled = False
-        opcion = 1
-        filas = dgwCategoria.RowCount
-        filas -= 1
-        colocar(filas)
-        comando.CommandText = "SELECT count(idCategoria	) FROM CATEGORIA"
-        lector = comando.ExecuteReader
-        lector.Read()
-        txtIdCategoria.Text = CInt(lector(0)) + 1
-        lector.Close()
+        Try
+            txtIdCategoria.Enabled = False
+            txtConcepto.Enabled = True
+            btnRegistrar.Enabled = True
+            btnNuevo.Enabled = False
+            gb1.Enabled = False
+            opcion = 1
+            filas = dgwCategoria.RowCount
+            filas -= 1
+            colocar(filas)
+            comando.CommandText = "SELECT count(idCategoria	) FROM CATEGORIA"
+            lector = comando.ExecuteReader
+            lector.Read()
+            txtIdCategoria.Text = CInt(lector(0)) + 1
+            lector.Close()
+        Catch ex As Exception
+            bitacora("Categoria - New", ex)
+        End Try
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+
         Try
             If opcion = 2 Then
                 comando.CommandText = "UPDATE CATEGORIA set Concepto = '" & txtConcepto.Text.ToString & "' Where idCategoria =" & txtIdCategoria.Text.ToString
@@ -46,16 +58,18 @@ Public Class categoría
                 comando.CommandText = "insert into CATEGORIA(Concepto) values('" & txtConcepto.Text.ToString & "')"
             End If
             comando.ExecuteNonQuery()
+
+            actualizar()
+            txtIdCategoria.Enabled = False
+            txtConcepto.Enabled = False
+            btnRegistrar.Enabled = False
+            btnNuevo.Enabled = True
+            gb1.Enabled = True
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar grabar compruebe los datos")
-        End Try
-        actualizar()
-        txtIdCategoria.Enabled = False
-        txtConcepto.Enabled = False
-        btnRegistrar.Enabled = False
-        btnNuevo.Enabled = True
-        gb1.Enabled = True
+            bitacora("Categoria - registrar", ex)
 
+        End Try
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -63,13 +77,20 @@ Public Class categoría
     End Sub
 
     Private Sub actualizar()
-        dgwCategoria.Rows.Clear()
-        comando.CommandText = "Select * from CATEGORIA"
-        lector = comando.ExecuteReader
-        While lector.Read()
-            dgwCategoria.Rows.Add(lector(0), lector(1))
-        End While
-        lector.Close()
+        Try
+            dgwCategoria.Rows.Clear()
+            comando.CommandText = "Select * from CATEGORIA"
+            lector = comando.ExecuteReader
+            While lector.Read()
+                dgwCategoria.Rows.Add(lector(0), lector(1))
+            End While
+            lector.Close()
+
+
+        Catch ex As Exception
+            bitacora("Categoria - Update", ex)
+
+        End Try
     End Sub
 
     Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
